@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 const Home: NextPage = () => {
   return (
     <>
-      <section className="bg-gradient-fuchsia background-animate overflow-hidden">
+      <section className="bg-gradient-fuchsia bg-black background-animate overflow-hidden">
         <section>
           <div className="flex items-center justify-between px-8 py-5">
             <div className="w-auto">
