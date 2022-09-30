@@ -1,0 +1,22 @@
+html,
+body {
+  padding: 0;
+  background-size: contain;
+  margin: 0;
+  font-family: serif;
+  color: white !important;
+  overflow-x: hidden !important;
+  background: rgba(0, 0, 0, 0.388) url("/assets/images/bg.svg") center center fixed;
+
+}
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

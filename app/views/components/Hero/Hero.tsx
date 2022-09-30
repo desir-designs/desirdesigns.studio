@@ -1,6 +1,6 @@
 const Hero = () => {
     return (
-        <div className="relative container mx-auto px-4">
+        <div className="z-10 relative container mx-auto px-4">
             <img
                 className="hidden xl:block absolute bottom-64 left-56 transform -translate-y-4"
                 src="gradia-assets/elements/hero/line2.svg"
@@ -37,9 +37,8 @@ const Hero = () => {
                             </svg>
                             <p>Rated #2 on G2</p>
                         </div>
-                        <h1 className="mb-6 font-heading text-center text-white text-7xl md:text-9xl xl:text-12xl font-bold">
-                            Customer service that actually works
-                        </h1>
+                        <h1 className="z-10 mb-6 font-heading text-center text-white text-7xl md:text-9xl xl:text-12xl font-bold">
+                            Desir Designs                        </h1>
                         <p className="mb-10 font-medium text-xl text-center text-white">
                             Velit officia consequat duis enim velit mollit. Exercitation veniam
                             consequat.
