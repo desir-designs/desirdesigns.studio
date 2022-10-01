@@ -1,10 +1,14 @@
-import ComplexTable from '@components/ComplexTable'
 import ContactForm from "@components/ContactForm"
+import ContentRow from "@components/ContentRow"
 import Hero from "@components/Hero"
+import SummarySection from "@components/SummarySection"
 import TagCloud from "@components/TagCloud"
-import PageLayout from '@layouts/PageLayout'
+import StatsSection from '@components/StatsSection'
+import CommentsRow from "@components/CommentsRow"
 
-import PageService from '@controllers/services/page'
+
+import PageLayout from '@layouts/PageLayout'
+import PageService from '@services/page'
 
 const HomePage = ({ page }) => {
 
@@ -15,6 +19,10 @@ const HomePage = ({ page }) => {
     <PageLayout {...layout}>
       <Hero />
       <TagCloud />
+      <ContentRow />
+      <StatsSection />
+      <SummarySection />
+      <CommentsRow />
       <ContactForm {...contactForm} />
     </PageLayout>
 
