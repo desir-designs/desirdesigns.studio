@@ -51,7 +51,7 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
     const NavBurger = () => {
 
         return (
-            <div className="w-auto lg:hidden">
+            <div className="w-auto ml-3">
                 <a href="#">
                     <svg
                         className="navbar-burger text-gray-800"
