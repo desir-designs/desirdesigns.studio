@@ -1,3 +1,13 @@
+:root {
+  --font-primary: 'Gothic', sans-serif;
+}
+
+
+
+@font-face {
+    font-family: 'Gothic';
+    src: url('/assets/fonts/gothic.otf');
+}
 html,
 body {
   padding: 0;
@@ -18,5 +28,7 @@ a {
 }
 
 * {
+  font-family: var(--font-primary);
+  scroll-behavior: smooth !important;
   box-sizing: border-box;
 }

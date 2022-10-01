@@ -12,7 +12,7 @@ const Footer = () => {
 
 
     return (
-        <section className="pt-24 overflow-hidden">
+        <section className="pt-24 overflow-hidden text-white">
             <div className="container mx-auto px-4">
                 <img
                     className="mx-auto mb-16"

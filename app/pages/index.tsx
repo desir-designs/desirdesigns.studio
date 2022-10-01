@@ -1,11 +1,12 @@
-import type { NextPage } from 'next'
-import PageLayout from '@views/layouts/PageLayout'
-import Hero from "@components/Hero"
+import ComplexTable from '@components/ComplexTable'
 import ContactForm from "@components/ContactForm"
+import Hero from "@components/Hero"
 import TagCloud from "@components/TagCloud"
-import ComplexTable from '@views/components/ComplexTable'
+import PageLayout from '@layouts/PageLayout'
 
-const Home: NextPage = () => {
+
+
+const HomePage = ({ page }) => {
 
   return (
 
@@ -20,14 +21,6 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default HomePage
 
 
-export async function getStaticProps() {
-
-  return {
-    props: {
-
-    }
-  }
-}

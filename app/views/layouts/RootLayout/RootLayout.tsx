@@ -1,3 +1,5 @@
+import React from "react"
+
 import Meta from "@includes/Meta"
 import Box from "@mui/material/Box"
 
@@ -12,4 +14,4 @@ const RootLayout = ({ children, metaData }) => {
     )
 }
 
-export default RootLayout
+export default React.memo(RootLayout)
