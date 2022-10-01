@@ -1,3 +1,7 @@
 export type MetaProps = {
-    title?: string
+    title?: string,
+    pageTitle: string,
+    copyright?: string,
+    email?: string
+    phone?: string
 }

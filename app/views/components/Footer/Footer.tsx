@@ -1,62 +1,53 @@
-export type Image = {
-    src?: string,
-    alt?: string,
-}
+import type { IComponent } from "@models/typings/Component";
+import type { FooterProps } from "@models/typings/Footer";
 
-export type FooterProps = {
-    copyright?: string;
-    logo: Image
-}
+const Footer: IComponent<FooterProps> = ({ ...props }: FooterProps) => {
 
-const Footer = () => {
+    const { copyright, links } = props ?? null
+
+    const CopyRight = () => {
+
+        return (
+            copyright ? <>
+                <div className="border-b border-gray-100" />
+                <p className="text-gray-100 text-center py-8 text-md">
+                    {copyright ? copyright : "COPYRIGHT_NOT_FOUND"}
+                </p>
+            </> : <></>
+        )
+    }
+
+    const Links = () => {
+        return (
+            links ? <ul className="flex flex-wrap justify-center -m-5 pb-8">
+                {links.map((link, index) => {
+                    return (
+                        <li key={index} className="p-5">
+                            <a
+                                className="font-heading text-base text-gray-200 hover:text-blue-700"
+                                href={link.url ? link.url : "LINK_URL_NOT_FOUND"}
+                            >
+                                {link.name}
+                            </a>
+                        </li>
+                    )
+                })}
+
+            </ul> : <></>
+        )
+    }
 
 
     return (
         <section className="pt-24 overflow-hidden text-white">
             <div className="container mx-auto px-4">
                 <img
-                    className="mx-auto mb-16"
-                    src="gradia-assets/logos/gradia-name-black.svg"
+                    className="mx-auto mb-16 h-16"
+                    src="/assets/images/logo-transparent.png"
                     alt=""
                 />
-                <ul className="flex flex-wrap justify-center -m-5 pb-8">
-                    <li className="p-5">
-                        <a
-                            className="font-heading text-base text-gray-900 hover:text-gray-700"
-                            href="#"
-                        >
-                            Features
-                        </a>
-                    </li>
-                    <li className="p-5">
-                        <a
-                            className="font-heading text-base text-gray-900 hover:text-gray-700"
-                            href="#"
-                        >
-                            Pricing
-                        </a>
-                    </li>
-                    <li className="p-5">
-                        <a
-                            className="font-heading text-base text-gray-900 hover:text-gray-700"
-                            href="#"
-                        >
-                            Affiliate Program
-                        </a>
-                    </li>
-                    <li className="p-5">
-                        <a
-                            className="font-heading text-base text-gray-900 hover:text-gray-700"
-                            href="#"
-                        >
-                            Press Kit
-                        </a>
-                    </li>
-                </ul>
-                <div className="border-b border-gray-100" />
-                <p className="text-gray-600 text-center py-8 text-sm">
-                    © Copyright 2022. All Rights Reserved by Gradia.
-                </p>
+                <Links />
+                <CopyRight />
             </div>
         </section>
 

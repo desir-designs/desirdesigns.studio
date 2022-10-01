@@ -2,15 +2,15 @@ import RootLayout from "@layouts/RootLayout"
 
 import Header from "@components/Header"
 import Footer from "@components/Footer"
-
-
-const PageLayout = ({ children, metaData }) => {
+import DrawerMenu from "@includes/DrawerMenu"
+const PageLayout = ({ children, metaData, header, footer }) => {
 
     return (
         <RootLayout {...metaData}>
-            <Header />
+            <DrawerMenu />
+            <Header {...header} />
             {children}
-            <Footer />
+            <Footer {...footer} />
         </RootLayout>
     )
 }

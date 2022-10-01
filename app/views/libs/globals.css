@@ -23,6 +23,7 @@ body {
 
 
 a {
+  transition: all 0.3s ease !important;
   color: inherit;
   text-decoration: none;
 }

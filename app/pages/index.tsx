@@ -4,17 +4,18 @@ import Hero from "@components/Hero"
 import TagCloud from "@components/TagCloud"
 import PageLayout from '@layouts/PageLayout'
 
-
+import PageService from '@controllers/services/page'
 
 const HomePage = ({ page }) => {
 
+  const { layout, data: { contactForm } } = page
+
   return (
 
-    <PageLayout metaData={{ pageTitle: "home" }}>
+    <PageLayout {...layout}>
       <Hero />
       <TagCloud />
-      <ComplexTable />
-      <ContactForm />
+      <ContactForm {...contactForm} />
     </PageLayout>
 
 
@@ -24,3 +25,16 @@ const HomePage = ({ page }) => {
 export default HomePage
 
 
+export async function getStaticProps() {
+
+  const { getPage } = PageService
+
+  const page = (await getPage("home")) || {}
+
+  return {
+    props: {
+      page
+    }
+  }
+
+}

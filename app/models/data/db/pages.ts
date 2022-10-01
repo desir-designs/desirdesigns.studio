@@ -3,14 +3,25 @@ import layout from "@configs/layout"
 
 const pages = ({ store, pageKey }) => {
 
-    const { title: siteTitle } = meta()
+    const { title: siteTitle, email: siteEmail, phone: sitePhone } = meta()
 
 
     const pageData = {
         home: {
+
+            metaData: {
+                pageTitle: 'Home',
+            },
             data: {
                 hero: {
-                    title: "Welcome to my website",
+                    title: "Desir Designs",
+                },
+                contactForm: {
+                    title: "Contact Me",
+                    description: "I'd love to hear from you. Please fill out the form below and I'll get back to you as soon as possible.",
+                    email: siteEmail,
+                    phone: sitePhone,
+
                 }
             }
         },
