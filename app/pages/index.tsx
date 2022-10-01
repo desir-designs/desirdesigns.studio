@@ -10,7 +10,7 @@ const HomePage = ({ page }) => {
 
   return (
 
-    <PageLayout>
+    <PageLayout metaData={{ pageTitle: "home" }}>
       <Hero />
       <TagCloud />
       <ComplexTable />

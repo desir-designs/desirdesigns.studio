@@ -4,10 +4,10 @@ import Header from "@components/Header"
 import Footer from "@components/Footer"
 
 
-const PageLayout = ({ children }) => {
+const PageLayout = ({ children, metaData }) => {
 
     return (
-        <RootLayout>
+        <RootLayout {...metaData}>
             <Header />
             {children}
             <Footer />
