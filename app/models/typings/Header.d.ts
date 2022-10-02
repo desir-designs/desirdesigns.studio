@@ -10,7 +10,15 @@ export type FaviconProps = {
     alt?: string
 }
 
+
+export type CallToActionProps = {
+    name?: string,
+    url?: string,
+}
+
 export type HeaderProps = {
+    [key: string]: any,
     favicon?: FaviconProps,
+    cta?: CallToActionProps
     links?: LinkProps[],
 }

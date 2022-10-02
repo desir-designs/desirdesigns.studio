@@ -1,16 +1,11 @@
+export type HeroProps = {
+    title?: string,
+    heading?: string,
+}
 const Hero = () => {
     return (
         <div className="z-10 relative container mx-auto px-4">
-            <img
-                className="hidden xl:block absolute bottom-64 left-56 transform -translate-y-4"
-                src="gradia-assets/elements/hero/line2.svg"
-                alt=""
-            />
-            <img
-                className="hidden xl:block absolute bottom-64 right-56 transform -translate-y-28"
-                src="gradia-assets/elements/hero/line3.svg"
-                alt=""
-            />
+
             <div className="relative z-10 flex flex-wrap justify-center items-center -m-6 lg:pt-32 pb-36">
                 <div className="w-full lg:w-auto p-6 self-start">
                     <img
@@ -35,15 +30,18 @@ const Hero = () => {
                                     fill="white"
                                 />
                             </svg>
-                            <p>Rated #2 on G2</p>
+                            <p>Master Designer</p>
                         </div>
+
+
                         <h1 className="z-10 mb-6 font-heading text-center text-white text-7xl md:text-9xl xl:text-12xl font-bold">
-                            Desir Designs                        </h1>
+                            Desir Designs
+                        </h1>
                         <p className="mb-10 font-medium text-xl text-center text-white">
                             Velit officia consequat duis enim velit mollit. Exercitation veniam
                             consequat.
                         </p>
-                        <button className="group mb-9 relative flex items-center justify-center font-heading px-24 py-5 mx-auto w-full lg:w-auto uppercase text-white text-xs font-semibold tracking-px bg-gray-900 overflow-hidden rounded-md">
+                        <button className="group mb-9 relative flex items-center justify-center font-heading px-24 py-5 mx-auto w-full lg:w-auto uppercase text-white text-sm font-semibold tracking-px bg-blue-900 bg-opacity-80 overflow-hidden rounded-md">
                             <div className="absolute transform -translate-x-full group-hover:-translate-x-0 h-full w-full transition ease-in-out duration-500 bg-gradient-fuchsia" />
                             <p className="relative z-10 mr-2">Get started now</p>
                             <svg
@@ -62,59 +60,10 @@ const Hero = () => {
                                 />
                             </svg>
                         </button>
-                        <ul className="flex justify-center">
-                            <li className="flex items-center mr-6">
-                                <svg
-                                    className="mr-2"
-                                    width={19}
-                                    height={19}
-                                    viewBox="0 0 19 19"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M3.95831 10.2917L7.12498 13.4584L15.0416 5.54169"
-                                        stroke="white"
-                                        strokeWidth="1.5"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    />
-                                </svg>
-                                <p className="font-heading text-white text-base">
-                                    No credit card required
-                                </p>
-                            </li>
-                            <li className="flex items-center">
-                                <svg
-                                    className="mr-2"
-                                    width={19}
-                                    height={19}
-                                    viewBox="0 0 19 19"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M3.95831 10.2917L7.12498 13.4584L15.0416 5.54169"
-                                        stroke="white"
-                                        strokeWidth="1.5"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    />
-                                </svg>
-                                <p className="font-heading text-white text-base">
-                                    Cancel anytime
-                                </p>
-                            </li>
-                        </ul>
+
                     </div>
                 </div>
-                <div className="w-full lg:w-auto p-6 self-end">
-                    <img
-                        className="xl:relative xl:-bottom-10 mx-auto"
-                        src="gradia-assets/images/hero/avatar-message2.png"
-                        alt=""
-                    />
-                </div>
+
             </div>
         </div>
     )

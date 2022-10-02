@@ -7,7 +7,7 @@ const ContactForm: IComponent<ConactFormProps> = ({ ...props }: ConactFormProps)
     const { title, description, email, phone } = props ?? null
 
     const Address = () => {
-        
+
         return (
             <div className="w-full md:w-1/3 p-6">
                 <div className="md:max-w-xs">
@@ -58,20 +58,57 @@ const ContactForm: IComponent<ConactFormProps> = ({ ...props }: ConactFormProps)
 
     return (
 
-        <section className="pt-24 pb-32 overflow-hidden">
-            <div className="container mx-auto px-4">
-                <Header />
+        <section className="relative pt-32 pb-28 bg-black overflow-hidden">
+            <img
+                className="absolute top-0 left-0"
+                src="gradia-assets/elements/contact/radial3.svg"
+                alt=""
+            />
+            <div className="relative z-10 container mx-auto px-4">
                 <div className="flex flex-wrap -m-6">
-                    <Address />
-                    <div className="w-full md:w-1/3 p-6">
-                        <div className="md:max-w-xs">
-                            <Email />
-                            <Phone />
+                    <div className="w-full md:w-1/2 p-6">
+                        <div className="md:max-w-lg">
+                            <h2 className="mb-7 font-heading font-semibold text-6xl sm:text-8xl xl:text-10xl text-white">
+                                Want to get in touch with us?
+                            </h2>
+                            <p className="text-gray-400 text-lg">
+                                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+                                sint. Velit officia consequat duis enim velit mollit.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="w-full md:w-1/2 p-6">
+                        <div className="md:max-w-md ml-auto">
+                            <p className="mb-4 max-w-max text-transparent bg-clip-text bg-gradient-cyan2 font-heading text-lg font-semibold">
+                                Send us a mail
+                            </p>
+                            <p className="mb-16 text-white text-2xl">hello@gradia.io</p>
+                            <p className="mb-4 max-w-max text-transparent bg-clip-text bg-gradient-cyan2 font-heading text-lg font-semibold">
+                                Follow us
+                            </p>
+                            <ul>
+                                <li className="mb-6 text-white hover:text-gray-300 text-2xl">
+                                    <a href="#">Facebook</a>
+                                </li>
+                                <li className="mb-6 text-white hover:text-gray-300 text-2xl">
+                                    <a href="#">Twitter</a>
+                                </li>
+                                <li className="mb-6 text-white hover:text-gray-300 text-2xl">
+                                    <a href="#">Linkedin</a>
+                                </li>
+                                <li className="mb-6 text-white hover:text-gray-300 text-2xl">
+                                    <a href="#">Instagram</a>
+                                </li>
+                                <li className="text-white hover:text-gray-300 text-2xl">
+                                    <a href="#">Pinterest</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
     )
 }

@@ -8,7 +8,12 @@ const images: IConfiguration<ImageProps[]> = () => {
         {
             name: 'logo-transparent',
             alt: 'desir-designs-logo',
-            src: '/assets/images/logo-transparent.png',
+            src: '/assets/images/logo.svg',
+        },
+        {
+            name: 'logo-alt',
+            alt: 'desir-designs-logo',
+            src: '/assets/images/logo-alt.png',
         }
     ]
 

@@ -5,9 +5,10 @@
 
 
 @font-face {
-    font-family: 'Gothic';
-    src: url('/assets/fonts/gothic.otf');
+  font-family: 'Gothic';
+  src: url('/assets/fonts/gothic.otf');
 }
+
 html,
 body {
   padding: 0;
@@ -16,7 +17,8 @@ body {
   font-family: serif;
   color: white !important;
   overflow-x: hidden !important;
-  background: rgba(0, 0, 0, 0.388) url("/assets/images/bg.svg") center center fixed;
+  background: rgb(0, 0, 0, 0.25) url("/assets/images/bg.svg") center center no-repeat fixed;
+  background-size: 500% 500%;
 
 }
 
