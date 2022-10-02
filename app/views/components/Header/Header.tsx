@@ -4,6 +4,7 @@ import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import type { IComponent } from "@typings/Component"
 import type { HeaderProps } from "@typings/Header"
 import BlackLogoIcon from "../BlackLogoIcon";
+import { Fade } from "react-awesome-reveal";
 
 const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
@@ -14,15 +15,18 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
         return (
             links ? <div className="w-auto hidden lg:block items-center">
                 <ul className="flex items-center mr-10">
-                    {
-                        links.map((link, index) => {
-                            return (
-                                <li key={index} className="font-heading mr-12 text-gray-200 hover:text-gray-700 transition-all text-xl">
-                                    <a className="inline" href={link.url}>{link.name}</a>
-                                </li>
-                            )
-                        })
-                    }
+                    <Fade cascade>
+                        {
+                            links.map((link, index) => {
+                                return (
+                                    <li key={index} className="font-heading mr-12 text-gray-200 hover:text-gray-700 transition-all text-xl">
+                                        <a className="inline" href={link.url}>{link.name}</a>
+                                    </li>
+                                )
+                            })
+                        }
+                    </Fade>
+
                 </ul>
             </div> : <></>
         )

@@ -4,6 +4,7 @@ import Header from "@components/Header"
 import Footer from "@components/Footer"
 import DrawerMenu from "@includes/DrawerMenu"
 import ScrollToTop from "react-scroll-to-top";
+import { Zoom } from "react-awesome-reveal";
 
 
 const PageLayout = ({ children, metaData, header, footer }) => {
@@ -13,7 +14,10 @@ const PageLayout = ({ children, metaData, header, footer }) => {
             <ScrollToTop smooth />
             <DrawerMenu />
             <Header {...header} />
-            {children}
+            <Zoom>
+                {children}
+
+            </Zoom>
             <Footer {...footer} />
         </RootLayout>
     )
