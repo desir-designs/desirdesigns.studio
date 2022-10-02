@@ -16,8 +16,10 @@
     "@notionhq/client": "^2.2.0",
     "next": "12.3.1",
     "react": "18.2.0",
+    "react-animated-text": "^0.1.4",
     "react-dom": "18.2.0",
     "react-headroom": "^3.2.1",
+    "react-scroll-to-top": "^3.0.0",
     "recoil": "^0.7.5"
   },
   "devDependencies": {

@@ -15,6 +15,12 @@ const pages = ({ store, pageKey }) => {
             data: {
                 hero: {
                     title: "Desir Designs",
+                    heading: "Master Designer",
+                    description: 'Measure twice, cut once. I am a full service graphic designer & illustrator here to serve your visualization needs.',
+                    cta: {
+                        name: 'Book Consultation',
+                        link: '/contact'
+                    }
                 },
 
                 contentRow: {

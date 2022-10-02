@@ -12,12 +12,12 @@ import PageService from '@services/page'
 
 const HomePage = ({ page }) => {
 
-  const { layout, data: { contactForm } } = page
+  const { layout, data: { contactForm, hero } } = page
 
   return (
 
     <PageLayout {...layout}>
-      <Hero />
+      <Hero {...hero} />
       <TagCloud />
       <ContentRow />
       <StatsSection />

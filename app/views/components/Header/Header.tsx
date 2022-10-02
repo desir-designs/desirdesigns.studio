@@ -3,7 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import type { IComponent } from "@typings/Component"
 import type { HeaderProps } from "@typings/Header"
-
+import BlackLogoIcon from "../BlackLogoIcon";
 
 const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
@@ -18,7 +18,7 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
                         links.map((link, index) => {
                             return (
                                 <li key={index} className="font-heading mr-12 text-gray-200 hover:text-gray-700 transition-all text-xl">
-                               <a className="inline-block" href={link.url}>{link.name}</a>
+                                    <a className="inline" href={link.url}>{link.name}</a>
                                 </li>
                             )
                         })

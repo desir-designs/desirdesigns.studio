@@ -39,12 +39,12 @@ const Footer: IComponent<FooterProps> = ({ ...props }: FooterProps) => {
 
 
     return (
-        <section className="relative py-24 bg-black overflow-hidden">
+        <section className="relative py-24 overflow-hidden">
 
             <div className="relative z-10 container mx-auto px-4">
                 <div className="flex flex-wrap -m-6">
 
-                    
+
                     <div className="w-full md:w-1/2 lg:w-5/12 p-6">
                         <div className="flex flex-col justify-between h-full max-w-sm">
                             <div className="mb-11">

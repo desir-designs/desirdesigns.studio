@@ -3,7 +3,6 @@
 }
 
 
-
 @font-face {
   font-family: 'Gothic';
   src: url('/assets/fonts/gothic.otf');
@@ -12,9 +11,7 @@
 html,
 body {
   padding: 0;
-  background-size: contain;
   margin: 0;
-  font-family: serif;
   color: white !important;
   overflow-x: hidden !important;
   background: rgb(0, 0, 0, 0.25) url("/assets/images/bg.svg") center center no-repeat fixed;
@@ -24,14 +21,8 @@ body {
 
 
 
-a {
-  transition: all 0.3s ease !important;
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
+  user-select: none !important;
   font-family: var(--font-primary);
   scroll-behavior: smooth !important;
-  box-sizing: border-box;
 }

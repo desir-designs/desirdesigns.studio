@@ -58,7 +58,7 @@ const ContactForm: IComponent<ConactFormProps> = ({ ...props }: ConactFormProps)
 
     return (
 
-        <section className="relative pt-32 pb-28 bg-black overflow-hidden">
+        <section className="relative pt-32 pb-28 overflow-hidden">
             <img
                 className="absolute top-0 left-0"
                 src="gradia-assets/elements/contact/radial3.svg"
