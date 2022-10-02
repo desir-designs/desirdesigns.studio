@@ -21,7 +21,7 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
                         </div>
 
                         <h1 className="z-10 mb-6 font-heading text-center text-white text-7xl md:text-9xl xl:text-12xl font-bold">
-                            <Wave speed={25} iterations={3} delay={1} text={title ? title : "TITLE_NOT_FOUND"} />
+                            <Wave speed={25} delay={3} text={title ? title : "TITLE_NOT_FOUND"} />
                         </h1>
 
                         <p className="mb-10 font-medium text-xl text-center text-white">
