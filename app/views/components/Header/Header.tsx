@@ -26,7 +26,6 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
                             })
                         }
                     </Fade>
-
                 </ul>
             </div> : <></>
         )
@@ -36,7 +35,9 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
         return (
             favicon ? <div className="w-auto mr-14">
                 <a href={favicon?.url ? favicon.url : "FAVICON_URL_NOT_FOUND"}>
-                    <img src={favicon.src ? favicon.src : "FAVICON_IMAGE_NOT_FOUND"} className="h-14 w-full" alt={favicon?.alt ? favicon.alt : "FAVICON_ALT_NOT_FOUND"} />
+                    <img src={favicon.src ? favicon.src : "FAVICON_IMAGE_NOT_FOUND"} 
+                        className="h-14 w-full" 
+                        alt={favicon?.alt ? favicon.alt : "FAVICON_ALT_NOT_FOUND"} />
                 </a>
             </div> : <></>
         )
@@ -59,15 +60,14 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
         return (
             <div className="w-auto ml-3">
                 <MenuIcon />
-
             </div>
         )
     }
 
 
     return (
-        <Headroom>
 
+        <Headroom>
             <section className="bg-opacity-20 backdrop-blur-md z-50 bg-gray-700 overflow-hidden ">
                 <section>
                     <div className="flex items-center justify-between px-8 py-5">
@@ -76,19 +76,15 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
                                 <Favicon />
                             </div>
                         </div>
-
                         <Links />
-
                         <div className="w-auto">
                             <div className="flex flex-wrap items-center">
                                 <CallToAction />
                                 <NavBurger />
                             </div>
                         </div>
-
                     </div>
                 </section>
-
             </section>
         </Headroom>
     )

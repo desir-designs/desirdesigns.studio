@@ -11,9 +11,9 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
 
         <div className="z-10 relative container mx-auto px-4 mt-14">
 
-            <div className="relative z-10 flex flex-wrap justify-center items-center -m-6 lg:pt-32 pb-36">
+            <div className="relative z-10 flex backdrop-blur-lg flex-wrap justify-center items-center -m-6 lg:pt-32 pb-36">
 
-                <div className="flex-1 p-6">
+                <div className="flex-1 p-6  backdrop-blur-lg ">
                     <div className="lg:max-w-2xl mx-auto">
 
                         <div className="mb-6 font-heading flex items-center max-w-max mx-auto px-5 py-2.5 uppercase font-semibold text-xs tracking-px text-white bg-white bg-opacity-20 rounded-lg">
@@ -21,7 +21,7 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
                         </div>
 
                         <h1 className="z-10 mb-6 font-heading text-center text-white text-7xl md:text-9xl xl:text-12xl font-bold">
-                            <Wave speed={25} delay={3} text={title ? title : "TITLE_NOT_FOUND"} />
+                            <img className="h-1/2" src="/assets/images/logo-header.png" />
                         </h1>
 
                         <p className="mb-10 font-medium text-xl text-center text-white">
