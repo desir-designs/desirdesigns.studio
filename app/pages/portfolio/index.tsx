@@ -10,7 +10,6 @@ const PortfolioPage = ({ page }) => {
     return (
 
         <PageLayout {...layout}>
-            <ContentSearch />
         </PageLayout>
 
     )
@@ -23,7 +22,7 @@ export async function getServerSideProps() {
 
     const { getPage } = PageService
 
-    const page = (await getPage("portfolio")) || {}
+    const page = await getPage("portfolio")
 
     return {
         props: {
