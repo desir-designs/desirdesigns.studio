@@ -11,6 +11,8 @@ const footer: IConfiguration<FooterProps> = () => {
 
     const footerObject = {
         copyright: meta().copyright,
+        email: meta().email,
+        phone: meta().phone,
         links: siteLinks
     }
 

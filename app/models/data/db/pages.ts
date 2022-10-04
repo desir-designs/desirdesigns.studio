@@ -3,6 +3,7 @@ import links from "@configs/links"
 import layout from "@configs/layout"
 
 import portfolio from "@db/portfolio"
+import services from "@db/services"
 
 
 const pages = (store, pageKey) => {
@@ -35,7 +36,22 @@ const pages = (store, pageKey) => {
                     }
                 },
 
-                tagCloud: {},
+                tagCloud: {
+                    title: 'Services',
+                    heading: 'What I Do for You',
+                    clouds: [
+                        {
+                            tags: []
+                        },
+                        {
+                            tags: []
+                        },
+                        {
+                            tags: []
+                        }
+                    ]
+                },
+
                 contentRow: {
                     title: 'Portfolio',
                     heading: 'The Fringe of Design',
@@ -88,7 +104,16 @@ const pages = (store, pageKey) => {
                     }))
 
                 }
-            }
+            },
+
+            pages: [...portfolioQuery.map((item) => ({
+                metaData: {},
+                data: {
+                    post: {
+                        ...item
+                    }
+                }
+            }))]
         },
         services: {},
 

@@ -39,7 +39,7 @@ const NotionService = {
             }
         },
         SERVICES: {
-            shape: (data) => { 
+            shape: (data) => {
 
                 const shapeObject = {
                     name: data?.properties?.Name?.title[0].plain_text ?? "TITLE_NOT_FOUND",
@@ -47,6 +47,8 @@ const NotionService = {
                     features: data?.properties?.Features?.multi_select.map((feature) => ({ name: feature.name })) ?? [],
 
                 }
+
+                return { ...shapeObject } ?? null
             },
             predicate: (data) => {
                 return data?.properties?.Database?.select?.name === "🛒Services"
@@ -90,7 +92,7 @@ const NotionService = {
 
         const centralDogma = await api.databases.query({
             database_id: secured.central_dogma_id
-        })
+        }).catch((error) => { throw error })
 
         return centralDogma
     },

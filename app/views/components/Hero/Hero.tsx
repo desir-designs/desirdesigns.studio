@@ -1,11 +1,10 @@
-import type { IComponent } from "@typings/Component"
-import type { HeroProps } from "@typings/Hero"
-import { Wave } from 'react-animated-text';
+import type { IComponent } from "@typings/Component";
+import type { HeroProps } from "@typings/Hero";
 
 
-const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
+const Hero: IComponent<HeroProps> = ({ title, heading, description, cta}: HeroProps) => {
 
-    const { title, heading, description, cta } = props ?? null
+
 
     return (
 
@@ -13,18 +12,18 @@ const Hero: IComponent<HeroProps> = ({ ...props }: HeroProps) => {
 
             <div className="relative z-10 flex backdrop-blur-lg flex-wrap justify-center items-center -m-6 lg:pt-32 pb-36">
 
-                <div className="flex-1 p-6  backdrop-blur-lg ">
+                <div className="flex-1 p-4 backdrop-blur-lg">
                     <div className="lg:max-w-2xl mx-auto">
 
-                        <div className="mb-6 font-heading flex items-center max-w-max mx-auto px-5 py-2.5 uppercase font-semibold text-xs tracking-px text-white bg-white bg-opacity-20 rounded-lg">
+                        <div className="mb-3 -mt-12 font-heading flex items-center max-w-max mx-auto px-5 py-2.5 uppercase font-semibold text-md tracking-px text-white bg-black bg-opacity-70 rounded-lg">
                             <p>{heading ? heading : "HEADING_NOT_FOUND"}</p>
                         </div>
 
-                        <h1 className="z-10 mb-6 font-heading text-center text-white text-7xl md:text-9xl xl:text-12xl font-bold">
+                        <h1 className="z-10 mb-6 font-heading text-center text-black text-7xl md:text-9xl xl:text-12xl font-bold">
                             <img className="h-1/2" src="/assets/images/logo-header.png" />
                         </h1>
 
-                        <p className="mb-10 font-medium text-xl text-center text-white">
+                        <p className="mb-10 font-medium text-xl text-center text-black">
                             {description ? description : "DESCRIPTION_NOT_FOUND"}
                         </p>
 

@@ -6,6 +6,8 @@ import type { HeaderProps } from "@typings/Header"
 import BlackLogoIcon from "../BlackLogoIcon";
 import { Fade } from "react-awesome-reveal";
 import useDrawer from "@hooks/useDrawer"
+
+import ArchitectureIcon from '@mui/icons-material/Architecture';
 const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
     const { favicon, links, cta } = props
@@ -61,7 +63,7 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
         return (
             <div onClick={() => toggleDrawer()} className="w-auto ml-3 hover:scale-90 transition-all">
-                <MenuIcon />
+                <ArchitectureIcon />
             </div>
         )
     }
