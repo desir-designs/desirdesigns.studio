@@ -1,137 +1,135 @@
 import type { IComponent } from "@models/typings/Component"
+import type { ContentProps } from "@typings/Content"
+import { Slide } from "react-awesome-reveal";
 
+
+export type ActionProps = {
+    name?: string,
+    url?: string
+}
 
 export type ContentRowProps = {
     title?: string,
+    heading?: string,
     description?: string,
-    content: any[]
+    action?: ActionProps,
+    content?: ContentProps[]
 }
 
-const ContentRow: IComponent<ContentRowProps> = ({ ...props }: ContentRowProps) => {
+const ContentRow: IComponent<ContentRowProps> = ({ title, heading, description, action, content }: ContentRowProps) => {
 
 
-    const { title, content } = props ?? null
+
+    const Header = () => {
+        return (
+            <div className="flex flex-wrap -mx-4 mb-16 items-center">
+                <div className="w-full lg:w-2/3 px-4 mb-8 lg:mb-0">
+                    <span className="text-xl font-extrabold text-blue-500">
+                        {title ? title : "TITLE_NOT_FOUND"}
+                    </span>
+                    <h1 className="text-3xl md:text-4xl font-extrabold font-heading mt-2 mb-4">
+                        {heading ? heading : "HEADING_NOT_FOUND"}
+                    </h1>
+                    <p className="text-xl font-extrabold leading-8">
+                        {description ? description : "DESCRIPTION_NOT_FOUND"}
+                    </p>
+                </div>
+                <div className="w-full lg:w-1/3 px-4 mb-8 md:mb-0 lg:text-right">
+                    <a
+                        className="inline-block py-4 px-12 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
+                        href={action ? action.url : "#"}
+                    >
+                        {action ? action.name : "ACTION_NOT_FOUND"}
+                    </a>
+                </div>
+            </div>
+
+
+        )
+    }
 
 
     const Content = () => {
 
         return (
-            content ? <div className="flex flex-wrap -m-3">
-                {
-                    content.map((item, index) => {
 
+            <div className="flex flex-wrap -mx-4 -mb-8">
+
+                {
+                    content ? content.map((item, index) => {
                         return (
-                            <div key={index} className="w-full md:w-1/2 xl:w-1/4 p-3">
-                                <a className="group" href="#">
-                                    <div className="group flex flex-col justify-end h-full relative overflow-hidden rounded-10">
-                                        <img
-                                            className="mx-auto w-full transform group-hover:scale-110 transition ease-out duration-500"
-                                            src="gradia-assets/images/blog/blog1.png"
-                                            alt=""
-                                        />
-                                        <div className="absolute bottom-0 left-0 w-full p-2.5">
-                                            <div className="p-5 w-full bg-black bg-opacity-80 rounded-md">
-                                                <h2 className="mb-2 font-heading font-medium text-xs uppercase text-gray-400 tracking-px">
-                                                    Technology . 4 min read
-                                                </h2>
-                                                <p className="font-heading font-semibold text-lg text-white group-hover:underline">
-                                                    {item.description ? item.description : "DESCRIPTION_NOT_FOUND"}
-                                                </p>
-                                            </div>
-                                        </div>
+                            <div key={index} className="w-full md:w-1/2 backdrop-blur-3xl xl:w-1/3 px-4 mb-8">
+                                <div className="border-3 bg-black items-center  border-indigo-200 backdrop-blur-2xl hover:bg-black hover:bg-opacity-20 bg-opacity-60 transition-all shadow-xl rounded-xl overflow-hidden m-auto">
+                                    <img
+                                        className="h-50 inline-block object-cover"
+                                        src={item.cover.src ?? "#"}
+                                        alt={item.cover.alt}
+                                    />
+                                    <div className="px-6 py-8 md:p-10 border-t-3 border-indigo-900">
+                                        {item.tags ?
+                                            item.tags.map((tag, index) => {
+                                                return (
+                                                    <span key={index} className="inline-flex mb-6 h-6 items-center justify-center text-xs font-extrabold px-2 text-indigo-900 rounded border-2 border-indigo-900 bg-green-200 uppercase shadow-sm">
+                                                        {tag.name}
+                                                    </span>
+                                                )
+                                            }) : <></>
+                                        }
+                                        <p className="text-xl font-bold text-gray-400 mb-2">
+                                            John Doe • 19 Jan 2022
+                                        </p>
+                                        <h2 className="text-2xl font-extrabold mb-6">
+                                            {item.title}
+                                        </h2>
+                                        <p className="text-xl font-bold mb-6">
+                                            {item.description}
+                                        </p>
+                                        <a
+                                            className="inline-block border-3  font-bold text-indigo-500 hover:text-indigo-600"
+                                            href="#"
+                                        >
+                                            Read More
+                                        </a>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         )
                     })
+                        : <></>
+
                 }
-                <div className="w-full md:w-1/2 xl:w-1/4 p-3">
-                    <a className="group" href="#">
-                        <div className="group flex flex-col justify-end h-full relative overflow-hidden rounded-10">
-                            <img
-                                className="mx-auto w-full transform group-hover:scale-110 transition ease-out duration-500"
-                                src="gradia-assets/images/blog/blog2.png"
-                                alt=""
-                            />
-                            <div className="absolute bottom-0 left-0 w-full p-2.5">
-                                <div className="p-5 w-full bg-black bg-opacity-80 rounded-md">
-                                    <h2 className="mb-2 font-heading font-medium text-xs uppercase text-gray-400 tracking-px">
-                                        Technology . 4 min read
-                                    </h2>
-                                    <p className="font-heading font-semibold text-lg text-white group-hover:underline">
-                                        You will never believe these bizarre truth of travel.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div className="w-full md:w-1/2 xl:w-1/4 p-3">
-                    <a className="group" href="#">
-                        <div className="group flex flex-col justify-end h-full relative overflow-hidden rounded-10">
-                            <img
-                                className="mx-auto w-full transform group-hover:scale-110 transition ease-out duration-500"
-                                src="gradia-assets/images/blog/blog3.png"
-                                alt=""
-                            />
-                            <div className="absolute bottom-0 left-0 w-full p-2.5">
-                                <div className="p-5 w-full bg-black bg-opacity-80 rounded-md">
-                                    <h2 className="mb-2 font-heading font-medium text-xs uppercase text-gray-400 tracking-px">
-                                        Technology . 4 min read
-                                    </h2>
-                                    <p className="font-heading font-semibold text-lg text-white group-hover:underline">
-                                        You will never believe these bizarre truth of travel.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div className="w-full md:w-1/2 xl:w-1/4 p-3">
-                    <a className="group" href="#">
-                        <div className="group flex flex-col justify-end h-full relative overflow-hidden rounded-10">
-                            <img
-                                className="mx-auto w-full transform group-hover:scale-110 transition ease-out duration-500"
-                                src="gradia-assets/images/blog/blog4.png"
-                                alt=""
-                            />
-                            <div className="absolute bottom-0 left-0 w-full p-2.5">
-                                <div className="p-5 w-full bg-black bg-opacity-80 rounded-md">
-                                    <h2 className="mb-2 font-heading font-medium text-xs uppercase text-gray-400 tracking-px">
-                                        Technology . 4 min read
-                                    </h2>
-                                    <p className="font-heading font-semibold text-lg text-white group-hover:underline">
-                                        You will never believe these bizarre truth of travel.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+
             </div>
-                : <></>
+
+        )
+    }
+
+    const Action = () => {
+
+        return (
+            action ? <div className="mt-20 text-center">
+                <a
+                    className="inline-block py-4 px-12 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
+                    href={action.url}
+                >
+                    {action.name}
+                </a>
+            </div> : <></>
         )
     }
 
 
+
+
     return (
-        <section className="pt-20 pb-36 overflow-hidden">
-            <div className="container mx-auto px-4">
-                <div className="md:max-w-lg mx-auto text-center mb-20">
-                    <h2 className="mb-4 font-heading font-semibold text-white text-6xl sm:text-7xl">
-                       Portfolio
-                    </h2>
-                    <p className="text-lg text-gray-400">
-                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-                        sint. Velit officia consequat duis enim.
-                    </p>
-                </div>
-
-
+        <section className="py-20 relative">
+            <div className="container px-4 mx-auto relative">
+                <Header />
                 <Content />
-
+                <Action />
             </div>
         </section>
+
 
     )
 }

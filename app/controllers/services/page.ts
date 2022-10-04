@@ -4,7 +4,7 @@ import meta from "@configs/meta"
 const PageService = {
 
     loadDataPage: (store?: any, pageKey?: string) => {
-        return pages({ store, pageKey })
+        return pages(store, pageKey)
     },
 
     getPage: async (pageKey: string) => {

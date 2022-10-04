@@ -1,12 +1,24 @@
 import meta from "@configs/meta"
+import links from "@configs/links"
 import layout from "@configs/layout"
 
-const pages = ({ store, pageKey }) => {
+import portfolio from "@db/portfolio"
+
+
+const pages = (store, pageKey) => {
 
     const { title: siteTitle, email: siteEmail, phone: sitePhone } = meta()
 
+    const portfolioRelativeURL = links().find((link) => link.name === "Portfolio") ?? null
+
+    const { getPortfolio } = portfolio()
+
+    const portfolioQuery = getPortfolio(store)
+
+
 
     const pageData = {
+
         home: {
 
             metaData: {
@@ -24,8 +36,27 @@ const pages = ({ store, pageKey }) => {
                 },
 
                 contentRow: {
-                    content: []
+                    title: 'Portfolio',
+                    heading: 'The Fringe of Design',
+                    description: 'Please take a look at some of my recent work. I am always looking to expand my portfolio, so if you have a project in mind, please feel free to contact me.',
+                    action: {
+                        name: 'View Portfolio',
+                        url: portfolioRelativeURL.url
+                    },
+                    content: portfolioQuery.map((item) => ({
+                        cover: {
+                            src: item.covers[0]?.src ?? "#",
+                            alt: item.covers[0]?.alt ?? "#",
+                        } ?? null,
+                        tags: ["Graphic Design", "Illustration"],
+                        title: item.name,
+                        description: ""
+                    }))
+
+
                 },
+
+
                 contactForm: {
                     title: "Contact Me",
                     description: "I'd love to hear from you. Please fill out the form below and I'll get back to you as soon as possible.",
@@ -35,7 +66,7 @@ const pages = ({ store, pageKey }) => {
                 }
             }
         },
-        projects: {},
+        portfolio: {},
         services: {},
 
     }

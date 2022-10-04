@@ -5,11 +5,13 @@ import type { IComponent } from "@typings/Component"
 import type { HeaderProps } from "@typings/Header"
 import BlackLogoIcon from "../BlackLogoIcon";
 import { Fade } from "react-awesome-reveal";
-
+import useDrawer from "@hooks/useDrawer"
 const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
     const { favicon, links, cta } = props
 
+
+    const { toggleDrawer } = useDrawer()
 
     const Links = () => {
         return (
@@ -35,8 +37,8 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
         return (
             favicon ? <div className="w-auto mr-14">
                 <a href={favicon?.url ? favicon.url : "FAVICON_URL_NOT_FOUND"}>
-                    <img src={favicon.src ? favicon.src : "FAVICON_IMAGE_NOT_FOUND"} 
-                        className="h-14 w-full" 
+                    <img src={favicon.src ? favicon.src : "FAVICON_IMAGE_NOT_FOUND"}
+                        className="h-14 w-full"
                         alt={favicon?.alt ? favicon.alt : "FAVICON_ALT_NOT_FOUND"} />
                 </a>
             </div> : <></>
@@ -58,7 +60,7 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
     const NavBurger = () => {
 
         return (
-            <div className="w-auto ml-3">
+            <div onClick={() => toggleDrawer()} className="w-auto ml-3 hover:scale-90 transition-all">
                 <MenuIcon />
             </div>
         )
