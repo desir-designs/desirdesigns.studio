@@ -10,7 +10,7 @@ const Footer: IComponent<FooterProps> = ({ ...props }: FooterProps) => {
         return (
             copyright ? <>
                 <div className="border-b border-gray-100" />
-                <p className="text-gray-100 text-center py-8 text-md">
+                <p className="text-gray-900 text-center py-8 text-lg">
                     {copyright ? copyright : "COPYRIGHT_NOT_FOUND"}
                 </p>
             </> : <></>
@@ -52,12 +52,12 @@ const Footer: IComponent<FooterProps> = ({ ...props }: FooterProps) => {
                             </div>
 
                             <div>
-                                <p className="mb-14 text-gray-200 text-sm">
+                                <p className="mb-14 text-gray-800 text-sm">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pretium
                                     dui convallis sagittis tempus mi viverra eget. Quisque justo,
                                     blandit orci.
                                 </p>
-                                <p className="text-gray-400 text-sm">
+                                <p className="text-gray-900 text-md">
                                     © Copyright 2022. All Rights Reserved by Gradia.
                                 </p>
                             </div>

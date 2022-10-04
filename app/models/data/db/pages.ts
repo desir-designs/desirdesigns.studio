@@ -35,6 +35,7 @@ const pages = (store, pageKey) => {
                     }
                 },
 
+                tagCloud: {},
                 contentRow: {
                     title: 'Portfolio',
                     heading: 'The Fringe of Design',
@@ -66,7 +67,29 @@ const pages = (store, pageKey) => {
                 }
             }
         },
-        portfolio: {},
+        portfolio: {
+            metaData: {
+                pageTitle: 'Portfolio',
+            },
+
+            data: {
+                contentSearch: {
+
+                    title: 'My Portfolio',
+                    heading: 'The Fringe of Design',
+                    description: 'Here lie my most recent works. I am always looking to expand my portfolio, so if you have a project in mind, please feel free to contact me.',
+                    content: portfolioQuery.map((item) => ({
+                        cover: {
+                            src: item.covers[0]?.src ?? "#",
+                            alt: item.covers[0]?.alt ?? "#",
+                        } ?? null,
+                        title: item.name,
+                        description: ""
+                    }))
+
+                }
+            }
+        },
         services: {},
 
     }

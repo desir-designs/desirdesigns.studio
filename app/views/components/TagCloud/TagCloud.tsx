@@ -49,7 +49,7 @@ const TagCloud = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div className="flex flex-wrap justify-center -m-2 mb-7">
                         <div className="w-auto p-2">
                             <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">

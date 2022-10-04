@@ -39,9 +39,17 @@ const NotionService = {
             }
         },
         SERVICES: {
-            shape: (data) => { },
+            shape: (data) => { 
+
+                const shapeObject = {
+                    name: data?.properties?.Name?.title[0].plain_text ?? "TITLE_NOT_FOUND",
+                    price: data?.properties?.Price?.number ?? 0,
+                    features: data?.properties?.Features?.multi_select.map((feature) => ({ name: feature.name })) ?? [],
+
+                }
+            },
             predicate: (data) => {
-                return data.properties.Database.select.name === "❓FAQs"
+                return data?.properties?.Database?.select?.name === "🛒Services"
 
             }
 
@@ -49,14 +57,14 @@ const NotionService = {
         SOCIAL_MEDIA: {
             shape: (data) => { },
             predicate: (data) => {
-                return data.properties.Database.select.name === "❓FAQs"
+                return data.properties.Database.select.name === "📱Social Media"
 
             }
         },
-        ORGANIZATION: {
+        ORGANIZATIONS: {
             shape: (data) => { },
             predicate: (data) => {
-                return data.properties.Database.select.name === "❓FAQs"
+                return data.properties.Database.select.name === "🫂Organizations"
 
             }
         },
@@ -69,7 +77,7 @@ const NotionService = {
         META: {
             shape: (data) => { },
             predicate: (data) => {
-                return data.properties.Database.select.name === "❓FAQs"
+                return data.properties.Database.select.name === "📏Meta"
 
             }
         }

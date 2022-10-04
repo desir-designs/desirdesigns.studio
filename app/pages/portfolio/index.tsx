@@ -1,15 +1,15 @@
-import ContentSearch from "@views/components/ContentSearch"
-
-import PageLayout from '@layouts/PageLayout'
-import PageService from '@services/page'
+import ContentSearch from "@components/ContentSearch"
+import PageLayout from "@layouts/PageLayout"
+import PageService from "@services/page"
 
 const PortfolioPage = ({ page }) => {
 
-    const { layout } = page
+    const { layout, data: { contentSearch } } = page
 
     return (
 
         <PageLayout {...layout}>
+            <ContentSearch {...contentSearch} />
         </PageLayout>
 
     )

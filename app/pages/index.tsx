@@ -12,7 +12,7 @@ import { useEffect } from "react"
 
 const HomePage = ({ page }) => {
 
-  const { layout, data: { contactForm, hero, contentRow } } = page
+  const { layout, data: { contactForm, tagCloud, hero, contentRow } } = page
 
   useEffect(() => {
     console.log(`[DesirDesigns@${page.version}]`, page)
@@ -23,7 +23,7 @@ const HomePage = ({ page }) => {
   return (
     <PageLayout {...layout}>
       <Hero {...hero} />
-      <TagCloud />
+      <TagCloud {...tagCloud} />
       <ContentRow {...contentRow} />
       <StatsSection />
       <SummarySection />
