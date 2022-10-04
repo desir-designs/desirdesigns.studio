@@ -82,7 +82,6 @@ const ContentRow: IComponent<ContentRowProps> = ({ title, heading, description, 
                                             {item.title}
                                         </h2>
                                         <p className="text-xl font-bold mb-6">
-                                            {item.description}
                                         </p>
                                         <a
                                             className="inline-block border-3  font-bold text-indigo-500 hover:text-indigo-600"
