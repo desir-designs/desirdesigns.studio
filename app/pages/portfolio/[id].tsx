@@ -10,7 +10,6 @@ const PortfolioPage = ({ page }) => {
     return (
 
         <PageLayout {...layout}>
-            <ContentSearch />
 
         </PageLayout>
 
