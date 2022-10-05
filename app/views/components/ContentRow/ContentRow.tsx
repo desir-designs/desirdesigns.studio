@@ -1,7 +1,9 @@
 import type { IComponent } from "@models/typings/Component"
 import type { ContentProps } from "@typings/Content"
-import { Slide } from "react-awesome-reveal";
-
+import Fade from 'react-reveal/Fade';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
 
 export type ActionProps = {
     name?: string,
@@ -55,48 +57,53 @@ const ContentRow: IComponent<ContentRowProps> = ({ title, heading, description, 
 
             <div className="flex flex-wrap -mx-4 -mb-8">
 
-                {
-                    content ? content.map((item, index) => {
-                        return (
-                            <div key={index} className="w-full md:w-1/2 backdrop-blur-3xl xl:w-1/3 px-4 mb-8">
-                                <div className="border-3 bg-black items-center  border-indigo-200 backdrop-blur-2xl hover:bg-black hover:bg-opacity-20 bg-opacity-60 transition-all shadow-xl rounded-xl overflow-hidden m-auto">
-                                    <img
-                                        className="h-50 inline-block object-cover"
-                                        src={item.cover.src ?? "#"}
-                                        alt={item.cover.alt}
-                                    />
-                                    <div className="px-6 py-8 md:p-10 border-t-3 border-indigo-900">
-                                        {item.tags ?
-                                            item.tags.map((tag, index) => {
-                                                return (
-                                                    <span key={index} className="inline-flex mb-6 h-6 items-center justify-center text-xs font-extrabold px-2 text-indigo-900 rounded border-2 border-indigo-900 bg-green-200 uppercase shadow-sm">
-                                                        {tag.name}
-                                                    </span>
-                                                )
-                                            }) : <></>
-                                        }
-                                        <p className="text-xl font-bold text-gray-400 mb-2">
-                                            John Doe • 19 Jan 2022
-                                        </p>
-                                        <h2 className="text-2xl font-extrabold mb-6">
-                                            {item.title}
-                                        </h2>
-                                        <p className="text-xl font-bold mb-6">
-                                        </p>
-                                        <a
-                                            className="inline-block border-3  font-bold text-indigo-500 hover:text-indigo-600"
-                                            href="#"
-                                        >
-                                            Read More
-                                        </a>
+                <Fade>
+
+                    {
+                        content ? content.map((item, index) => {
+                            return (
+                                <div key={index} className="w-full md:w-1/2 backdrop-blur-3xl xl:w-1/3 px-4 mb-8">
+                                    <div className="border-3 bg-black items-center  border-indigo-200 backdrop-blur-2xl hover:bg-black hover:bg-opacity-20 bg-opacity-60 transition-all shadow-xl rounded-xl overflow-hidden m-auto">
+                                        <img
+                                            className="h-50 inline-block object-cover"
+                                            src={item.cover.src ?? "#"}
+                                            alt={item.cover.alt}
+                                        />
+                                        <div className="px-6 py-8 md:p-10 border-t-3 border-indigo-900">
+                                            {item.tags ?
+                                                item.tags.map((tag, index) => {
+                                                    return (
+                                                        <span key={index} className="inline-flex mb-6 h-6 items-center justify-center text-xs font-extrabold px-2 text-blue-900 rounded border-2 border-indigo-900 bg-blue-300 uppercase shadow-xl">
+                                                            {tag.name}
+                                                        </span>
+                                                    )
+                                                }) : <></>
+                                            }
+                                            <p className="text-xl font-bold text-gray-400 mb-2">
+                                                John Doe • 19 Jan 2022
+                                            </p>
+                                            <h2 className="text-2xl font-extrabold mb-6">
+                                                {item.title}
+                                            </h2>
+                                            <p className="text-xl font-bold mb-6">
+                                            </p>
+                                            <a
+                                                className="inline-block border-3  font-bold text-indigo-500 hover:text-indigo-600"
+                                                href="#"
+                                            >
+                                                Read More
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        )
-                    })
-                        : <></>
+                            )
+                        })
+                            : <></>
 
-                }
+                    }
+                </Fade>
+
+
 
             </div>
 

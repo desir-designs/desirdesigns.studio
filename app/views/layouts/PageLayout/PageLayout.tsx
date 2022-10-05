@@ -4,7 +4,7 @@ import Header from "@components/Header"
 import Footer from "@components/Footer"
 import DrawerMenu from "@includes/DrawerMenu"
 import ScrollToTop from "react-scroll-to-top";
-import { Zoom } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 import NorthIcon from '@mui/icons-material/North';
 const PageLayout = ({ children, metaData, header, footer }) => {
@@ -14,10 +14,10 @@ const PageLayout = ({ children, metaData, header, footer }) => {
             <ScrollToTop component={<NorthIcon className="text-blue-900" />} smooth />
             <DrawerMenu />
             <Header {...header} />
-            <Zoom>
+            <Fade cascade triggerOnce delay={1} direction="down">
                 {children}
+            </Fade>
 
-            </Zoom>
             <Footer {...footer} />
         </RootLayout>
     )

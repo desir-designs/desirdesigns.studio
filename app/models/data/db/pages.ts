@@ -78,6 +78,10 @@ const pages = (store, pageKey) => {
 
                     title: 'Frequently Asked Questions',
                     heading: 'Know my process',
+                    banner: {
+                        src: '/assets/images/fringe.svg',
+                        alt: 'fringe-of-design'
+                    },
                     summary: [
 
                     ]
