@@ -7,6 +7,11 @@ const links = () => {
             type: 'internal',
         },
         {
+            name: 'Blog',
+            url: '/blog',
+            type: 'internal',
+        },
+        {
             name: 'Portfolio',
             url: '/portfolio',
             type: 'internal'

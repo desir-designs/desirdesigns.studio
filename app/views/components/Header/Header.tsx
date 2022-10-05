@@ -1,13 +1,10 @@
-import Headroom from "react-headroom"
-import MenuIcon from '@mui/icons-material/Menu'
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
-import type { IComponent } from "@typings/Component"
-import type { HeaderProps } from "@typings/Header"
-import BlackLogoIcon from "../BlackLogoIcon";
-import { Fade } from "react-awesome-reveal";
-import useDrawer from "@hooks/useDrawer"
-
+import useDrawer from "@hooks/useDrawer";
 import ArchitectureIcon from '@mui/icons-material/Architecture';
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import type { IComponent } from "@typings/Component";
+import type { HeaderProps } from "@typings/Header";
+import { Fade } from "react-awesome-reveal";
+import Headroom from "react-headroom";
 const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
     const { favicon, links, cta } = props
@@ -17,14 +14,14 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
     const Links = () => {
         return (
-            links ? <div className="w-auto hidden lg:block items-center">
+            links ? <div className="transform translate-x-8 w-auto hidden lg:block items-center">
                 <ul className="flex items-center mr-10">
-                    <Fade cascade>
+                    <Fade cascade triggerOnce>
                         {
                             links.map((link, index) => {
                                 return (
-                                    <li key={index} className="font-heading mr-12 text-gray-900 hover:text-gray-700 transition-all font-bold text-xl">
-                                        <a className="inline" href={link.url}>📐{link.name}</a>
+                                    <li key={index} className="font-heading mr-12 text-gray-900 hover:text-blue-400 hover:scale-90 transition-all text-lg">
+                                        <a className="inline" href={link.url}><DesignServicesIcon />{link.name}</a>
                                     </li>
                                 )
                             })
@@ -37,10 +34,10 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
     const Favicon = () => {
         return (
-            favicon ? <div className="w-auto mr-14">
+            favicon ? <div className="w-auto mr-14 hvr-grow-rotate">
                 <a href={favicon?.url ? favicon.url : "FAVICON_URL_NOT_FOUND"}>
                     <img src={favicon.src ? favicon.src : "FAVICON_IMAGE_NOT_FOUND"}
-                        className="h-14 w-full"
+                        className="h-14 w-full scale-110"
                         alt={favicon?.alt ? favicon.alt : "FAVICON_ALT_NOT_FOUND"} />
                 </a>
             </div> : <></>
@@ -51,7 +48,7 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
     const CallToAction = () => {
         return (
             cta ? <div className="w-auto hidden lg:block">
-                <button className="font-heading block py-3.5 px-5 uppercase text-md tracking-px text-blue-700 font-bold bg-gray-300 bg-opacity-50 hover:bg-opacity-10 transition-all rounded">
+                <button className="font-heading block py-3.5 px-5 uppercase text-md tracking-px text-blue-300 font-bold bg-black bg-opacity-50 hover:bg-opacity-10 transition-all rounded">
                     {cta.name}
                 </button>
             </div> : <></>
@@ -62,8 +59,8 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
     const NavBurger = () => {
 
         return (
-            <div onClick={() => toggleDrawer()} className="w-auto ml-3 hover:scale-90 transition-all">
-                <ArchitectureIcon />
+            <div onClick={() => toggleDrawer()} className="w-auto ml-3 hover:scale-90 transition-all hvr-buzz-out">
+                <ArchitectureIcon sx={{ color: 'blue', transform: 'scale(1.65)' }} />
             </div>
         )
     }

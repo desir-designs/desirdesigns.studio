@@ -2,6 +2,10 @@ import meta from "@configs/meta"
 import { Client } from "@notionhq/client"
 
 
+export type ServicesProps = {
+    name?: string,
+}
+
 
 const { title: siteTitle } = meta()
 
@@ -43,6 +47,7 @@ const NotionService = {
 
                 const shapeObject = {
                     name: data?.properties?.Name?.title[0].plain_text ?? "TITLE_NOT_FOUND",
+                    icon: data?.icon?.external?.url ?? "#",
                     price: data?.properties?.Price?.number ?? 0,
                     features: data?.properties?.Features?.multi_select.map((feature) => ({ name: feature.name })) ?? [],
 

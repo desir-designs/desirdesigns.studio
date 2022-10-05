@@ -10,12 +10,14 @@ const pages = (store, pageKey) => {
 
     const { title: siteTitle, email: siteEmail, phone: sitePhone } = meta()
 
-    const portfolioRelativeURL = links().find((link) => link.name === "Portfolio") ?? null
+    const portfolioRelativeURL = links().find((link) => link.name === "Portfolio")
 
     const { getPortfolio } = portfolio()
+    const { getServices } = services()
+
 
     const portfolioQuery = getPortfolio(store)
-
+    const servicesQuery = getServices(store)
 
 
     const pageData = {
@@ -39,16 +41,14 @@ const pages = (store, pageKey) => {
                 tagCloud: {
                     title: 'Services',
                     heading: 'What I Do for You',
-                    clouds: [
-                        {
-                            tags: []
-                        },
-                        {
-                            tags: []
-                        },
-                        {
-                            tags: []
-                        }
+                    tags: [
+                        ...servicesQuery.map((service) => {
+                            return {
+                                name: service.name,
+                                icon: service.icon,
+                            }
+                        })
+
                     ]
                 },
 
@@ -116,11 +116,14 @@ const pages = (store, pageKey) => {
             }))]
         },
         services: {},
+        about: {},
+        organizations: {},
+        resume: {},
+        blog: {},
 
     }
 
     const layoutData = { ...layout(), metaData: pageData[pageKey].metaData ?? null }
-
 
     const pageObject = {
         id: `${siteTitle} | ${pageKey}--page-data`,
@@ -129,8 +132,7 @@ const pages = (store, pageKey) => {
         data: pageData[pageKey],
     }
 
-
-    return { ...pageObject } ?? null
+    return { ...pageObject }
 }
 
 export default pages

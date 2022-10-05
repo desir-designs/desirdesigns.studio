@@ -8,19 +8,14 @@ export type TagProps = {
     url?: string,
 }
 
-export type CloudProps = {
-    
-    tags?: TagProps[]
-}
-
 export type TagCloudProps = {
     title?: string,
     heading?: string,
-    clouds?: any
+    tags?: TagProps[]
 }
 
 
-const TagCloud: IComponent<TagCloudProps> = ({ title, heading, clouds }: TagCloudProps) => {
+const TagCloud: IComponent<TagCloudProps> = ({ title, heading, tags }: TagCloudProps) => {
 
 
     const Header = () => {
@@ -39,123 +34,39 @@ const TagCloud: IComponent<TagCloudProps> = ({ title, heading, clouds }: TagClou
 
 
     }
+
+    const Tags = () => {
+
+        return (
+            tags ?
+                <div className="flex flex-wrap justify-center  mb-7 w-3/4 item-center m-auto">
+                    <Fade triggerOnce cascade>
+                        {
+                            tags?.map((tag, index) => {
+                                return (
+                                    <div key={index} className="w-auto p-2">
+                                        <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-white hover:scale-90 hover:bg-opacity-40 transition-all bg-black rounded-full">
+                                            <img src={tag.icon ?? "#"} className="mr-3 w-3.5 h-3.5 bg-gradient-cyan rounded-full" />
+                                            <p>{tag?.name}</p>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </Fade>
+                </div> : <>`NO_TAGS`</>
+        )
+    }
+
+
+
+
     return (
         <section className="relative pt-20 pb-32 overflow-hidden">
 
-
             <div className="container mx-auto px-4">
-
-
-
                 <Header />
-
-
-
-                <div className="flex flex-wrap justify-center -m-2 mb-7">
-                    <Fade cascade>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-cyan rounded-full" />
-                                <p>Manage remote team</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-orange rounded-full" />
-                                <p>Connect with experts</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-purple rounded-full" />
-                                <p>Easy to chat</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-green rounded-full" />
-                                <p>Video analytics</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-blue rounded-full" />
-                                <p>Secured Payments</p>
-                            </div>
-                        </div>
-                    </Fade>
-                </div>
-
-                <div className="flex flex-wrap justify-center -m-2 mb-7">
-                    <Fade cascade>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-cyan rounded-full" />
-                                <p>Manage remote team</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-orange rounded-full" />
-                                <p>Connect with experts</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-purple rounded-full" />
-                                <p>Easy to chat</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-green rounded-full" />
-                                <p>Video analytics</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-blue rounded-full" />
-                                <p>Secured Payments</p>
-                            </div>
-                        </div>
-                    </Fade>
-                </div>
-                <div className="flex flex-wrap justify-center -m-2 mb-7">
-                    <Fade cascade>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-cyan rounded-full" />
-                                <p>Manage remote team</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-orange rounded-full" />
-                                <p>Connect with experts</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-purple rounded-full" />
-                                <p>Easy to chat</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-green rounded-full" />
-                                <p>Video analytics</p>
-                            </div>
-                        </div>
-                        <div className="w-auto p-2">
-                            <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-gray-900 bg-white rounded-full">
-                                <div className="mr-3 w-3.5 h-3.5 bg-gradient-blue rounded-full" />
-                                <p>Secured Payments</p>
-                            </div>
-                        </div>
-                    </Fade>
-                </div>
-
-
+                <Tags />
             </div>
         </section >
 

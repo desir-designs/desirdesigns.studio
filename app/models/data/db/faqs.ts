@@ -1,6 +1,6 @@
 import NotionService from "@services/notion"
 
-const services = () => {
+const faqs = () => {
 
     const DB_TITLE = "SERVICES_DATABASE"
     const { SERVICES } = NotionService.db
@@ -22,5 +22,5 @@ const services = () => {
     }
 }
 
-export default services
+export default faqs
 
