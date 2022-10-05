@@ -4,7 +4,7 @@ import layout from "@configs/layout"
 
 import portfolio from "@db/portfolio"
 import services from "@db/services"
-
+import faqs from "@db/faqs"
 
 const pages = (store, pageKey) => {
 
@@ -14,11 +14,12 @@ const pages = (store, pageKey) => {
 
     const { getPortfolio } = portfolio()
     const { getServices } = services()
+    const { getFAQs } = faqs()
 
 
     const portfolioQuery = getPortfolio(store)
     const servicesQuery = getServices(store)
-
+    const faqsQuery = getFAQs(store)
 
     const pageData = {
 
@@ -73,6 +74,23 @@ const pages = (store, pageKey) => {
 
                 },
 
+                summarySection: {
+
+                    title: 'Frequently Asked Questions',
+                    heading: 'Know my process',
+                    summary: [
+
+                    ]
+                },
+
+                commentsRow: {
+                    title: 'Testimonials',
+                    heading: 'What my clients say',
+                    comments: [
+
+                    ]
+                },
+
 
                 contactForm: {
                     title: "Contact Me",
@@ -115,9 +133,25 @@ const pages = (store, pageKey) => {
                 }
             }))]
         },
-        services: {},
-        about: {},
-        organizations: {},
+        services: {
+            metaData: {
+                pageTitle: 'Services'
+            },
+
+            data: {
+
+            }
+        },
+        about: {
+            metaData: {
+                pageTitle: 'About'
+            }
+        },
+        organizations: {
+            metaData: {
+                pageTitle: 'Organizations'
+            }
+        },
         resume: {},
         blog: {},
 
@@ -126,7 +160,7 @@ const pages = (store, pageKey) => {
     const layoutData = { ...layout(), metaData: pageData[pageKey].metaData ?? null }
 
     const pageObject = {
-        id: `${siteTitle} | ${pageKey}--page-data`,
+        id: `${siteTitle} | ${pageKey}@page-data`,
         version: Date.now(),
         layout: layoutData,
         data: pageData[pageKey],

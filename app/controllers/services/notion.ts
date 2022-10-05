@@ -76,9 +76,16 @@ const NotionService = {
             }
         },
         FAQS: {
-            shape: (data) => { },
+            shape: (data) => {
+
+                const shapeObject = {
+
+                }
+
+                return { ...shapeObject } ?? null
+            },
             predicate: (data) => {
-                return data.properties.Database.select.name === "❓FAQs"
+                return data?.properties?.Database?.select?.name === "❓FAQs"
             }
         },
         META: {

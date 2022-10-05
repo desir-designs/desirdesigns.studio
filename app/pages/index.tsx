@@ -12,12 +12,13 @@ import { useEffect } from "react"
 
 const HomePage = ({ page }) => {
 
-  const { layout, data: { contactForm, tagCloud, hero, contentRow } } = page
+  const { layout,
+    data: { contactForm, tagCloud, hero, contentRow, summarySection, commentsRow, statsSection },
+    version } = page
 
   useEffect(() => {
-    console.log(`[DesirDesigns@${page.version}]`, page)
-  }, [page])
-
+    console.log(`[DesirDesigns@${version}]`, page)
+  }, [page, version])
 
 
   return (
@@ -25,9 +26,9 @@ const HomePage = ({ page }) => {
       <Hero {...hero} />
       <TagCloud {...tagCloud} />
       <ContentRow {...contentRow} />
-      <StatsSection />
-      <SummarySection />
-      <CommentsRow />
+      <StatsSection {...statsSection} />
+      <SummarySection {...summarySection} />
+      <CommentsRow {...commentsRow} />
       <ContactForm {...contactForm} />
     </PageLayout>
 

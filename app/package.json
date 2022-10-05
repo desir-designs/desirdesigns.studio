@@ -1,12 +1,13 @@
 {
-  "name": "app",
-  "version": "0.1.0",
+  "name": "desirdesigns",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "next build"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
