@@ -44,9 +44,9 @@ const TagCloud: IComponent<TagCloudProps> = ({ title, heading, tags }: TagCloudP
                         {
                             tags?.map((tag, index) => {
                                 return (
-                                    <div key={index} className="w-auto p-2">
-                                        <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-white hover:scale-90 hover:bg-opacity-40 transition-all bg-black rounded-full">
-                                            <img src={tag.icon ?? "#"} className="mr-3 w-3.5 h-3.5 bg-gradient-cyan rounded-full" />
+                                    <div key={index} className="w-auto p-2 cursor-pointer">
+                                        <div className="font-heading flex items-center font-semibold px-4 py-2.5 text-lg text-white hover:scale-90 hover:bg-opacity-40 transition-all bg-gradient rounded-full">
+                                            <img src={tag.icon ?? "#"} className="mr-3 w-8 h-8  rounded-full" />
                                             <p>{tag?.name}</p>
                                         </div>
                                     </div>

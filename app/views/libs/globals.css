@@ -18,7 +18,9 @@ body {
   background-size: 500% 500%;
 }
 
-
+.bg-gradient {
+  background-image: linear-gradient(to right top, #0031ff, #0039d3, #193ba6, #2a3879, #31344c);
+}
 
 * {
   user-select: none !important;

@@ -14,10 +14,7 @@ const PageLayout = ({ children, metaData, header, footer }) => {
             <ScrollToTop component={<NorthIcon className="text-blue-900" />} smooth />
             <DrawerMenu />
             <Header {...header} />
-            <Fade cascade triggerOnce delay={1} direction="down">
-                {children}
-            </Fade>
-
+            {children}
             <Footer {...footer} />
         </RootLayout>
     )

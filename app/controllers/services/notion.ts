@@ -26,6 +26,7 @@ const NotionService = {
                 const shapeObject = {
                     name: data?.properties?.Name?.title[0].plain_text ?? "TITLE_NOT_FOUND",
                     tags: data?.properties?.Tags?.multi_select.map((tag) => ({ name: tag.name })) ?? [],
+                    date: data?.properties?.Date?.date?.start ?? "DATE_NOT_FOUND",
                     covers: data?.properties?.Covers?.files.map((file) => ({
                         alt: file?.name,
                         src: file?.file?.url ?? "#",
@@ -79,7 +80,9 @@ const NotionService = {
             shape: (data) => {
 
                 const shapeObject = {
-
+                    question: data?.properties?.Name?.title[0]?.plain_text ?? "TITLE_NOT_FOUND",
+                    answer: data?.properties?.Answer?.rich_text[0]?.plain_text ?? "ANSWER_NOT_FOUND",
+                    icon: data?.icon?.external?.url ?? "#",
                 }
 
                 return { ...shapeObject } ?? null

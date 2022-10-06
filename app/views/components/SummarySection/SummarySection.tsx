@@ -3,7 +3,7 @@ import type { SummarySectionProps } from "@typings/SummarySection"
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-
+import FadeAnimation from "../FadeAnimation";
 const SummarySection: IComponent<SummarySectionProps> = ({ banner, title, heading, summary }: SummarySectionProps) => {
 
 
@@ -13,179 +13,62 @@ const SummarySection: IComponent<SummarySectionProps> = ({ banner, title, headin
         return (
             summary ? <div className="max-w-4xl">
 
-                <Accordion className="bg-transparent outline-none">
-                    <AccordionSummary className="mb-4 px-4 lg:px-12 py-8 bg-gray-700 rounded-2xl"
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                    >
-                            <button className="flex w-full text-left">
-                                <div className="w-auto mr-8">
-                                    <span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-white rounded-full">
-                                        1
-                                    </span>
-                                </div>
-                                <div className="w-full mt-3">
-                                    <div className="flex items-center justify-between">
-                                        <h3 className="text-xl font-bold text-white">
-                                            How should I develop my workflow over time?
-                                        </h3>
-                                        <span className="ml-4">
-                                            <svg
-                                                className="w-4 h-4"
-                                                width={18}
-                                                height={10}
-                                                viewBox="0 0 18 10"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M1.18267 9.00018C0.910673 9.26818 0.473672 9.26818 0.203672 9.00018C-0.0663284 8.73218 -0.0673279 8.29918 0.203672 8.03118L8.11167 0.201183C8.38167 -0.0668173 8.81867 -0.0668173 9.09067 0.201183L16.9987 8.03118C17.2687 8.29918 17.2687 8.73218 16.9987 9.00018C16.7277 9.26818 16.2897 9.26818 16.0197 9.00018L8.60067 1.85918L1.18267 9.00018Z"
-                                                    fill="#1F40FF"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div className="mt-6 border-l-2 border-gray-500 pl-10">
-                                        <p className="mb-5 text-xl text-gray-300">
-                                            The point of using Lorem Ipsum is that it has a more-or-less
-                                            normal:
-                                        </p>
-                                        <p className="mb-2 text-lg text-gray-300">
-                                            <span className="inline-block mr-6 h-2 w-2 rounded-full bg-blue-500" />
-                                            <span>Distribution of letters</span>
-                                        </p>
-                                        <p className="text-lg text-gray-300">
-                                            <span className="inline-block mr-6 h-2 w-2 rounded-full bg-blue-500" />
-                                            <span>Content here</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </button>
-                    
-                    </AccordionSummary>
-                    <AccordionDetails  className="mb-4 px-4 lg:px-12 py-8 bg-gray-700 rounded-2xl">
-                        <>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                        </>
-                    </AccordionDetails>
-                </Accordion>
-                <Accordion className="bg-transparent outline-none">
-                    <AccordionSummary className="mb-4 px-4 lg:px-12 py-8 bg-gray-700 rounded-2xl"
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                    >
-                            <button className="flex w-full text-left">
-                                <div className="w-auto mr-8">
-                                    <span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-white rounded-full">
-                                        1
-                                    </span>
-                                </div>
-                                <div className="w-full mt-3">
-                                    <div className="flex items-center justify-between">
-                                        <h3 className="text-xl font-bold text-white">
-                                            How should I develop my workflow over time?
-                                        </h3>
-                                        <span className="ml-4">
-                                            <svg
-                                                className="w-4 h-4"
-                                                width={18}
-                                                height={10}
-                                                viewBox="0 0 18 10"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M1.18267 9.00018C0.910673 9.26818 0.473672 9.26818 0.203672 9.00018C-0.0663284 8.73218 -0.0673279 8.29918 0.203672 8.03118L8.11167 0.201183C8.38167 -0.0668173 8.81867 -0.0668173 9.09067 0.201183L16.9987 8.03118C17.2687 8.29918 17.2687 8.73218 16.9987 9.00018C16.7277 9.26818 16.2897 9.26818 16.0197 9.00018L8.60067 1.85918L1.18267 9.00018Z"
-                                                    fill="#1F40FF"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div className="mt-6 border-l-2 border-gray-500 pl-10">
-                                        <p className="mb-5 text-xl text-gray-300">
-                                            The point of using Lorem Ipsum is that it has a more-or-less
-                                            normal:
-                                        </p>
-                                        <p className="mb-2 text-lg text-gray-300">
-                                            <span className="inline-block mr-6 h-2 w-2 rounded-full bg-blue-500" />
-                                            <span>Distribution of letters</span>
-                                        </p>
-                                        <p className="text-lg text-gray-300">
-                                            <span className="inline-block mr-6 h-2 w-2 rounded-full bg-blue-500" />
-                                            <span>Content here</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </button>
-                    
-                    </AccordionSummary>
-                    <AccordionDetails  className="mb-4 px-4 lg:px-12 py-8 bg-gray-700 rounded-2xl">
-                        <>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                        </>
-                    </AccordionDetails>
-                </Accordion>
-                <Accordion className="bg-transparent outline-none">
-                    <AccordionSummary className="mb-4 px-4 lg:px-12 py-8 bg-gray-700 rounded-2xl"
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                    >
-                            <button className="flex w-full text-left">
-                                <div className="w-auto mr-8">
-                                    <span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-white rounded-full">
-                                        1
-                                    </span>
-                                </div>
-                                <div className="w-full mt-3">
-                                    <div className="flex items-center justify-between">
-                                        <h3 className="text-xl font-bold text-white">
-                                            How should I develop my workflow over time?
-                                        </h3>
-                                        <span className="ml-4">
-                                            <svg
-                                                className="w-4 h-4"
-                                                width={18}
-                                                height={10}
-                                                viewBox="0 0 18 10"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M1.18267 9.00018C0.910673 9.26818 0.473672 9.26818 0.203672 9.00018C-0.0663284 8.73218 -0.0673279 8.29918 0.203672 8.03118L8.11167 0.201183C8.38167 -0.0668173 8.81867 -0.0668173 9.09067 0.201183L16.9987 8.03118C17.2687 8.29918 17.2687 8.73218 16.9987 9.00018C16.7277 9.26818 16.2897 9.26818 16.0197 9.00018L8.60067 1.85918L1.18267 9.00018Z"
-                                                    fill="#1F40FF"
-                                                />
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div className="mt-6 border-l-2 border-gray-500 pl-10">
-                                        <p className="mb-5 text-xl text-gray-300">
-                                            The point of using Lorem Ipsum is that it has a more-or-less
-                                            normal:
-                                        </p>
-                                        <p className="mb-2 text-lg text-gray-300">
-                                            <span className="inline-block mr-6 h-2 w-2 rounded-full bg-blue-500" />
-                                            <span>Distribution of letters</span>
-                                        </p>
-                                        <p className="text-lg text-gray-300">
-                                            <span className="inline-block mr-6 h-2 w-2 rounded-full bg-blue-500" />
-                                            <span>Content here</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </button>
-                    
-                    </AccordionSummary>
-                    <AccordionDetails  className="mb-4 px-4 lg:px-12 py-8 bg-gray-700 rounded-2xl">
-                        <>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                        </>
-                    </AccordionDetails>
-                </Accordion>
+                <FadeAnimation cascade triggerOnce>
 
-                
+
+                    {
+                        summary.map((item, index) => {
+
+                            return (
+                                <Accordion key={index} className="bg-transparent outline-none">
+                                    <AccordionSummary expandIcon={<img className="h-14" src={item.icon} />} className="mb-4 px-4 lg:px-12 py-8 bg-black rounded-2xl outline-none"
+                                        aria-controls="panel1a-content"
+                                        id="panel1a-header"
+                                    >
+                                        <button className="flex w-full text-left">
+                                            <div className="w-auto mr-8">
+                                                <span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-white rounded-full">
+                                                    {index + 1}
+                                                </span>
+                                            </div>
+                                            <h3 className="text-xl font-bold text-white">
+                                                {item.question}
+                                            </h3>
+                                        </button>
+
+                                    </AccordionSummary>
+                                    <AccordionDetails className="mb-4 px-4 lg:px-12 py-8 bg-blue-700 rounded-2xl">
+                                        <div className="w-full mt-3">
+
+                                            <div className="mt-6 border-l-2 border-gray-500 pl-10">
+                                                <p className="mb-5 text-xl text-gray-300">
+                                                    The point of using Lorem Ipsum is that it has a more-or-less
+                                                    normal:
+                                                </p>
+                                                <p className="mb-2 text-lg text-gray-300">
+                                                    <span className="inline-block mr-6 h-2 w-2 rounded-full bg-blue-500" />
+                                                    <span>Distribution of letters</span>
+                                                </p>
+                                                <p className="text-lg text-gray-300">
+                                                    <span className="inline-block mr-6 h-2 w-2 rounded-full bg-blue-500" />
+                                                    <span>Content here</span>
+                                                </p>
+                                            </div>
+                                        </div>
+
+
+                                    </AccordionDetails>
+                                </Accordion>
+                            )
+                        })
+                    }
+
+                </FadeAnimation>
+
+
+
+
+
             </div> : <></>
         )
     }

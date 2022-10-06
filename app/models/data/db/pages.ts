@@ -66,7 +66,8 @@ const pages = (store, pageKey) => {
                             src: item.covers[0]?.src ?? "#",
                             alt: item.covers[0]?.alt ?? "#",
                         } ?? null,
-                        tags: ["Graphic Design", "Illustration"],
+                        tags: item.tags,
+                        date: item.date,
                         title: item.name,
                         description: ""
                     }))
@@ -82,9 +83,7 @@ const pages = (store, pageKey) => {
                         src: '/assets/images/fringe.svg',
                         alt: 'fringe-of-design'
                     },
-                    summary: [
-
-                    ]
+                    summary: faqsQuery.map((faq) => ({ ...faq }))
                 },
 
                 commentsRow: {
