@@ -20,9 +20,16 @@ const SummarySection: IComponent<SummarySectionProps> = ({ banner, title, headin
                         summary.map((item, index) => {
 
                             return (
-                                <Accordion key={index} className="bg-transparent outline-none">
-                                    <AccordionSummary expandIcon={<img className="h-14" src={item.icon} />} className="mb-4 px-4 lg:px-12 py-8 bg-black rounded-2xl outline-none"
+                                <Accordion sx={{
+                                    backgroundColor: "transparent",
+                                    outline: "none",
+                                }} key={index} className="bg-transparent outline-none">
+                                    <AccordionSummary expandIcon={<img className="h-14" src={item.icon} />} className="mb-4 px-4 lg:px-12 py-6 hover:bg-opacity-100 backdrop-blur-md transition-all bg-black rounded-xl bg-opacity-80 outline-none"
                                         aria-controls="panel1a-content"
+                                        sx={{
+                                            backgroundColor: 'black',
+                                            marginBottom: 'var(--size-4)',
+                                        }}
                                         id="panel1a-header"
                                     >
                                         <button className="flex w-full text-left">
