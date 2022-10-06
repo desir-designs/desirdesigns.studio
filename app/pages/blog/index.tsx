@@ -1,38 +1,27 @@
 import ContentSearch from "@components/ContentSearch"
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/page"
-import { useEffect } from "react"
 
+const BlogIndexPage = ({ page }) => {
 
-const PortfolioPage = ({ page }) => {
-
-    const { layout, version, data: {
-        contentSearch
-    } } = page
-
-
-    useEffect(() => {
-        console.log(`[DesirDesigns@${version}]`, page)
-    }, [page, version])
+    const { layout } = page
 
     return (
 
         <PageLayout {...layout}>
-            <ContentSearch {...contentSearch} />
-
         </PageLayout>
 
     )
 }
 
-export default PortfolioPage
+export default BlogIndexPage
 
 
 export async function getServerSideProps() {
 
     const { getPage } = PageService
 
-    const page = await getPage("portfolio")
+    const page = await getPage("blog")
 
     return {
         props: {

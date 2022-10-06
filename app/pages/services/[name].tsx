@@ -22,7 +22,7 @@ export async function getServerSideProps({ params }) {
 
     const { getPage } = PageService
 
-    const { data: dataStore, version, layout, id } = await getPage("portfolio")
+    const { data: dataStore, version, layout, id } = await getPage("services")
 
     const data = dataStore.pages.find(page => page.name === params.name)
 

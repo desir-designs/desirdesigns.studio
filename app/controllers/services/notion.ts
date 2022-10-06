@@ -24,6 +24,7 @@ const NotionService = {
             shape: (data) => {
 
                 const shapeObject = {
+                    id: data?.properties?.ID?.select?.name ?? "fuck!",
                     name: data?.properties?.Name?.title[0].plain_text ?? "TITLE_NOT_FOUND",
                     tags: data?.properties?.Tags?.multi_select.map((tag) => ({ name: tag.name })) ?? [],
                     date: data?.properties?.Date?.date?.start ?? "DATE_NOT_FOUND",

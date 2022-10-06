@@ -10,6 +10,8 @@ import PageLayout from '@layouts/PageLayout'
 import PageService from '@services/page'
 import { useEffect } from "react"
 
+
+
 const HomePage = ({ page }) => {
 
   const { layout,

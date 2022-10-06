@@ -7,11 +7,11 @@ import Box from "@mui/material/Box"
 const RootLayout = ({ children, metaData }) => {
 
     return (
-        <>
+        <Box>
             <Meta {...metaData} />
             {children}
-        </>
+        </Box>
     )
 }
 
-export default React.memo(RootLayout)
+export default RootLayout

@@ -24,7 +24,6 @@ const pages = (store, pageKey) => {
     const pageData = {
 
         home: {
-
             metaData: {
                 pageTitle: 'Home',
             },
@@ -67,6 +66,7 @@ const pages = (store, pageKey) => {
                             alt: item.covers[0]?.alt ?? "#",
                         } ?? null,
                         tags: item.tags,
+                        url: `${portfolioRelativeURL.url}/${item.id}`,
                         date: item.date,
                         title: item.name,
                         description: ""
@@ -110,6 +110,20 @@ const pages = (store, pageKey) => {
             },
 
             data: {
+
+                pages: portfolioQuery.map((item) => ({
+                    name: item.id ? item.id : "",
+                    metaData: {
+                        pageTitle: item.name,
+                    },
+                    data: {
+                        post: {
+                            title: item.name,
+                            banner: item.covers[0]
+                        }
+                    }
+
+                })),
                 contentSearch: {
 
                     title: 'My Portfolio',
@@ -119,7 +133,7 @@ const pages = (store, pageKey) => {
                         cover: {
                             src: item.covers[0]?.src ?? "#",
                             alt: item.covers[0]?.alt ?? "#",
-                        } ?? null,
+                        },
                         title: item.name,
                         description: ""
                     }))
@@ -127,14 +141,7 @@ const pages = (store, pageKey) => {
                 }
             },
 
-            pages: [...portfolioQuery.map((item) => ({
-                metaData: {},
-                data: {
-                    post: {
-                        ...item
-                    }
-                }
-            }))]
+
         },
         services: {
             metaData: {
@@ -142,8 +149,9 @@ const pages = (store, pageKey) => {
             },
 
             data: {
+                contentSearch: {}
+            },
 
-            }
         },
         about: {
             metaData: {
@@ -156,17 +164,22 @@ const pages = (store, pageKey) => {
             }
         },
         resume: {},
-        blog: {},
+        blog: {
+            metaData: {
+                pageTitle: 'Blog'
+            },
+            data: {}
+        },
 
     }
 
-    const layoutData = { ...layout(), metaData: pageData[pageKey].metaData ?? null }
+    const layoutData = { ...layout(), metaData: pageData[pageKey].metaData }
 
     const pageObject = {
         id: `${siteTitle} | ${pageKey}@page-data`,
         version: Date.now(),
         layout: layoutData,
-        data: pageData[pageKey],
+        data: pageData[pageKey].data,
     }
 
     return { ...pageObject }

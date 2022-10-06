@@ -12,18 +12,12 @@ import PageService from '@services/page'
 
 const HomePage = ({ page }) => {
 
-  const { layout, data: { contactForm, hero } } = page
+  const { layout } = page
 
   return (
 
     <PageLayout {...layout}>
-      <Hero {...hero} />
-      <TagCloud />
-      <ContentRow />
-      <StatsSection />
-      <SummarySection />
-      <CommentsRow />
-      <ContactForm {...contactForm} />
+
     </PageLayout>
 
 
@@ -37,7 +31,7 @@ export async function getStaticProps() {
 
   const { getPage } = PageService
 
-  const page = (await getPage("home")) || {}
+  const page = await getPage("about")
 
   return {
     props: {

@@ -1,8 +1,9 @@
 import type { IComponent } from "@typings/Component";
 import type { HeroProps } from "@typings/Hero";
 
+import { motion } from "framer-motion"
 
-const Hero: IComponent<HeroProps> = ({ title, heading, description, cta}: HeroProps) => {
+const Hero: IComponent<HeroProps> = ({ title, heading, description, cta }: HeroProps) => {
 
 
 
@@ -14,9 +15,25 @@ const Hero: IComponent<HeroProps> = ({ title, heading, description, cta}: HeroPr
 
                 <div className="flex-1 p-4">
                     <div className="lg:max-w-2xl mx-auto">
-                        <h1 className="z-10 mb-6 m-auto translate-x-10 font-heading align-center text-center text-black text-7xl md:text-9xl xl:text-12xl font-bold">
-                            <img className="h-full" src="/assets/images/logo-header.png" />
-                        </h1>
+
+                        <motion.div transition={{
+                            loop: Infinity,
+                            ease: "easeInOut",
+                            duration: 3
+                        }}
+                        
+                        
+
+                            animate={{
+                                rotateZ: 360,
+                                rotateX: 360,
+                                rotateY: 360
+                            }}>
+                            <h1 className="z-10 mb-6 m-auto translate-x-10 font-heading align-center text-center text-black text-7xl md:text-9xl xl:text-12xl font-bold">
+                                <img className="h-full" src="/assets/images/logo-header.svg" />
+                            </h1>
+                        </motion.div>
+
 
                         <p className="mb-10 font-medium text-xl text-center text-black">
                             {description ? description : "DESCRIPTION_NOT_FOUND"}

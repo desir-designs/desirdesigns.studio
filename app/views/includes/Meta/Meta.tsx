@@ -3,7 +3,7 @@ import Head from "next/head"
 const Meta = ({ pageTitle }) => {
     return (
         <Head>
-            <title>Desir Designs</title>
+            <title>Desir Designs | {pageTitle ? pageTitle : "Home"}</title>
 
             <>
                 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />

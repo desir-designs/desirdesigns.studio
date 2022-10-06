@@ -5,6 +5,8 @@ import type { IComponent } from "@typings/Component";
 import type { HeaderProps } from "@typings/Header";
 import { Fade } from "react-awesome-reveal";
 import Headroom from "react-headroom";
+import { motion } from "framer-motion"
+
 const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
     const { favicon, links, cta } = props
@@ -34,13 +36,17 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
     const Favicon = () => {
         return (
-            favicon ? <div className="w-auto mr-14 hvr-grow-rotate">
-                <a href={favicon?.url ? favicon.url : "FAVICON_URL_NOT_FOUND"}>
-                    <img src={favicon.src ? favicon.src : "FAVICON_IMAGE_NOT_FOUND"}
-                        className="h-14 w-full scale-110"
-                        alt={favicon?.alt ? favicon.alt : "FAVICON_ALT_NOT_FOUND"} />
-                </a>
-            </div> : <></>
+            favicon ?
+
+                <div className="w-auto mr-14 hvr-grow-rotate">
+                    <a href={favicon?.url ? favicon.url : "FAVICON_URL_NOT_FOUND"}>
+                        <img src={favicon.src ? favicon.src : "FAVICON_IMAGE_NOT_FOUND"}
+                            className="h-14 w-full scale-110"
+                            alt={favicon?.alt ? favicon.alt : "FAVICON_ALT_NOT_FOUND"} />
+                    </a>
+                </div>
+
+                : <></>
         )
     }
 
