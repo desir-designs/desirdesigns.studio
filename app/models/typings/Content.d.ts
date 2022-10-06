@@ -3,6 +3,7 @@ export type ContentProps = {
     date?: string,
     title?: string,
     url?: string,
+    description?: string,
     heading?: string,
     tags?: any[]
 }

@@ -6,3 +6,4 @@ export type ContentSearchProps = {
     heading?: string,
     description?: string,
 }
+

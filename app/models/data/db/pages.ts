@@ -124,6 +124,8 @@ const pages = (store, pageKey) => {
                     }
 
                 })),
+
+
                 contentSearch: {
 
                     title: 'My Portfolio',
@@ -135,7 +137,8 @@ const pages = (store, pageKey) => {
                             alt: item.covers[0]?.alt ?? "#",
                         },
                         title: item.name,
-                        description: ""
+                        url: `${portfolioRelativeURL.url}/${item.id}`,
+                        ...item
                     }))
 
                 }

@@ -1,10 +1,15 @@
 import Post from "@components/Post"
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/page"
+import { useEffect } from "react"
 
 const PortfolioPage = ({ page }) => {
+    useEffect(() => {
 
-    const { layout, data: { post } } = page
+        console.log(page)
+    })
+
+    const { layout, data: { data: { post } } } = page
 
     return (
 
