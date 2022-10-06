@@ -156,7 +156,8 @@ const pages = (store, pageKey) => {
         about: {
             metaData: {
                 pageTitle: 'About'
-            }
+            },
+            data: {}
         },
         organizations: {
             metaData: {
@@ -179,7 +180,7 @@ const pages = (store, pageKey) => {
         id: `${siteTitle} | ${pageKey}@page-data`,
         version: Date.now(),
         layout: layoutData,
-        data: pageData[pageKey].data,
+        data: pageData[pageKey].data ?? {},
     }
 
     return { ...pageObject }
