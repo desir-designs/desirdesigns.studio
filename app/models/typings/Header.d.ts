@@ -15,6 +15,5 @@ export type FaviconProps = {
 
 export type HeaderProps = {
     favicon?: FaviconProps,
-    cta?: CallToActionProps
     links?: LinkProps[],
 }

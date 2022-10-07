@@ -103,7 +103,7 @@ const SummarySection: IComponent<SummarySectionProps> = ({ banner, title, headin
 
     return (
 
-        <section className="relative pb-20 2xl:py-40 overflow-hidden">
+        <section className="relative pb-20 2xl:py-40 overflow-hidden z-0">
             <Banner />
             <div className="relative w-full lg:w-4/6 ml-auto pl-4 lg:pl-24 pr-4 pt-20">
                 <Header />

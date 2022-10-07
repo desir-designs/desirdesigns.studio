@@ -1,7 +1,9 @@
 import ContentSearch from "@components/ContentSearch"
 import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/page"
+
 import { useEffect } from "react"
+
 
 
 const PortfolioPage = ({ page }) => {

@@ -9,7 +9,7 @@ import { motion } from "framer-motion"
 
 const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
-    const { favicon, links, cta } = props
+    const { favicon, links } = props
 
 
     const { toggleDrawer } = useDrawer()
@@ -51,15 +51,6 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
     }
 
 
-    const CallToAction = () => {
-        return (
-            cta ? <div className="w-auto hidden lg:block">
-                <button className="font-heading block py-3.5 px-5 uppercase text-md tracking-px text-blue-300 font-bold bg-black bg-opacity-50 hover:bg-opacity-10 transition-all rounded">
-                    {cta.name}
-                </button>
-            </div> : <></>
-        )
-    }
 
 
     const NavBurger = () => {
@@ -75,7 +66,7 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
     return (
 
         <Headroom>
-            <section className="bg-opacity-20 backdrop-blur-md z-50 bg-gray-700 overflow-hidden ">
+            <section style={{ zIndex: '999999999' }} className="bg-opacity-20 backdrop-blur-md z-50 bg-gray-700 overflow-hidden ">
                 <section>
                     <div className="flex items-center justify-between px-8 py-5">
                         <div className="w-auto">
@@ -86,7 +77,6 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
                         <Links />
                         <div className="w-auto">
                             <div className="flex flex-wrap items-center">
-                                <CallToAction />
                                 <NavBurger />
                             </div>
                         </div>

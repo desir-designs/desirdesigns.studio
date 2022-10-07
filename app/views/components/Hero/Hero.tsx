@@ -9,12 +9,12 @@ const Hero: IComponent<HeroProps> = ({ title, heading, description, cta }: HeroP
 
     return (
 
-        <div className="z-10 relative container mx-auto px-4 mt-24">
+        <div className="z-10 relative container mx-auto px-4 mt-14">
 
             <div className="relative z-10 flex flex-wrap justify-center items-center -m-6 lg:pt-32 pb-36">
 
                 <div className="flex-1 p-4">
-                    <div className="lg:max-w-2xl mx-auto">
+                    <div className="lg:max-w-2xl mx-auto z-0">
 
                         <motion.div transition={{
                             loop: Infinity,
@@ -33,13 +33,15 @@ const Hero: IComponent<HeroProps> = ({ title, heading, description, cta }: HeroP
                                 <img className="h-full" src="/assets/images/logo-header.svg" />
                             </h1>
                         </motion.div>
+                        <img className="h-1/2 absolute top-24 left-1 -translate-y-1/8" src="/assets/images/logo.svg" />
+
 
 
                         <p className="mb-10 font-medium text-xl text-center text-black">
                             {description ? description : "DESCRIPTION_NOT_FOUND"}
                         </p>
 
-                        <a href={cta?.url} className="group mb-9 relative flex items-center justify-center font-heading px-24 py-5 mx-auto w-full lg:w-auto uppercase text-white text-sm font-semibold tracking-px bg-blue-900 bg-opacity-80 overflow-hidden rounded-md">
+                        <a href={cta?.url} className="group mb-9 relative flex items-center justify-center font-heading px-24 py-5 mx-auto w-1/2 lg:w-auto uppercase text-white text-sm font-semibold tracking-px bg-blue-900 bg-opacity-80 overflow-hidden rounded-md">
                             <p className="relative z-10 mr-2">{cta?.name}</p>
                         </a>
 

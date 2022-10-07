@@ -27,6 +27,7 @@
     "react-lazy-load-image-component": "^1.5.5",
     "react-reveal": "^1.2.2",
     "react-scroll-to-top": "^3.0.0",
+    "react-share": "^4.4.0",
     "react-stagger": "^1.0.1",
     "recoil": "^0.7.5"
   },

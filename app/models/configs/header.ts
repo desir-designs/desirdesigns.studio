@@ -13,10 +13,6 @@ const header: IConfiguration<HeaderProps> = () => {
 
     const headerObject = {
         links: [...links()],
-        cta: {
-            name: 'Book Me',
-            url: '/book-me'
-        },
         favicon: { ...logoTransparent, url: homeLinkRelative.url }
     }
 

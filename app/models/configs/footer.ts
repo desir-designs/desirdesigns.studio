@@ -9,10 +9,14 @@ const footer: IConfiguration<FooterProps> = () => {
 
     const siteLinks = links().filter(link => link.type !== 'internal')
 
+    const { copyright, email, phone, favicon } = meta()
+
+
     const footerObject = {
-        copyright: meta().copyright,
-        email: meta().email,
-        phone: meta().phone,
+        copyright,
+        email,
+        phone,
+        favicon,
         links: siteLinks
     }
 
