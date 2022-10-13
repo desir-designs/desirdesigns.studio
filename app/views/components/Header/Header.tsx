@@ -38,7 +38,7 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
         return (
             favicon ?
 
-                <div className="w-auto mr-14 hvr-grow-rotate">
+                <div className="w-auto mr-14 hvr-grow-rotate cursor-pointer">
                     <a href={favicon?.url ? favicon.url : "FAVICON_URL_NOT_FOUND"}>
                         <img src={favicon.src ? favicon.src : "FAVICON_IMAGE_NOT_FOUND"}
                             className="h-14 w-full scale-110"
@@ -56,7 +56,7 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
     const NavBurger = () => {
 
         return (
-            <div onClick={() => toggleDrawer()} className="w-auto ml-3 hover:scale-90 transition-all hvr-buzz-out">
+            <div onClick={() => toggleDrawer()} className="cursor-pointer w-auto ml-3 hover:scale-90 transition-all hvr-buzz-out">
                 <ArchitectureIcon sx={{ color: 'blue', transform: 'scale(1.65)' }} />
             </div>
         )

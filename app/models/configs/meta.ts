@@ -8,6 +8,7 @@ const meta: IConfiguration<MetaProps> = () => {
         pageTitle: 'Home',
         phone: '678-826-7321',
         email: 'joshua@informandinspire.llc',
+        impressum: 'Measure twice, cut once',
         copyright: '©️ 2022 Desir Designs. All Rights Reserved.',
         favicon: {
             url: 'https://desir-designs.vercel.app/',

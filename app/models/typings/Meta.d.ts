@@ -4,5 +4,6 @@ export type MetaProps = {
     copyright?: string,
     email?: string
     phone?: string
+    impressum?: string,
     favicon?: any
 }

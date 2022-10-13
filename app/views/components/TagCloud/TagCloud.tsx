@@ -40,7 +40,7 @@ const TagCloud: IComponent<TagCloudProps> = ({ title, heading, tags }: TagCloudP
         return (
             tags ?
                 <div className="flex flex-wrap justify-center  mb-7 w-3/4 item-center m-auto">
-                    <Fade triggerOnce cascade>
+                    <Fade duration={500} triggerOnce cascade>
                         {
                             tags?.map((tag, index) => {
                                 return (
