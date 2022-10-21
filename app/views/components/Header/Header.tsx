@@ -16,19 +16,17 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
 
     const Links = () => {
         return (
-            links ? <div className="transform translate-x-8 w-auto hidden lg:block items-center">
+            links ? <div className="w-auto hidden lg:block items-center">
                 <ul className="flex items-center mr-10">
-                    <Fade cascade triggerOnce>
-                        {
-                            links.map((link, index) => {
-                                return (
-                                    <li key={index} className="font-heading mr-12 text-gray-900 hover:text-blue-400 hover:scale-90 transition-all text-lg">
-                                        <a className="inline" href={link.url}><DesignServicesIcon />{link.name}</a>
-                                    </li>
-                                )
-                            })
-                        }
-                    </Fade>
+                    {
+                        links.map((link, index) => {
+                            return (
+                                <li key={index} className="font-heading mr-12 text-blue-900 hover:text-blue-700 hover:scale-90 transition-all text-lg">
+                                    <a className="inline" href={link.url}><DesignServicesIcon />{link.name}</a>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </div> : <></>
         )

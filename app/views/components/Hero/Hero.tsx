@@ -16,24 +16,9 @@ const Hero: IComponent<HeroProps> = ({ title, heading, description, cta }: HeroP
                 <div className="flex-1 p-4">
                     <div className="lg:max-w-2xl mx-auto z-0">
 
-                        <motion.div transition={{
-                            loop: Infinity,
-                            ease: "easeInOut",
-                            duration: 3
-                        }}
-                        
-                        
-
-                            animate={{
-                                rotateZ: 360,
-                                rotateX: 360,
-                                rotateY: 360
-                            }}>
-                            <h1 className="z-10 mb-6 m-auto translate-x-10 font-heading align-center text-center text-black text-7xl md:text-9xl xl:text-12xl font-bold">
-                                <img className="h-full" src="/assets/images/logo-header.svg" />
-                            </h1>
-                        </motion.div>
-                        <img className="h-1/2 absolute top-24 left-1 -translate-y-1/8" src="/assets/images/logo.svg" />
+                        <h1 className="z-0 m-auto align-center text-center">
+                            <img className="h-full object-fit" src="/assets/images/logo-transparent.png" />
+                        </h1>
 
 
 

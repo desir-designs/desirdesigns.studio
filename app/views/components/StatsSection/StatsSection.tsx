@@ -1,3 +1,4 @@
+import type { IComponent } from "@typings/Component"
 const StatsSection = () => {
 
     return (
