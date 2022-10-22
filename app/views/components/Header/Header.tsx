@@ -21,7 +21,7 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
                     {
                         links.map((link, index) => {
                             return (
-                                <li key={index} className="font-heading mr-12 text-blue-900 hover:text-blue-700 hover:scale-90 transition-all text-lg">
+                                <li key={index} className="font-heading mr-12 text-blue-700 hover:text-blue-500 hover:scale-90 transition-all text-lg">
                                     <a className="inline" href={link.url}><DesignServicesIcon />{link.name}</a>
                                 </li>
                             )

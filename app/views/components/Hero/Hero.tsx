@@ -11,13 +11,13 @@ const Hero: IComponent<HeroProps> = ({ title, heading, description, cta }: HeroP
 
         <div className="z-10 relative container mx-auto px-4 mt-14">
 
-            <div className="relative z-10 flex flex-wrap justify-center items-center -m-6 lg:pt-32 pb-36">
+            <div className="relative z-0 flex flex-wrap justify-center items-center -m-6 lg:pt-30">
 
-                <div className="flex-1 p-4">
-                    <div className="lg:max-w-2xl mx-auto z-0">
+                <div className="flex-1">
+                    <div className="lg:max-w-2xl mx-auto z-0 flex justify-center flex-col items-center">
 
-                        <h1 className="z-0 m-auto align-center text-center">
-                            <img className="h-full object-fit" src="/assets/images/logo-transparent.png" />
+                        <h1 className="z-0 m-auto">
+                            <img className="h-1/2 w-1/2 object-fit m-auto" src="/assets/images/logo-transparent.png" />
                         </h1>
 
 
