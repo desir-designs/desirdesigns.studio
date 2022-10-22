@@ -1,118 +1,28 @@
-import meta from "@configs/meta"
 import { Client } from "@notionhq/client"
 
+const NotionService = () => {
 
-export type ServicesProps = {
-    name?: string,
-}
-
-
-const { title: siteTitle } = meta()
-
-const NotionService = {
-
-    api: new Client({
-        auth: process.env.FACADE_API_KEY,
-    }),
-
-    secured: {
-        central_dogma_id: process.env.CENTRAL_DOGMA_ID,
-    },
-
-    db: {
-        PORTFOLIO: {
-            shape: (data) => {
-
-                const shapeObject = {
-                    id: data?.properties?.ID?.select?.name ?? "fuck!",
-                    name: data?.properties?.Name?.title[0].plain_text ?? "TITLE_NOT_FOUND",
-                    tags: data?.properties?.Tags?.multi_select.map((tag) => ({ name: tag.name })) ?? [],
-                    date: data?.properties?.Date?.date?.start ?? "DATE_NOT_FOUND",
-                    covers: data?.properties?.Covers?.files.map((file) => ({
-                        alt: file?.name,
-                        src: file?.file?.url ?? "#",
-                        expires: file?.file?.expiry_time
-                    })) ?? []
-
-                }
-
-                return { ...shapeObject } ?? null
-
-            },
-            predicate: (data) => {
-                return (data?.properties?.Database?.select?.name === "🎁Portfolio" &&
-                    data?.properties?.Covers?.files.every((file) => file?.file?.url !== null)) ?? null
-            }
+    const serviceObject = {
+        secured: {
+            central_dogma_id: process.env.CENTRAL_DOGMA_ID,
         },
-        SERVICES: {
-            shape: (data) => {
 
-                const shapeObject = {
-                    name: data?.properties?.Name?.title[0].plain_text ?? "TITLE_NOT_FOUND",
-                    icon: data?.icon?.external?.url ?? "#",
-                    price: data?.properties?.Price?.number ?? 0,
-                    features: data?.properties?.Features?.multi_select.map((feature) => ({ name: feature.name })) ?? [],
+        api: new Client({
+            auth: process.env.FACADE_API_KEY,
+        }),
 
-                }
+        getCentralDogma: async () => {
+            const { api, secured } = NotionService
+            const centralDogma = (await api.databases.query({
+                database_id: secured.central_dogma_id
+            }).catch((error) => { throw error })).results
 
-                return { ...shapeObject } ?? null
-            },
-            predicate: (data) => {
-                return data?.properties?.Database?.select?.name === "🛒Services"
-
-            }
-
+            return centralDogma
         },
-        SOCIAL_MEDIA: {
-            shape: (data) => { },
-            predicate: (data) => {
-                return data.properties.Database.select.name === "📱Social Media"
 
-            }
-        },
-        ORGANIZATIONS: {
-            shape: (data) => { },
-            predicate: (data) => {
-                return data.properties.Database.select.name === "🫂Organizations"
+    }
 
-            }
-        },
-        FAQS: {
-            shape: (data) => {
-
-                const shapeObject = {
-                    question: data?.properties?.Name?.title[0]?.plain_text ?? "TITLE_NOT_FOUND",
-                    answer: data?.properties?.Answer?.rich_text[0]?.plain_text ?? "ANSWER_NOT_FOUND",
-                    icon: data?.icon?.external?.url ?? "#",
-                }
-
-                return { ...shapeObject } ?? null
-            },
-            predicate: (data) => {
-                return data?.properties?.Database?.select?.name === "❓FAQs"
-            }
-        },
-        META: {
-            shape: (data) => { },
-            predicate: (data) => {
-                return data.properties.Database.select.name === "📏Meta"
-
-            }
-        }
-
-    },
-
-    loadCentralDogma: async () => {
-
-        const { api, secured } = NotionService
-
-        const centralDogma = await api.databases.query({
-            database_id: secured.central_dogma_id
-        }).catch((error) => { throw error })
-
-        return centralDogma
-    },
-
+    return { ...serviceObject } ?? null
 }
 
 

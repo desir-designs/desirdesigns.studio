@@ -3,19 +3,9 @@ import { CSSTransition } from 'react-transition-group';
 import CloseIcon from '@mui/icons-material/Close';
 import { Fade } from "react-awesome-reveal"
 import ClickAwayListener from '@mui/material/ClickAwayListener';
+import type { DrawerMenuProps } from "@models/typings/DrawerMenu";
 
-export type Link = {
-    name: string,
-    url?: string
-}
-
-export type DrawerMenuProps = {
-
-    navLinks?: Link[]
-}
-
-
-const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
+const DrawerMenu = ({ links }: DrawerMenuProps) => {
 
     const { drawer: { isOpen }, toggleDrawer, closeDrawer } = useDrawer()
 
@@ -23,24 +13,25 @@ const DrawerMenu = ({ navLinks }: DrawerMenuProps) => {
     const NavLinks = () => {
 
         return (
-            navLinks ?
-                <ul className="text-2xl font-thin font-heading">
-                    <Fade cascade>
-                        {
-                            navLinks.map((link, index) => {
-                                return (
-                                    <li key={index} style={{ fontFamily: 'var(--font-secondary)' }} className="mb-8">
-                                        <a className="text-gray-900 hover:text-green-700 hover:bg-gray-200 rounded hover:bg-opacity-50 transition-all p-3" href={link.url}>🍃{link.name}</a>
-                                    </li>
+            links ? <div className="flex flex-col justify-center py-8 w-full">
+                <ul>
+                    {
+                        links.map((link, index) => {
+                            return (
+                                <li key={index} className="mb-12">
+                                    <a
+                                        className="font-heading font-medium text-lg text-blue-700 hover:text-black"
+                                        href={link?.url}
+                                    >
+                                        {link?.name ?? "LINK_NOT_FOUND"}
+                                    </a>
+                                </li>
+                            )
+                        })
+                    }
 
-                                )
-                            })
-                        }
-                    </Fade>
-
-
-
-                </ul> : <></>
+                </ul>
+            </div> : <></>
         )
     }
 

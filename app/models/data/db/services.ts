@@ -1,25 +1,25 @@
-import NotionService from "@services/notion"
+import FacadeService from "@services/fadcade"
 
-const services = () => {
 
-    const DB_TITLE = "SERVICES_DATABASE"
-    const { SERVICES } = NotionService.db
+const services = (store: []) => {
 
-    return {
-        id: DB_TITLE,
-        version: `[${DB_TITLE}]: ${Date.now()}`,
+    const { services } = FacadeService().types
+
+
+    const servicesObject = {
+
         getServices: (store: []) => {
             return store.filter((data) => {
-                return SERVICES.predicate(data)
+                return services.predicate(data)
             }).map((data: []) => {
-                return {
-                    ...SERVICES.shape(data)
-                }
+                return services.shape(data)
             })
 
         }
-
     }
+
+
+    return { ...servicesObject }
 }
 
 export default services

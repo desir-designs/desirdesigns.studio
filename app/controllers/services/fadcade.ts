@@ -8,95 +8,59 @@ const FacadeService = () => {
     const serviceObject = {
         version: Date.now(),
         types: {
-
-            products: {
-                name: "🛍️Product",
+            services: {
+                name: "📱Social Media",
                 shape: (data: any) => {
 
-                    const { Covers, Advertisements, Discount, Name, Price, Value, Tags, SKU, Gumroad, URL, Description } = getProperties(data) ?? null
-
-                    return {
-                        id: rich_text(Name),
-                        name: title(Name),
-                        url: url(URL),
-                        advertisements: files(Advertisements),
-                        gumroadURL: url(Gumroad),
-                        heading: rich_text(Name),
-                        description: rich_text(Description),
-                        sku: rich_text(SKU),
-                        value: number(Value),
-                        price: number(Price),
-                        tags: multi_select(Tags),
-                        discount: rich_text(Discount),
-                        covers: files(Covers),
-                    }
-                },
-                predicate: (data: any) => {
-                    const { name } = serviceObject.types.products
-                    return isDatabase(name, data)
-                }
-            },
-
-            meta: {
-                name: "📐Meta",
-                shape: (data: any) => {
-
-                    const { URL, Title, Name, Covers, Types, Values, Description, Status, Phone, Email } = data.properties
+                    const { URL, Title, Types, Status } = data.properties
 
                     return {
                         url: url(URL),
-                        title: select(Title),
-                        name: title(Name),
-                        description: rich_text(Description),
-                        status: status(Status),
-                        covers: files(Covers),
-                        phone: phone(Phone),
-                        email: email(Email),
+                        title: rich_text(Title),
                         types: multi_select(Types),
-                        values: multi_select(Values),
+                        status: status(Status),
                     }
                 },
                 predicate: (data: any) => {
-                    const { name } = serviceObject.types.meta
+                    const { name } = serviceObject.types.portfolio
                     return isDatabase(name, data) ?? null
                 }
+
             },
-
-
             faqs: {
-                name: "❓FAQ",
+                name: "📱Social Media",
                 shape: (data: any) => {
 
-                    const { URL, Name, Description, Status, Types } = data.properties
+                    const { URL, Title, Types, Status } = data.properties
 
                     return {
-                        question: title(Name),
-                        answer: rich_text(Description),
-                        status: status(Status),
                         url: url(URL),
+                        title: rich_text(Title),
                         types: multi_select(Types),
+                        status: status(Status),
                     }
                 },
                 predicate: (data: any) => {
-                    const { name } = serviceObject.types.faqs
+                    const { name } = serviceObject.types.portfolio
                     return isDatabase(name, data) ?? null
                 }
-            },
 
-            links: {
-                name: "📎Links",
+            },
+            portfolio: {
+                name: "📱Social Media",
                 shape: (data: any) => {
 
-                    const { URL, Name, Types } = data.properties
+                    const { URL, Title, Types, Status } = data.properties
 
                     return {
                         url: url(URL),
-                        name: title(Name),
+                        title: rich_text(Title),
                         types: multi_select(Types),
+                        status: status(Status),
                     }
                 },
                 predicate: (data: any) => {
-                    const { name } = serviceObject.types.links
+                    const { name } = serviceObject.types.portfolio
                     return isDatabase(name, data) ?? null
                 }
 

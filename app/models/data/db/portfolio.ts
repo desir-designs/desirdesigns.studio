@@ -1,25 +1,20 @@
-import NotionService from "@services/notion"
+import FacadeService from "@controllers/services/fadcade"
 
+const portfolio = (store: []) => {
 
-const portfolio = () => {
+    const { portfolio } = FacadeService().types
 
-    const DB_TITLE = "PORTFOLIO_DATABASE"
-
-    const { PORTFOLIO } = NotionService.db
-
-    return {
-        id: DB_TITLE,
-        version: `[${DB_TITLE}]: ${Date.now()}`,
-        getPortfolio: (store) => {
+    const portfolioObject = {
+        getPortfolio: () => {
             return store.filter((data) => {
-                return PORTFOLIO.predicate(data)
+                return portfolio.predicate(data)
             }).map((data) => {
-                return PORTFOLIO.shape(data)
+                return portfolio.shape(data)
             })
-
         }
-
     }
+
+    return { ...portfolioObject } ?? null
 }
 
 export default portfolio

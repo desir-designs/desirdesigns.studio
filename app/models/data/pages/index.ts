@@ -1,25 +1,12 @@
-import meta from "@configs/meta"
-import links from "@configs/links"
-import layout from "@configs/layout"
-
-import portfolio from "@db/portfolio"
-import services from "@db/services"
-import faqs from "@db/faqs"
-
-const pages = (store, pageKey) => {
-
-    const { title: siteTitle, email: siteEmail, phone: sitePhone } = meta()
-
-    const portfolioRelativeURL = links().find((link) => link.name === "Portfolio")
-
-    const { getPortfolio } = portfolio()
-    const { getServices } = services()
-    const { getFAQs } = faqs()
+import { layout } from "@configs/index"
+import { portfolio, faqs, services } from "@db/index"
 
 
-    const portfolioQuery = getPortfolio(store)
-    const servicesQuery = getServices(store)
-    const faqsQuery = getFAQs(store)
+const pages = ({ store, key }) => {
+
+    const { getPortfolio } = portfolio(store)
+    const { getServices } = services(store)
+    const { getFAQs } = faqs(store)
 
     const pageData = {
 
@@ -177,16 +164,26 @@ const pages = (store, pageKey) => {
 
     }
 
-    const layoutData = { ...layout(), metaData: pageData[pageKey].metaData }
 
     const pageObject = {
-        id: `${siteTitle} | ${pageKey}@page-data`,
         version: Date.now(),
-        layout: layoutData,
-        data: pageData[pageKey].data ?? {},
+        layout: layout({
+            header: {
+                
+            },
+            footer: {
+
+            },
+            menu: {
+
+            },
+            metaData: pageData[key]?.metaData ?? null,
+        }),
+        data: pageData[key]?.data ?? null,
+        pages: pageData[key]?.pages ?? null
     }
 
-    return { ...pageObject }
+    return { ...pageObject } ?? null
 }
 
 export default pages

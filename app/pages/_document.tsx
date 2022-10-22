@@ -1,10 +1,4 @@
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import React from 'react'
-import Meta from "@includes/Meta"
-
-import Script from 'next/script'
-
-
+import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
 class Document extends NextDocument<any> {
     render() {
         return (
