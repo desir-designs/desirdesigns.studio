@@ -48,7 +48,7 @@ const utils = () => {
                 }
             },
             title: (data) => {
-                return data?.title[0]?.plain_text ?? "TITLE_NOT_FOUND"
+                return data?.title[0]?.text?.content ?? "TITLE_NOT_FOUND"
             },
             files: (data) => {
                 return data?.files?.map(file => ({

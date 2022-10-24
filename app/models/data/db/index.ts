@@ -1,3 +1,5 @@
 export { default as portfolio } from "./portfolio"
 export { default as services } from "./services"
 export { default as faqs } from "./faqs"
+export { default as meta } from "./meta"
+export { default as links } from "./links"

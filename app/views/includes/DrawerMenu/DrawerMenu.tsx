@@ -10,7 +10,7 @@ const DrawerMenu = ({ links }: DrawerMenuProps) => {
     const { drawer: { isOpen }, toggleDrawer, closeDrawer } = useDrawer()
 
 
-    const NavLinks = () => {
+    const Links = () => {
 
         return (
             links ? <div className="flex flex-col justify-center py-8 w-full">
@@ -62,42 +62,7 @@ const DrawerMenu = ({ links }: DrawerMenuProps) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="flex flex-col justify-center py-8 w-full">
-                                            <ul>
-                                                <li className="mb-12">
-                                                    <a
-                                                        className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700"
-                                                        href="#"
-                                                    >
-                                                        Features
-                                                    </a>
-                                                </li>
-                                                <li className="mb-12">
-                                                    <a
-                                                        className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700"
-                                                        href="#"
-                                                    >
-                                                        Solutions
-                                                    </a>
-                                                </li>
-                                                <li className="mb-12">
-                                                    <a
-                                                        className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700"
-                                                        href="#"
-                                                    >
-                                                        Resources
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        className="font-heading font-medium text-lg text-gray-900 hover:text-gray-700"
-                                                        href="#"
-                                                    >
-                                                        Pricing
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        <Links />
                                         <div className="flex flex-col justify-end w-full">
                                             <div className="flex flex-wrap">
                                                 <div className="w-full">

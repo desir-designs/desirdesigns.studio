@@ -11,7 +11,6 @@ const layout = ({ header, footer, menu, metaData }: LayoutProps) => {
         footer: footerConfig({}),
         menu: menuConfig({}),
         metaData: {}
-
     }
 
     const layoutObject: LayoutProps = {

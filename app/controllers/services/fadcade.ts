@@ -27,6 +27,25 @@ const FacadeService = () => {
                 }
 
             },
+            links: {
+                name: "🔗Links",
+                shape: (data: any) => {
+
+                    const { URL, Name, Types, Status } = data.properties
+
+                    return {
+                        url: url(URL),
+                        title: title(Name),
+                        types: multi_select(Types),
+                        status: status(Status),
+                    }
+                },
+                predicate: (data: any) => {
+                    const { name } = serviceObject.types.links
+                    return isDatabase(name, data) ?? null
+                }
+
+            },
             faqs: {
                 name: "📱Social Media",
                 shape: (data: any) => {
@@ -47,15 +66,16 @@ const FacadeService = () => {
 
             },
             portfolio: {
-                name: "📱Social Media",
+                name: "🎁Portfolio",
                 shape: (data: any) => {
 
-                    const { URL, Title, Types, Status } = data.properties
+                    const { URL, Title, Types, Status, Covers } = data.properties
 
                     return {
                         url: url(URL),
                         title: rich_text(Title),
                         types: multi_select(Types),
+                        covers: files(Covers),
                         status: status(Status),
                     }
                 },
@@ -81,6 +101,26 @@ const FacadeService = () => {
                 },
                 predicate: (data: any) => {
                     const { name } = serviceObject.types.social_media
+                    return isDatabase(name, data) ?? null
+                }
+
+            },
+            meta: {
+                name: "📏Meta",
+                shape: (data: any) => {
+
+                    const { URL, Title, Types, Status, Description } = data.properties
+
+                    return {
+                        url: url(URL),
+                        description: rich_text(Description),
+                        title: rich_text(Title),
+                        types: multi_select(Types),
+                        status: status(Status),
+                    }
+                },
+                predicate: (data: any) => {
+                    const { name } = serviceObject.types.meta
                     return isDatabase(name, data) ?? null
                 }
 

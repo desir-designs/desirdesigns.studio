@@ -1,7 +1,7 @@
 {
   "name": "desirdesigns",
-  "version": "1.0.0",
-  "description": "",
+  "version": "3.0.0",
+  "description": "The Fringe of Design.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/desirablesolutions/desirdesigns.git"
   },
-  "author": "",
+  "author": "Jeffrey Desir",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/desirablesolutions/desirdesigns/issues"

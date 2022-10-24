@@ -5,10 +5,9 @@ const services = (store: []) => {
 
     const { services } = FacadeService().types
 
-
     const servicesObject = {
 
-        getServices: (store: []) => {
+        getServices: () => {
             return store.filter((data) => {
                 return services.predicate(data)
             }).map((data: []) => {
