@@ -17,7 +17,7 @@ const Hero: IComponent<HeroProps> = ({ title, heading, description, cta }: HeroP
                     <div className="lg:max-w-2xl mx-auto z-0 flex justify-center flex-col items-center">
 
                         <h1 className="z-0 m-auto">
-                            <img className="h-1/2 w-1/2 object-fit m-auto" src="/assets/images/logo-transparent.png" />
+                            <img className="h-3/4 w-3/4 object-fit m-auto" src="/assets/images/logo-transparent.png" />
                         </h1>
 
 

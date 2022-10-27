@@ -32,7 +32,7 @@ export default PortfolioPage
 
 export async function getServerSideProps() {
 
-    const { getPage } = PageService
+    const { getPage } = PageService()
 
     const page = await getPage("portfolio")
 

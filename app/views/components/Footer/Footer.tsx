@@ -1,4 +1,3 @@
-import Icon from "@components/Icon"
 
 import type { IComponent } from "@models/typings/Component"
 import type { FooterProps } from "@models/typings/Footer"
@@ -13,8 +12,6 @@ const Footer: IComponent<FooterProps> = ({ copyright, links, email, phone, favic
             </p>
         )
     }
-
-
 
     const ContactInfo = () => {
         return (
@@ -219,7 +216,7 @@ const Footer: IComponent<FooterProps> = ({ copyright, links, email, phone, favic
     }
 
     return (
-        <section className="relative py-20 backdrop-blur-md overflow-hidden">
+        <section className="relative py-20 h-full m-0 w-full backdrop-blur-md overflow-hidden">
 
             <div className="relative z-10 container mx-auto px-4">
                 <div className="flex flex-wrap -m-6">

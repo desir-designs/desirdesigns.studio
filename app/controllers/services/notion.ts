@@ -15,7 +15,7 @@ const NotionService = () => {
             const { api, secured } = NotionService()
             const centralDogma = (await api.databases.query({
                 database_id: secured.central_dogma_id
-            }).catch((error) => { throw error })).results
+            })).results
 
             return centralDogma
         },

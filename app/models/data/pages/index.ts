@@ -8,7 +8,7 @@ const pages = ({ store, key }) => {
     const { getServices } = services(store)
     const { getFAQs } = faqs(store)
     const { getHeaderLinks, getLinks } = links(store)
-    const { getTitle } = meta(store)
+    const { getTitle, getMeta, getFavicon } = meta(store)
 
     const pageData = {
 
@@ -18,7 +18,7 @@ const pages = ({ store, key }) => {
             },
             data: {
                 hero: {
-                    title: getTitle()?.description,
+                    title: getTitle(),
                     heading: "Master Designer",
                     description: 'Measure twice, cut once. I am a full service graphic designer & illustrator here to serve your visualization needs.',
                     cta: {
@@ -40,8 +40,13 @@ const pages = ({ store, key }) => {
                     url: link?.url
                 })),
 
+
             },
             footer: {
+                links: getLinks().map((link) => ({
+                    url: link?.url,
+                    name: ""
+                }))
 
             },
             menu: {

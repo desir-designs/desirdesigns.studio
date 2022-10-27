@@ -1,9 +1,27 @@
+export type NotionFileProps = {
+    url?: string,
+    name?: string,
+}
+
+export type NotionLastEdited = {
+    last_edited_time?: string,
+}
+
+export type NotionSelectProps = {
+    name?: string,
+}
+
+export type NotoionFilesProps = NotionFileProps[]
+
 const utils = () => {
 
     const utilsObject = {
         notion: {
             isDatabase: (key, data) => {
-                return data?.properties?.Database?.select?.name === key
+
+                const { select } = utilsObject.notion
+                const { Database } = utilsObject.notion.getProperties(data)
+                return select(Database).name == key
             },
             getProperties: (data) => {
                 return { ...data?.properties } ?? null
@@ -54,7 +72,7 @@ const utils = () => {
                 return data?.files?.map(file => ({
                     url: file?.file?.url ?? "URL_NOT_FOUND",
                     name: file?.file?.name ?? "NAME_NOT_FOUND",
-                })) ?? null
+                })) as NotoionFilesProps ?? null
             },
             url: (data) => {
                 return data?.url ?? "URL_NOT_FOUND"

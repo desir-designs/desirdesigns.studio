@@ -20,7 +20,7 @@ export default PortfolioPage
 
 export async function getServerSideProps({ params }) {
 
-    const { getPage } = PageService
+    const { getPage } = PageService()
 
     const { data: dataStore, version, layout, id } = await getPage("services")
 

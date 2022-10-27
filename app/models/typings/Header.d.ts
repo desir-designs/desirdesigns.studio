@@ -1,5 +1,5 @@
 import type { CallToActionProps } from "@typings/CallToAction"
-
+import type { ImageProps } from "@typings/Image"
 
 export type LinkProps = {
     url?: string,
@@ -8,9 +8,8 @@ export type LinkProps = {
 }
 
 export type FaviconProps = {
-    src?: string,
+    image?: ImpageProps,
     url?: string,
-    alt?: string
 }
 
 export type HeaderProps = {

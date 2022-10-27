@@ -7,7 +7,7 @@ const PageService = () => {
         getPage: async (pageKey: string) => {
 
             const { getCentralDogma } = NotionService()
-            const centralDogma = (await getCentralDogma())
+            const centralDogma = await getCentralDogma()
 
             const { layout, data, version, pages: pagesData } = pages({ store: centralDogma, key: pageKey })
 

@@ -35,16 +35,15 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
     const Favicon = () => {
         return (
             favicon ?
-
                 <div className="w-auto mr-14 hvr-grow-rotate cursor-pointer">
                     <a href={favicon?.url ? favicon.url : "FAVICON_URL_NOT_FOUND"}>
-                        <img src={favicon.src ? favicon.src : "FAVICON_IMAGE_NOT_FOUND"}
+                        <img src={favicon.image?.src ? favicon.image?.src : "FAVICON_IMAGE_NOT_FOUND"}
                             className="h-14 w-full scale-110"
-                            alt={favicon?.alt ? favicon.alt : "FAVICON_ALT_NOT_FOUND"} />
+                            alt={favicon?.image?.alt ? favicon.image?.alt : "FAVICON_ALT_NOT_FOUND"} />
                     </a>
                 </div>
 
-                : <></>
+                : <>FAVICON_NOT_FOUND</>
         )
     }
 

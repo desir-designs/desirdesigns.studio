@@ -5,6 +5,10 @@ const meta = (store: []) => {
     const { meta } = FacadeService().types
 
     const metaObject = {
+
+        getFavicon: () => {
+            return metaObject.getMeta().find((meta) => meta?.types?.includes("🖼️Favicon")) ?? null
+        },
         getTitle: () => {
             return metaObject.getMeta().find((meta) => meta?.types?.includes("📛Title")) ?? null
         },

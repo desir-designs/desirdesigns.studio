@@ -23,7 +23,7 @@ const FacadeService = () => {
                 },
                 predicate: (data: any) => {
                     const { name } = serviceObject.types.portfolio
-                    return isDatabase(name, data) ?? null
+                    return isDatabase(name, data) 
                 }
 
             },
@@ -31,18 +31,20 @@ const FacadeService = () => {
                 name: "🔗Links",
                 shape: (data: any) => {
 
-                    const { URL, Name, Types, Status } = data.properties
-
+                    const { URL, Name, Types, Status } = data?.properties
+                    
                     return {
                         url: url(URL),
                         title: title(Name),
                         types: multi_select(Types),
                         status: status(Status),
                     }
+
                 },
+
                 predicate: (data: any) => {
-                    const { name } = serviceObject.types.links
-                    return isDatabase(name, data) ?? null
+                    const { name } = serviceObject?.types?.links
+                    return isDatabase(name, data) 
                 }
 
             },
@@ -109,10 +111,11 @@ const FacadeService = () => {
                 name: "📏Meta",
                 shape: (data: any) => {
 
-                    const { URL, Title, Types, Status, Description } = data.properties
+                    const { URL, Title, Types, Status, Files, Description } = getProperties(data)
 
                     return {
                         url: url(URL),
+                        files: files(Files),
                         description: rich_text(Description),
                         title: rich_text(Title),
                         types: multi_select(Types),
@@ -121,7 +124,7 @@ const FacadeService = () => {
                 },
                 predicate: (data: any) => {
                     const { name } = serviceObject.types.meta
-                    return isDatabase(name, data) ?? null
+                    return isDatabase(name, data)
                 }
 
             },
