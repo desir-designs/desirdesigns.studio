@@ -1,14 +1,13 @@
 import { layout } from "@configs/index"
-import { portfolio, faqs, services, meta, links } from "@db/index"
+import { links, meta, services } from "@db/index"
 
 
 const pages = ({ store, key }) => {
 
-    const { getPortfolio } = portfolio(store)
+    const { getLinks } = links(store)
+    const { getMeta, getFavicon } = meta(store)
     const { getServices } = services(store)
-    const { getFAQs } = faqs(store)
-    const { getHeaderLinks, getLinks } = links(store)
-    const { getTitle, getMeta, getFavicon } = meta(store)
+
 
     const pageData = {
 
@@ -18,18 +17,12 @@ const pages = ({ store, key }) => {
             },
             data: {
                 hero: {
-                    title: getTitle(),
-                    heading: "Master Designer",
-                    description: 'Measure twice, cut once. I am a full service graphic designer & illustrator here to serve your visualization needs.',
-                    cta: {
-                        name: 'Book Consultation',
-                        link: '/contact'
-                    }
-                },
-            }
-        },
-    }
 
+                }
+
+            }
+        }
+    }
 
     const pageObject = {
         version: Date.now(),
@@ -39,27 +32,26 @@ const pages = ({ store, key }) => {
                     name: link?.title,
                     url: link?.url
                 })),
-
-
+                favicon: {
+                    image: getFavicon().map((favicon) => ({ src: favicon?.files[0]?.url }))[0] ?? null
+                }
             },
+
             footer: {
                 links: getLinks().map((link) => ({
                     url: link?.url,
-                    name: ""
+                    name: link.title
                 }))
-
             },
             menu: {
                 links: getLinks().map((link) => ({
                     name: link?.title,
                     url: link?.url
-                })),
-
-
+                }))
             },
-            metaData: pageData[key]?.metaData ?? null,
+            metaData: pageData[key]?.metaData,
         }),
-        data: pageData[key]?.data ?? null,
+        data: pageData[key]?.data,
         pages: pageData[key]?.pages ?? null
     }
 

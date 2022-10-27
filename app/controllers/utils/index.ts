@@ -21,7 +21,7 @@ const utils = () => {
 
                 const { select } = utilsObject.notion
                 const { Database } = utilsObject.notion.getProperties(data)
-                return select(Database).name == key
+                return select(Database).name === key
             },
             getProperties: (data) => {
                 return { ...data?.properties } ?? null
@@ -47,7 +47,7 @@ const utils = () => {
                 return data?.phone_number ?? null
             },
             select: (data) => {
-                return data?.select?.name ?? "SELECT_NOT_FOUND"
+                return data?.select ?? "SELECT_NOT_FOUND"
             },
             date: (data) => {
                 return data?.date?.start ?? null

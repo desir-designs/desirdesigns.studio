@@ -30,9 +30,8 @@ const FacadeService = () => {
             links: {
                 name: "🔗Links",
                 shape: (data: any) => {
-
                     const { URL, Name, Types, Status } = data?.properties
-                    
+        
                     return {
                         url: url(URL),
                         title: title(Name),

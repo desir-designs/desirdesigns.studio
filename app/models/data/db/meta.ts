@@ -7,7 +7,7 @@ const meta = (store: []) => {
     const metaObject = {
 
         getFavicon: () => {
-            return metaObject.getMeta().find((meta) => meta?.types?.includes("🖼️Favicon")) ?? null
+            return metaObject.getMeta().filter((meta) => meta?.types?.includes("🖼️Favicon")) ?? null
         },
         getTitle: () => {
             return metaObject.getMeta().find((meta) => meta?.types?.includes("📛Title")) ?? null

@@ -1,6 +1,5 @@
 import FacadeService from "@services/fadcade"
 
-
 const services = (store: []) => {
 
     const { services } = FacadeService().types

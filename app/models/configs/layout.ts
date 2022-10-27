@@ -20,7 +20,7 @@ const layout = ({ header, footer, menu, metaData }: LayoutProps) => {
         metaData: metaData ?? defaultObject?.metaData
     }
 
-    return { ...layoutObject } as LayoutProps ?? null
+    return { ...layoutObject } as LayoutProps
 
 }
 
