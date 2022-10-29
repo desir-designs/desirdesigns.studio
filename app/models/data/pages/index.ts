@@ -17,7 +17,6 @@ const pages = ({ store, key }) => {
             },
             data: {
                 hero: {
-
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel tincidunt lacinia, nisl nisl aliquam lorem, nec ultricies nisl nisl vel ante. Sed euismod, nisl vel tincidunt lacinia, nisl nisl aliquam lorem, nec ultricies nisl nisl vel ante.',
                 }
 
@@ -49,9 +48,10 @@ const pages = ({ store, key }) => {
                     }))
                 },
                 secondaryLinks: {
-                    title: "Services",
-                    links: getServices().map((service) => ({
-                        url: service?.name,
+                    title: "Links",
+                    links: getLinks().map((links) => ({
+                        url: links?.url,
+                        name: links?.title
                     }))
                 },
                 socials: getSocialMedia().map((social) => ({

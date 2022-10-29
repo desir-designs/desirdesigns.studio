@@ -101,12 +101,11 @@ const Footer: IComponent<FooterProps> = ({ socials, copyright, primaryLinks, sec
                     </ul>
                 </div>
             </div> : <>PRIMARY_LINKS_NOT_FOUND</>
-
-
         )
     }
 
     const ContactLinks = () => {
+
         return (
             <div className="w-full md:w-1/2 lg:w-3/12 p-6">
                 <div className="flex flex-col justify-between h-full">
@@ -143,7 +142,9 @@ const Footer: IComponent<FooterProps> = ({ socials, copyright, primaryLinks, sec
                         <div className="flex flex-col justify-between h-full max-w-sm">
 
                             <a href={favicon?.url ?? "#"} className="mb-11">
-                                <img src={favicon?.image?.src ?? "#"} alt={favicon?.image.alt ?? "IMAGE_NOT_FOUND"} />
+                                <img src={favicon?.image?.src ?? "#"}
+                                     alt={favicon?.image?.alt ?? "IMAGE_NOT_FOUND"}
+                                />
                             </a>
 
                             <div>
