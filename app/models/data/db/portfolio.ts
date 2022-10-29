@@ -1,10 +1,16 @@
-import FacadeService from "@controllers/services/fadcade"
+import FacadeService from "@services/fadcade"
 
 const portfolio = (store: []) => {
 
     const { portfolio } = FacadeService().types
 
     const portfolioObject = {
+        getFeaturedPortfolio: () => {
+            const featuredKey = "⭐Featured"
+            return portfolioObject.getPortfolio().filter((data) => {
+                return data?.types?.includes(featuredKey)
+            })
+        },
         getPortfolio: () => {
             return store.filter((data) => {
                 return portfolio.predicate(data)
@@ -14,7 +20,7 @@ const portfolio = (store: []) => {
         }
     }
 
-    return { ...portfolioObject } ?? null
+    return { ...portfolioObject } 
 }
 
 export default portfolio

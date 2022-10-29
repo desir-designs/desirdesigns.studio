@@ -1,21 +1,42 @@
 import utils from "@utils/index"
 
 
-const { files, url, email, phone, rich_text, title, multi_select, number, status, select, isDatabase, getProperties } = utils().notion
+const { files, url, email, phone, rich_text, title, multi_select, number, status, select, icon, isDatabase, getProperties } = utils().notion
 
 const FacadeService = () => {
 
     const serviceObject = {
         version: Date.now(),
         types: {
-            services: {
-                name: "🛒Services",
+            
+            organizations: {
+                name: "🫂Organizations",
                 shape: (data: any) => {
 
                     const { URL, Name, Types, Status } = data.properties
 
                     return {
                         url: url(URL),
+                        name: title(Name),
+                        types: multi_select(Types),
+                        status: status(Status),
+                    }
+                },
+                predicate: (data: any) => {
+                    const { name } = serviceObject.types.organizations
+                    return isDatabase(name, data)
+                }
+            },
+
+            services: {
+                name: "🛒Services",
+                shape: (data: any) => {
+
+                    const { icon: Icon, properties: { URL, Name, Types, Status } } = data
+
+                    return {
+                        url: url(URL),
+                        icon: icon(Icon),
                         name: title(Name),
                         types: multi_select(Types),
                         status: status(Status),
@@ -34,7 +55,7 @@ const FacadeService = () => {
 
                     return {
                         url: url(URL),
-                        title: title(Name),
+                        name: title(Name),
                         types: multi_select(Types),
                         status: status(Status),
                     }
@@ -47,8 +68,9 @@ const FacadeService = () => {
                 }
 
             },
+            
             faqs: {
-                name: "📱Social Media",
+                name: "❓FAQs",
                 shape: (data: any) => {
 
                     const { URL, Title, Types, Status } = data.properties
@@ -61,7 +83,7 @@ const FacadeService = () => {
                     }
                 },
                 predicate: (data: any) => {
-                    const { name } = serviceObject.types.portfolio
+                    const { name } = serviceObject.types.faqs
                     return isDatabase(name, data) ?? null
                 }
 
@@ -104,8 +126,8 @@ const FacadeService = () => {
                     const { name } = serviceObject.types.social_media
                     return isDatabase(name, data) ?? null
                 }
-
             },
+
             meta: {
                 name: "📏Meta",
                 shape: (data: any) => {

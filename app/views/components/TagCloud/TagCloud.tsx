@@ -23,9 +23,9 @@ const TagCloud: IComponent<TagCloudProps> = ({ title, heading, tags }: TagCloudP
         return (
             <div className="mb-16 max-w-md mx-auto">
                 <h2 className="mb-5 font-heading font-bold text-center text-5xl sm:text-6xl text-gray-900">
-                    {title ? title : "Tag Cloud"}
+                    {title ? title : "TITLE_NOT_FOUND"}
                 </h2>
-                <p className="text-gray-600 text-center">
+                <p className="text-gray-600 text-center text-xl">
                     {heading ? heading : "HEADING_NOT_FOUND"}
                 </p>
             </div>

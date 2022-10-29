@@ -58,7 +58,7 @@ const Footer: IComponent<FooterProps> = ({ socials, copyright, primaryLinks, sec
                                 return (
                                     <li key={index} className="mb-4">
                                         <a
-                                            className="font-heading font-medium text-xl  hover:bg-black hover:rounded-full py-2 px-1 ease-in text-black hover:text-blue-2000"
+                                            className="font-heading font-medium text-xl transition-all   hover:bg-black hover:rounded-full py-2 px-1 ease-in text-black hover:text-blue-200"
                                             href={link?.url}
                                         >
                                             {link?.name}
@@ -143,7 +143,7 @@ const Footer: IComponent<FooterProps> = ({ socials, copyright, primaryLinks, sec
 
                             <a href={favicon?.url ?? "#"} className="mb-11">
                                 <img src={favicon?.image?.src ?? "#"}
-                                     alt={favicon?.image?.alt ?? "IMAGE_NOT_FOUND"}
+                                    alt={favicon?.image?.alt ?? "IMAGE_NOT_FOUND"}
                                 />
                             </a>
 

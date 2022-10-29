@@ -1,21 +1,21 @@
 import FacadeService from "@controllers/services/fadcade"
 
-const social_media = (store: []) => {
+const organizations = (store: []) => {
 
-    const { portfolio } = FacadeService().types
+    const { organizations } = FacadeService().types
 
-    const socialMediaObject = {
-        getPortfolio: () => {
+    const organizationsObject = {
+        getOrganizations: () => {
             return store.filter((data) => {
-                return portfolio.predicate(data)
+                return organizations.predicate(data)
             }).map((data) => {
-                return portfolio.shape(data)
+                return organizations.shape(data)
             })
         }
     }
 
-    return { ...socialMediaObject } ?? null
+    return { ...organizationsObject } ?? null
 }
 
-export default social_media
+export default organizations
 

@@ -17,8 +17,6 @@ export type ContentRowProps = {
 
 const ContentRow: IComponent<ContentRowProps> = ({ title, heading, description, action, content }: ContentRowProps) => {
 
-
-
     const Header = () => {
         return (
             <div className="flex flex-wrap -mx-4 mb-16 items-center">

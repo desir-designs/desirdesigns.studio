@@ -1,11 +1,13 @@
 import layout from "@configs/layout"
-import { links, meta, services, social_media } from "@db/index"
+import { links, meta, services, portfolio, social_media, organizations } from "@db/index"
 
 const pages = ({ store, key }) => {
 
     const { getLinks } = links(store)
     const { getCopyright, getMeta, getEmailAddress, getPhoneNumber, getFavicon, getImpressum } = meta(store)
     const { getServices } = services(store)
+    const { getPortfolio, getFeaturedPortfolio } = portfolio(store)
+    const { getOrganizations } = organizations(store)
     const { getSocialMedia } = social_media(store)
 
 
@@ -17,9 +19,30 @@ const pages = ({ store, key }) => {
             },
             data: {
                 hero: {
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel tincidunt lacinia, nisl nisl aliquam lorem, nec ultricies nisl nisl vel ante. Sed euismod, nisl vel tincidunt lacinia, nisl nisl aliquam lorem, nec ultricies nisl nisl vel ante.',
+                    description: getImpressum()[0]?.values[0],
+                },
+                tagCloud: {
+                    title: "Services",
+                    heading: "What I can do for you",
+                    tags: getServices().map((services) => ({
+                        name: services?.name,
+                        url: services?.url,
+                        icon: services?.icon,
+                    })),
+                },
+                contentRow: {
+                    title: "My Portfolio",
+                    heading: "",
+                    description: "",
+                    content: getFeaturedPortfolio().map((portfolio) => ({  
+                        title: portfolio?.title,
+                        cover: portfolio?.covers[0]?.url,
+                     })),
+                    action: {
+                        name: "View Portfolio",
+                        url: "/portfolio",
+                    }
                 }
-
             }
         }
     }
@@ -27,31 +50,30 @@ const pages = ({ store, key }) => {
     const pageObject = {
         version: Date.now(),
         layout: layout({
-
-
             header: {
                 links: getLinks().map((link) => ({
-                    name: link?.title,
+                    name: link?.name,
                     url: link?.url
                 })),
+
                 favicon: {
-                    image: getFavicon().map((favicon) => ({ src: favicon?.files[0]?.url }))[0] ?? null
+                    image: getFavicon().map((favicon) => ({ src: favicon?.files[0]?.url }))[0]
                 }
             },
 
             footer: {
                 primaryLinks: {
                     title: "Organizations",
-                    links: getLinks().map((link) => ({
+                    links: getOrganizations().map((link) => ({
                         url: link?.url,
-                        name: link?.title
+                        name: link?.name
                     }))
                 },
                 secondaryLinks: {
                     title: "Links",
                     links: getLinks().map((links) => ({
                         url: links?.url,
-                        name: links?.title
+                        name: links?.name
                     }))
                 },
                 socials: getSocialMedia().map((social) => ({
@@ -69,7 +91,7 @@ const pages = ({ store, key }) => {
 
             menu: {
                 links: getLinks().map((link) => ({
-                    name: link?.title,
+                    name: link?.name,
                     url: link?.url
                 }))
             },
@@ -82,7 +104,7 @@ const pages = ({ store, key }) => {
         pages: pageData[key]?.pages ?? null
     }
 
-    return { ...pageObject } ?? null
+    return { ...pageObject } as const
 }
 
 

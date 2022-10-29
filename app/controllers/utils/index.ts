@@ -39,6 +39,9 @@ const utils = () => {
                     return null
                 }
             },
+            icon: (data) => {
+                return data?.external?.url ?? null
+            },
             multi_select: (data) => {
                 return data?.multi_select?.map((item) => item?.name ? item?.name : null) ?? null
             },
