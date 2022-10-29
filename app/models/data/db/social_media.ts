@@ -2,14 +2,14 @@ import FacadeService from "@controllers/services/fadcade"
 
 const social_media = (store: []) => {
 
-    const { portfolio } = FacadeService().types
+    const { social_media } = FacadeService().types
 
     const socialMediaObject = {
-        getPortfolio: () => {
+        getSocialMedia: () => {
             return store.filter((data) => {
-                return portfolio.predicate(data)
+                return social_media.predicate(data)
             }).map((data) => {
-                return portfolio.shape(data)
+                return social_media.shape(data)
             })
         }
     }

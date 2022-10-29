@@ -13,9 +13,17 @@ export type FaviconProps = {
 export type FooterProps = {
     copyright?: string,
     email?: string,
+    socials?: any[],
     phone?: string,
     contact?: any[],
     favicon?: FaviconProps,
     impressum?: string,
-    links?: LinkProps[]
+    secondaryLinks?: {
+        title?: string,
+        links?: LinkProps[]
+    }
+    primaryLinks?: {
+        title?: string,
+        links?: LinkProps[]
+    }
 }

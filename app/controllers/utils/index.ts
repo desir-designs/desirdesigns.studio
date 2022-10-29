@@ -11,6 +11,9 @@ export type NotionSelectProps = {
     name?: string,
 }
 
+export type NotionMultiSelectProps = {
+    
+}
 export type NotoionFilesProps = NotionFileProps[]
 
 const utils = () => {

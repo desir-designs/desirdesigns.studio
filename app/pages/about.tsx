@@ -8,9 +8,8 @@ const HomePage = ({ page }) => {
 
   return (
 
-    <PageLayout {...layout}>
-
-    </PageLayout>
+    <>
+    </>
 
 
   )

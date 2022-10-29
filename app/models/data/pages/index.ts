@@ -1,12 +1,12 @@
-import { layout } from "@configs/index"
-import { links, meta, services } from "@db/index"
-
+import layout from "@configs/layout"
+import { links, meta, services, social_media } from "@db/index"
 
 const pages = ({ store, key }) => {
 
     const { getLinks } = links(store)
-    const { getMeta, getFavicon } = meta(store)
+    const { getCopyright, getMeta, getEmailAddress, getPhoneNumber, getFavicon, getImpressum } = meta(store)
     const { getServices } = services(store)
+    const { getSocialMedia } = social_media(store)
 
 
     const pageData = {
@@ -18,6 +18,7 @@ const pages = ({ store, key }) => {
             data: {
                 hero: {
 
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel tincidunt lacinia, nisl nisl aliquam lorem, nec ultricies nisl nisl vel ante. Sed euismod, nisl vel tincidunt lacinia, nisl nisl aliquam lorem, nec ultricies nisl nisl vel ante.',
                 }
 
             }
@@ -27,6 +28,8 @@ const pages = ({ store, key }) => {
     const pageObject = {
         version: Date.now(),
         layout: layout({
+
+
             header: {
                 links: getLinks().map((link) => ({
                     name: link?.title,
@@ -38,11 +41,32 @@ const pages = ({ store, key }) => {
             },
 
             footer: {
-                links: getLinks().map((link) => ({
-                    url: link?.url,
-                    name: link.title
-                }))
+                primaryLinks: {
+                    title: "Organizations",
+                    links: getLinks().map((link) => ({
+                        url: link?.url,
+                        name: link?.title
+                    }))
+                },
+                secondaryLinks: {
+                    title: "Services",
+                    links: getServices().map((service) => ({
+                        url: service?.name,
+                    }))
+                },
+                socials: getSocialMedia().map((social) => ({
+                    url: social?.url,
+                })),
+                email: getEmailAddress()[0]?.email,
+                phone: getPhoneNumber()[0]?.phone,
+                favicon: {
+                    image: getFavicon().map((favicon) => ({ src: favicon?.files[0]?.url }))[0]
+                },
+                impressum: getImpressum()[0]?.values[0],
+                copyright: getCopyright()[0]?.values[0],
             },
+
+
             menu: {
                 links: getLinks().map((link) => ({
                     name: link?.title,
@@ -51,6 +75,9 @@ const pages = ({ store, key }) => {
             },
             metaData: pageData[key]?.metaData,
         }),
+
+
+
         data: pageData[key]?.data,
         pages: pageData[key]?.pages ?? null
     }

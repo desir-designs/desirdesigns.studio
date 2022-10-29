@@ -9,21 +9,21 @@ const FacadeService = () => {
         version: Date.now(),
         types: {
             services: {
-                name: "📱Social Media",
+                name: "🛒Services",
                 shape: (data: any) => {
 
-                    const { URL, Title, Types, Status } = data.properties
+                    const { URL, Name, Types, Status } = data.properties
 
                     return {
                         url: url(URL),
-                        title: rich_text(Title),
+                        name: title(Name),
                         types: multi_select(Types),
                         status: status(Status),
                     }
                 },
                 predicate: (data: any) => {
-                    const { name } = serviceObject.types.portfolio
-                    return isDatabase(name, data) 
+                    const { name } = serviceObject.types.services
+                    return isDatabase(name, data)
                 }
 
             },
@@ -31,7 +31,7 @@ const FacadeService = () => {
                 name: "🔗Links",
                 shape: (data: any) => {
                     const { URL, Name, Types, Status } = data?.properties
-        
+
                     return {
                         url: url(URL),
                         title: title(Name),
@@ -43,7 +43,7 @@ const FacadeService = () => {
 
                 predicate: (data: any) => {
                     const { name } = serviceObject?.types?.links
-                    return isDatabase(name, data) 
+                    return isDatabase(name, data)
                 }
 
             },
@@ -110,11 +110,14 @@ const FacadeService = () => {
                 name: "📏Meta",
                 shape: (data: any) => {
 
-                    const { URL, Title, Types, Status, Files, Description } = getProperties(data)
+                    const { URL, Title, Types, Status, Values, Phone, Email, Files, Description } = getProperties(data)
 
                     return {
                         url: url(URL),
                         files: files(Files),
+                        email: email(Email),
+                        phone: phone(Phone),
+                        values: multi_select(Values),
                         description: rich_text(Description),
                         title: rich_text(Title),
                         types: multi_select(Types),
