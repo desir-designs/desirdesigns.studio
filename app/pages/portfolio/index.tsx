@@ -1,29 +1,14 @@
 import ContentSearch from "@components/ContentSearch"
-import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/page"
 
-import { useEffect } from "react"
+const PortfolioPage = ({ page: { data } }) => {
 
-
-
-const PortfolioPage = ({ page }) => {
-
-    const { layout, version, data: {
-        contentSearch
-    } } = page
-
-
-    useEffect(() => {
-        console.log(`[DesirDesigns@${version}]`, page)
-    }, [page, version])
+    const { contentSearch } = data
 
     return (
-
-        <PageLayout {...layout}>
+        <>
             <ContentSearch {...contentSearch} />
-
-        </PageLayout>
-
+        </>
     )
 }
 

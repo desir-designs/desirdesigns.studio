@@ -36,7 +36,10 @@ const pages = ({ store, key }) => {
                     description: "",
                     content: getFeaturedPortfolio().map((portfolio) => ({  
                         title: portfolio?.title,
-                        cover: portfolio?.covers[0]?.url,
+                        cover: {
+                            src: portfolio?.covers[0]?.url,
+                            alt: portfolio?.title
+                        }
                      })),
                     action: {
                         name: "View Portfolio",
