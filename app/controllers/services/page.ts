@@ -4,6 +4,22 @@ import NotionService from '@services/notion'
 const PageService = () => {
 
     const serviceObject = {
+        getLayout: async (pageKey: string) => {
+
+            const { getCentralDogma } = NotionService()
+            const centralDogma = await getCentralDogma()
+
+            const { layout, data, version, pages: pagesData } = pages({ store: centralDogma, key: pageKey })
+
+            const page = {
+                version,
+                layout,
+                data,
+                pages: pagesData
+            }
+
+            return page
+        },
         getPage: async (pageKey: string) => {
 
             const { getCentralDogma } = NotionService()

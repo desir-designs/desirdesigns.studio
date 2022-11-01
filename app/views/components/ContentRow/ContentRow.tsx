@@ -57,10 +57,10 @@ const ContentRow: IComponent<ContentRowProps> = ({ title, heading, description, 
                     {
                         content ? content.map((item, index) => {
                             return (
-                                <a key={index} href={item.url ?? "#"} className="w-full md:w-1/2 xl:w-1/3 px-4 mb-8 cursor-pointer transition-all">
-                                    <div key={index} >
+                                <a key={index} href={item.url ?? "#"} className="w-full md:w-1/2 xl:w-1/3 px-4 mb-8 cursor-pointer transition-all group">
+                                    <div key={index} className="shadow-lg group-hover:shadow-2xl ease-in duration-500">
 
-                                        <div className="items-center bg-black bg-opacity-40 backdrop-blur-3xl hover:scale-90 bg-transparent transition-all shadow-xl rounded-lg overflow-hidden m-auto">
+                                        <div className="items-center bg-opacity-40 backdrop-blur-xl bg-transparent duration-500 hover:opacity-80 transition-all shadow-3xl rounded-xl overflow-hidden hover:-translate-y-4 ease-in-out m-auto">
                                             <img
                                                 className="h-50 inline-block object-cover"
                                                 src={item?.cover?.src ?? "#"}

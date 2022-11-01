@@ -23,8 +23,10 @@ export default Application
 
 
 Application.getInitialProps = async () => {
-  const { getPage } = PageService()
-  const { layout } = await getPage("home")
+
+  const { getLayout } = PageService()
+  const { layout } = await getLayout("home")
+  
   return {
     layout
   }

@@ -1,9 +1,11 @@
 import layout from "@configs/layout"
 import { links, meta, services, portfolio, social_media, organizations } from "@db/index"
+import type { ContentSearchProps, ContentRowProps } from "@typings/index"
+
 
 const pages = ({ store, key }) => {
 
-    const { getLinks } = links(store)
+    const { getLinks, getHeaderLinks } = links(store)
     const { getCopyright, getMeta, getEmailAddress, getPhoneNumber, getFavicon, getImpressum } = meta(store)
     const { getServices } = services(store)
     const { getPortfolio, getFeaturedPortfolio } = portfolio(store)
@@ -30,22 +32,52 @@ const pages = ({ store, key }) => {
                         icon: services?.icon,
                     })),
                 },
-                contentRow: {
+                contentRow: <ContentRowProps>{
                     title: "My Portfolio",
                     heading: "",
                     description: "",
-                    content: getFeaturedPortfolio().map((portfolio) => ({  
-                        title: portfolio?.title,
+                    content: getFeaturedPortfolio().map((portfolio) => ({
+                        title: portfolio?.name,
+                        url: portfolio?.url,
                         cover: {
                             src: portfolio?.covers[0]?.url,
-                            alt: portfolio?.title
+                            alt: portfolio?.name
                         }
-                     })),
+                    })),
                     action: {
                         name: "View Portfolio",
                         url: "/portfolio",
                     }
                 }
+            }
+        },
+
+        portfolio: {
+            metaData: {
+                pageTitle: 'Portfolio',
+            },
+            data: {
+                contentSearch: <ContentSearchProps>{
+
+                }
+            }
+        },
+
+        media: {},
+        organizations: {},
+        store: {},
+        blog: {},
+        faqs: {},
+        knowledge: {},
+
+
+        services: {
+            metaData: {
+                pageTitle: 'Services',
+            },
+
+            data: {
+
             }
         }
     }
@@ -54,7 +86,7 @@ const pages = ({ store, key }) => {
         version: Date.now(),
         layout: layout({
             header: {
-                links: getLinks().map((link) => ({
+                links: getHeaderLinks().map((link) => ({
                     name: link?.name,
                     url: link?.url
                 })),
@@ -74,7 +106,7 @@ const pages = ({ store, key }) => {
                 },
                 secondaryLinks: {
                     title: "Links",
-                    links: getLinks().map((links) => ({
+                    links: getHeaderLinks().map((links) => ({
                         url: links?.url,
                         name: links?.name
                     }))

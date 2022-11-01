@@ -8,7 +8,7 @@ const FacadeService = () => {
     const serviceObject = {
         version: Date.now(),
         types: {
-            
+
             organizations: {
                 name: "🫂Organizations",
                 shape: (data: any) => {
@@ -68,7 +68,7 @@ const FacadeService = () => {
                 }
 
             },
-            
+
             faqs: {
                 name: "❓FAQs",
                 shape: (data: any) => {
@@ -92,11 +92,11 @@ const FacadeService = () => {
                 name: "🎁Portfolio",
                 shape: (data: any) => {
 
-                    const { URL, Title, Types, Status, Covers } = data.properties
+                    const { URL, Name, Types, Status, Covers } = data.properties
 
                     return {
                         url: url(URL),
-                        title: rich_text(Title),
+                        name: title(Name),
                         types: multi_select(Types),
                         covers: files(Covers),
                         status: status(Status),
