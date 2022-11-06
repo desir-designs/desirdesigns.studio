@@ -59,7 +59,19 @@ const pages = ({ store, key }) => {
             data: {
                 contentSearch: <ContentSearchProps>{
 
-                }
+                },
+                pages: getPortfolio().map((portfolio) => ({
+                    id: portfolio?.name.replace(/\s/g, '-').toLowerCase(),
+                    metaData: {
+                        pageTitle: portfolio?.name,
+                    },
+                    data: {
+                        post: {
+                            title: portfolio?.name,
+                        }
+
+                    }
+                }))
             }
         },
 
@@ -136,7 +148,7 @@ const pages = ({ store, key }) => {
 
 
         data: pageData[key]?.data,
-        pages: pageData[key]?.pages ?? null
+        pages: <Array<any>>pageData[key]?.pages ?? null
     }
 
     return { ...pageObject } as const

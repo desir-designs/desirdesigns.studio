@@ -7,9 +7,7 @@ import SummarySection from "@components/SummarySection"
 import TagCloud from "@components/TagCloud"
 
 import PageService from '@services/page'
-
-
-const HomePage = ({ page: { data } }) => {
+function HomePage({ page: { data } }) {
 
   const { contactForm, tagCloud, hero, contentRow, summarySection, commentsRow, statsSection } = data
 
@@ -28,6 +26,17 @@ const HomePage = ({ page: { data } }) => {
 }
 
 export default HomePage
+
+HomePage.layout = async () => {
+
+  const { getPage } = PageService()
+
+  const { layout } = await getPage("home")
+
+  return {
+      layout
+  }
+}
 
 
 export async function getServerSideProps() {
