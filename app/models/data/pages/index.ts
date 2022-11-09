@@ -2,23 +2,21 @@ import layout from "@configs/layout"
 import { links, meta, services, portfolio, social_media, organizations } from "@db/index"
 import type { ContentSearchProps, ContentRowProps } from "@typings/index"
 
-
 const pages = ({ store, key }) => {
 
     const { getLinks, getHeaderLinks } = links(store)
-    const { getCopyright, getMeta, getEmailAddress, getPhoneNumber, getFavicon, getImpressum } = meta(store)
+    const { getCopyright, getEmailAddress, getPhoneNumber, getFavicon, getImpressum } = meta(store)
     const { getServices } = services(store)
     const { getPortfolio, getFeaturedPortfolio } = portfolio(store)
     const { getOrganizations } = organizations(store)
     const { getSocialMedia } = social_media(store)
 
-
     const pageData = {
-
         home: {
             metaData: {
                 pageTitle: 'Home',
             },
+
             data: {
                 hero: {
                     description: getImpressum()[0]?.values[0],
@@ -51,7 +49,6 @@ const pages = ({ store, key }) => {
                 }
             }
         },
-
         portfolio: {
             metaData: {
                 pageTitle: 'Portfolio',
@@ -74,15 +71,12 @@ const pages = ({ store, key }) => {
                 }))
             }
         },
-
         media: {},
         organizations: {},
         store: {},
         blog: {},
         faqs: {},
         knowledge: {},
-
-
         services: {
             metaData: {
                 pageTitle: 'Services',
@@ -102,12 +96,10 @@ const pages = ({ store, key }) => {
                     name: link?.name,
                     url: link?.url
                 })),
-
                 favicon: {
                     image: getFavicon().map((favicon) => ({ src: favicon?.files[0]?.url }))[0]
                 }
             },
-
             footer: {
                 primaryLinks: {
                     title: "Organizations",
@@ -134,8 +126,6 @@ const pages = ({ store, key }) => {
                 impressum: getImpressum()[0]?.values[0],
                 copyright: getCopyright()[0]?.values[0],
             },
-
-
             menu: {
                 links: getLinks().map((link) => ({
                     name: link?.name,
@@ -144,15 +134,11 @@ const pages = ({ store, key }) => {
             },
             metaData: pageData[key]?.metaData,
         }),
-
-
-
         data: pageData[key]?.data,
-        pages: <Array<any>>pageData[key]?.pages ?? null
+        pages: pageData[key]?.pages 
     }
 
     return { ...pageObject } as const
 }
-
 
 export default pages
