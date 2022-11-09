@@ -7,5 +7,6 @@ export type LayoutProps = {
     header?: HeaderProps,
     menu?: DrawerMenuProps,
     footer?: FooterProps,
-    metaData?: MetaProps
+    metaData?: MetaProps,
+    children?: any,
 }

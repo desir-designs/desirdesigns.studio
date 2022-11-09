@@ -12,11 +12,16 @@ const PortfolioPage = ({ page }) => {
 
 export default PortfolioPage
 
+export async function getStaticPaths() {
 
-export async function getServerSideProps({ params }) {
+
+}
+
+
+export async function getStaticProps({ params }) {
 
     const { getPage } = PageService()
-    
+
     const { pages } = await getPage(params.id)
 
     const page = pages.find(page => page.id === params.id)
