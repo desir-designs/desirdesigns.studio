@@ -12,13 +12,8 @@ const PortfolioPage = ({ page }) => {
 
 export default PortfolioPage
 
-export async function getStaticPaths() {
 
-
-}
-
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
 
     const { getPage } = PageService()
 
