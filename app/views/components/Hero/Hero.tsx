@@ -7,7 +7,7 @@ const Hero: IComponent<HeroProps> = ({ description, cta }: HeroProps) => {
 
     return (
 
-        <div className="-z-10 relative container mx-auto px-4 mt-14">
+        <div className="z-10 relative container mx-auto px-4 mt-14">
 
             <div className="relative z-0 flex flex-wrap justify-center items-center -m-6 lg:pt-30">
 

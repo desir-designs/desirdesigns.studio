@@ -135,7 +135,7 @@ const pages = ({ store, key }) => {
             metaData: pageData[key]?.metaData,
         }),
         data: pageData[key]?.data,
-        pages: pageData[key]?.pages 
+        pages: pageData[key]?.pages ?? null
     }
 
     return { ...pageObject } as const
