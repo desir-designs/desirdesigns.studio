@@ -7,7 +7,7 @@ import { Fade } from "react-awesome-reveal";
 import Headroom from "react-headroom";
 import { motion } from "framer-motion"
 
-const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
+const Header = ({ ...props }: HeaderProps) => {
 
     const { favicon, links } = props
 
@@ -63,7 +63,7 @@ const Header: IComponent<HeaderProps> = ({ ...props }: HeaderProps) => {
     return (
 
         <Headroom>
-            <section className="bg-opacity-20 backdrop-blur-md z-50 bg-gray-700 overflow-hidden ">
+            <section className="backdrop-blur-sm z-50 overflow-hidden ">
                 <section>
                     <div className="flex items-center justify-between px-8 py-5">
                         <div className="w-auto">

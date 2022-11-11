@@ -3,7 +3,7 @@ import type { IComponent } from "@models/typings/Component"
 import type { FooterProps } from "@models/typings/Footer"
 import { SocialIcon } from 'react-social-icons';
 
-const Footer: IComponent<FooterProps> = ({ socials, copyright, primaryLinks, secondaryLinks, email, phone, favicon, impressum }: FooterProps) => {
+const Footer = ({ socials, copyright, primaryLinks, secondaryLinks, email, phone, favicon, impressum }: FooterProps) => {
 
 
     const Copyright = () => {

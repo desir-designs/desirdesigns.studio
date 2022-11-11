@@ -16,7 +16,6 @@ export default function Application({ Component, pageProps, layout }) {
         <PageLayout {...layout}>
           <PageTransition timeout={300} classNames="page-transition">
             <Component {...pageProps} />
-
           </PageTransition>
         </PageLayout>
       </Suspense>

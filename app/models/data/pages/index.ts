@@ -46,6 +46,9 @@ const pages = ({ store, key }) => {
                         name: "View Portfolio",
                         url: "/portfolio",
                     }
+                },
+                SummarySection: {
+                    title: 'Frequently Asked Questions'
                 }
             }
         },
