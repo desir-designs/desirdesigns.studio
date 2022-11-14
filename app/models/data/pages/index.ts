@@ -1,18 +1,18 @@
 import layout from "@configs/layout"
-import { links, meta, services, portfolio, social_media, organizations } from "@db/index"
-import type { ContentSearchProps, ContactFormProps, ContentRowProps } from "@models/typings/index"
+import { links, meta, services, portfolio, social_media, organizations, faqs } from "@db/index"
+import type { ContentSearchProps, ContactFormProps, ContentRowProps, SummarySectionProps } from "@typings/index"
 
 const pages = ({ store, key }) => {
 
     const { getLinks, getHeaderLinks } = links(store)
 
-    const { getCopyright, getEmailAddress, getPhoneNumber, getLogo,
-        getFavicon, getImpressum } = meta(store)
+    const { getCopyright, getEmailAddress, getPhoneNumber, getLogo, getFavicon, getImpressum } = meta(store)
 
     const { getServices } = services(store)
     const { getPortfolio, getFeaturedPortfolio } = portfolio(store)
     const { getOrganizations } = organizations(store)
     const { getSocialMedia } = social_media(store)
+    const { getFAQs } = faqs(store)
 
     const pageData = {
         home: {
@@ -50,8 +50,12 @@ const pages = ({ store, key }) => {
                         url: "/portfolio",
                     }
                 },
-                summarySection: {
-                    title: 'Frequently Asked Questions'
+                summarySection: <SummarySectionProps>{
+                    title: 'Frequently Asked Questions',
+                    banner: {
+                        src: getLogo().files[0]?.url,
+                    },
+                    summary: getFAQs().map((faq) => ({ name: faq?.name }))
                 },
                 contactForm: <ContactFormProps>{
                     title: "Contact Me",
@@ -70,6 +74,10 @@ const pages = ({ store, key }) => {
             },
             data: {
                 contentSearch: <ContentSearchProps>{
+
+                    content: getPortfolio().map((portfolio) => ({
+                        title: portfolio?.name,
+                    }))
 
                 },
                 pages: getPortfolio().map((portfolio) => ({
@@ -136,7 +144,9 @@ const pages = ({ store, key }) => {
                 email: getEmailAddress()?.email,
                 phone: getPhoneNumber()?.phone,
                 favicon: {
-                    image: getLogo().map((favicon) => ({ src: favicon?.files[0]?.url }))[0]
+                    image: {
+                        src: getLogo().files[0]?.url,
+                    }
                 },
                 impressum: getImpressum()[0]?.values[0],
                 copyright: getCopyright()[0]?.values[0],

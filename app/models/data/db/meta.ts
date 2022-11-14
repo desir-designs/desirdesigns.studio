@@ -27,7 +27,7 @@ const meta = (store: []) => {
         },
         getLogo: ()=> {
             const logoKey = "🍎Logo"
-            return metaObject.getMeta().filter((meta) => meta?.types?.includes(logoKey)) ?? null
+            return metaObject.getMeta().find((meta) => meta?.types?.includes(logoKey)) ?? null
 
         },
         getTitle: () => {

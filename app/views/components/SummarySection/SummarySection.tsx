@@ -1,10 +1,14 @@
-import type { IComponent } from "@typings/Component"
+import type { ComponentType } from "@typings/Component"
 import type { SummarySectionProps } from "@typings/SummarySection"
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import FadeAnimation from "../FadeAnimation";
-const SummarySection: IComponent<SummarySectionProps> = ({ banner, title, heading, summary }: SummarySectionProps) => {
+
+
+
+
+const SummarySection: ComponentType<SummarySectionProps> = ({ banner, title, heading, summary }: SummarySectionProps) => {
 
 
 
@@ -39,7 +43,7 @@ const SummarySection: IComponent<SummarySectionProps> = ({ banner, title, headin
                                                 </span>
                                             </div>
                                             <h3 className="text-xl font-bold text-white">
-                                                {item.question}
+                                                {item?.name}
                                             </h3>
                                         </button>
 

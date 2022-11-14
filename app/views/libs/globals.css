@@ -19,7 +19,7 @@ body {
 }
 
 .bg-gradient {
-  background-image: linear-gradient(to right top, #0031ff, #0039d3, #193ba6, #2a3879, #31344c);
+  background-image: linear-gradient(to right top, rgb(0, 49, 255), #0039d3, #193ba6, #2a3879, #31344c);
 }
 
 * {
