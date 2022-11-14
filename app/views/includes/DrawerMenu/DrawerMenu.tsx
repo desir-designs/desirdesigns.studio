@@ -12,8 +12,8 @@ const DrawerMenu = ({ links }: DrawerMenuProps) => {
     const Links = () => {
 
         return (
-            links ? <div className="flex flex-col justify-center py-8 w-full">
-                <ul>
+            links ? <div className="flex max-h-1/2 flex-col justify-center py-8 w-full">
+                <ul className="overflow-visible">
                     {
                         links.map((link, index) => {
                             return (
@@ -30,7 +30,7 @@ const DrawerMenu = ({ links }: DrawerMenuProps) => {
                     }
 
                 </ul>
-            </div> : <></>
+            </div> : <>LINKS_NOT_FOUND</>
         )
     }
 
@@ -44,7 +44,7 @@ const DrawerMenu = ({ links }: DrawerMenuProps) => {
                     <section>
                         <ClickAwayListener onClickAway={() => closeDrawer()}>
 
-                            <div className="navbar-menu fixed top-0 left-0 bottom-0 w-4/6 sm:max-w-xs z-50">
+                            <div className="navbar-menu fixed top-0 overflow-visible left-0 bottom-0 w-4/6 sm:max-w-xs z-50">
                                 <nav className={`relative z-10 px-9 py-8 backdrop-blur-xl h-full tilt-in-left-1 ${!isOpen ? "slit-out-vertical" : ""}`}>
                                     <div className="flex flex-wrap justify-between h-full">
                                         <div className="w-full">
@@ -61,7 +61,9 @@ const DrawerMenu = ({ links }: DrawerMenuProps) => {
                                                 </div>
                                             </div>
                                         </div>
+                                  
                                         <Links />
+
                                         <div className="flex flex-col justify-end w-full">
                                             <div className="flex flex-wrap">
 
@@ -75,6 +77,7 @@ const DrawerMenu = ({ links }: DrawerMenuProps) => {
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
                                 </nav>
                             </div>

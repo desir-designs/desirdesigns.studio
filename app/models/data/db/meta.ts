@@ -7,11 +7,11 @@ const meta = (store: []) => {
     const metaObject = {
         getPhoneNumber: () => {
             const phoneNumberKey = "📞Phone Number"
-            return metaObject.getMeta().filter((meta) => meta?.types.includes(phoneNumberKey))
+            return metaObject.getMeta().find((meta) => meta?.types.includes(phoneNumberKey)) ?? null
         },
         getEmailAddress: () => {
             const emailAddressKey = "📧Email Address"
-            return metaObject.getMeta().filter((meta) => meta?.types.includes(emailAddressKey)) ?? null
+            return metaObject.getMeta().find((meta) => meta?.types.includes(emailAddressKey)) ?? null
         },
         getCopyright: () => {
             const copyrightKey = "📜Copyright"
@@ -24,6 +24,11 @@ const meta = (store: []) => {
         getFavicon: () => {
             const faviconKey = "🖼️Favicon"
             return metaObject.getMeta().filter((meta) => meta?.types?.includes(faviconKey)) ?? null
+        },
+        getLogo: ()=> {
+            const logoKey = "🍎Logo"
+            return metaObject.getMeta().filter((meta) => meta?.types?.includes(logoKey)) ?? null
+
         },
         getTitle: () => {
             const titleKey = "📛Title"

@@ -3,6 +3,7 @@ import "@libs/globals.css"
 import "@libs/hover.css"
 import "@libs/scrollbars.css"
 import "@libs/tailwind.css"
+
 import PageService from "@services/page"
 import PageLayout from "@layouts/PageLayout"
 import { RecoilRoot } from 'recoil'
@@ -11,16 +12,17 @@ import { Suspense } from "react"
 export default function Application({ Component, pageProps, layout }) {
 
   return (
-    <RecoilRoot>
-      <Suspense fallback={<></>}>
+
+    <Suspense fallback={<></>}>
+      <RecoilRoot>
         <PageLayout {...layout}>
           <PageTransition timeout={300} classNames="page-transition">
             <Component {...pageProps} />
           </PageTransition>
         </PageLayout>
-      </Suspense>
+      </RecoilRoot>
+    </Suspense >
 
-    </RecoilRoot>
   )
 }
 

@@ -1,8 +1,8 @@
-import type { IComponent } from "@models/typings/Component"
+import type { ComponentType } from "@typings/Component"
 import type { ConactFormProps } from "@typings/ContactForm"
 
 
-const ContactForm: IComponent<ConactFormProps> = ({ title, description, address, socials, email, phone }: ConactFormProps) => {
+const ContactForm: ComponentType<ConactFormProps> = ({ title, description, address, socials, email, phone }: ConactFormProps) => {
 
 
     const Address = () => {
@@ -63,7 +63,7 @@ const ContactForm: IComponent<ConactFormProps> = ({ title, description, address,
                 {
                     socials.map((social, index) => {
                         return (
-                            <li key={index} className="mb-6 text-black hover:text-gray-300 text-2xl">
+                            <li key={index} className="mb-6 text-black hover:text-gray-300 font-heading font-medium text-xl transition-all  hover:rounded-full py-2 px-1 ease-in text-black hover:text-blue-200">
                                 <a href={social.url}>{social.name}</a>
                             </li>
                         )
@@ -77,7 +77,7 @@ const ContactForm: IComponent<ConactFormProps> = ({ title, description, address,
 
     return (
 
-        <section className="relative pt-32 pb-28 overflow-hidden">
+        <section className="relative pt-32 pb-28 overflow-hidden z-0">
 
             <img
                 className="absolute top-0 left-0"
@@ -95,9 +95,9 @@ const ContactForm: IComponent<ConactFormProps> = ({ title, description, address,
 
                     <div className="w-full md:w-1/2 p-6">
                         <div className="md:max-w-md ml-auto">
-                            <Phone/>
-                            <Email/>
-                            <Address/>
+                            <Phone />
+                            <Email />
+                            <Address />
                             <SocialLinks />
                         </div>
                     </div>

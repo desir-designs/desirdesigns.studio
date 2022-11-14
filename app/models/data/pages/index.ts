@@ -1,11 +1,14 @@
 import layout from "@configs/layout"
 import { links, meta, services, portfolio, social_media, organizations } from "@db/index"
-import type { ContentSearchProps, ContentRowProps } from "@typings/index"
+import type { ContentSearchProps, ContactFormProps, ContentRowProps } from "@models/typings/index"
 
 const pages = ({ store, key }) => {
 
     const { getLinks, getHeaderLinks } = links(store)
-    const { getCopyright, getEmailAddress, getPhoneNumber, getFavicon, getImpressum } = meta(store)
+
+    const { getCopyright, getEmailAddress, getPhoneNumber, getLogo,
+        getFavicon, getImpressum } = meta(store)
+
     const { getServices } = services(store)
     const { getPortfolio, getFeaturedPortfolio } = portfolio(store)
     const { getOrganizations } = organizations(store)
@@ -47,8 +50,17 @@ const pages = ({ store, key }) => {
                         url: "/portfolio",
                     }
                 },
-                SummarySection: {
+                summarySection: {
                     title: 'Frequently Asked Questions'
+                },
+                contactForm: <ContactFormProps>{
+                    title: "Contact Me",
+                    description: "I'm always open to new opportunities and challenges. If you have a project you'd like to discuss, please get in touch.",
+                    address: "ere",
+                    email: getEmailAddress()?.email,
+                    phone: getPhoneNumber()?.phone,
+                    socials: getSocialMedia().map((social) => ({ name: social?.name }))
+
                 }
             }
         },
@@ -121,10 +133,10 @@ const pages = ({ store, key }) => {
                 socials: getSocialMedia().map((social) => ({
                     url: social?.url,
                 })),
-                email: getEmailAddress()[0]?.email,
-                phone: getPhoneNumber()[0]?.phone,
+                email: getEmailAddress()?.email,
+                phone: getPhoneNumber()?.phone,
                 favicon: {
-                    image: getFavicon().map((favicon) => ({ src: favicon?.files[0]?.url }))[0]
+                    image: getLogo().map((favicon) => ({ src: favicon?.files[0]?.url }))[0]
                 },
                 impressum: getImpressum()[0]?.values[0],
                 copyright: getCopyright()[0]?.values[0],
@@ -141,7 +153,7 @@ const pages = ({ store, key }) => {
         pages: pageData[key]?.pages ?? null
     }
 
-    return { ...pageObject } as const
+    return { ...pageObject }
 }
 
 export default pages
