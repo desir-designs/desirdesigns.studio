@@ -1,29 +1,35 @@
 import Post from "@components/Post"
 import PageService from "@services/page"
 
-const PortfolioPage = ({ page }) => {
+const PortfolioPage = () => {
 
-    const { data: { post } } = page
 
     return (
-        <Post {...post} />
+        <Post />
     )
 }
 
 export default PortfolioPage
 
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+    const paths = ["/portfolio/native-woman"]
+    return {
+        paths,
+        fallback: false
+    }
+}
+
+export async function getStaticProps({ params }) {
 
     const { getPage } = PageService()
 
-    const { pages } = await getPage(params.id)
+    const { data } = await getPage("home")
 
-    const page = pages.find(page => page.id === params.id)
 
     return {
         props: {
-            page
+            data
         }
     }
 }

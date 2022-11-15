@@ -22,7 +22,7 @@ const Header = ({ ...props }: HeaderProps) => {
                         links.map((link, index) => {
                             return (
                                 <li key={index} className="hover:shadow-xl font-heading mr-12 text-blue-700 hover:text-slate-300 hover:py-2 hover:px-2 hover:bg-black rounded hover:bg-opacity-50 duration-250 ease-in-out will-change-auto transition-all text-lg">
-                                    <a className="inline uppercase" href={link.url}><DesignServicesIcon />{link.name}</a>
+                                    <a className="inline" href={link.url}><DesignServicesIcon />{link.name}</a>
                                 </li>
                             )
                         })
@@ -63,7 +63,7 @@ const Header = ({ ...props }: HeaderProps) => {
     return (
 
         <Headroom>
-            <section className="backdrop-blur-md z-50 overflow-hidden ">
+            <section className="backdrop-blur-sm z-30 overflow-hidden ">
                 <section>
                     <div className="flex items-center justify-between px-8 py-5">
                         <div className="w-auto">

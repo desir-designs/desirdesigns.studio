@@ -11,7 +11,7 @@ import type { LayoutProps } from "@models/typings/Layout"
 const PageLayout = ({ children, metaData, header, footer, menu }: LayoutProps) => {
 
     return (
-        <Suspense>
+        <Suspense fallback={<></>}>
             <RootLayout metaData={metaData}>
                 <ScrollToTop component={<NorthIcon className="text-blue-800" />} smooth />
                 <DrawerMenu {...menu} />

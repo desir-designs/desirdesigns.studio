@@ -7,7 +7,7 @@ const PageService = () => {
         pages: {
             portfolio: "portfolio"
         },
-        
+
         findPage: async (pageName, id) => {
 
             const { getPage } = serviceObject
@@ -20,7 +20,7 @@ const PageService = () => {
             }
             return { ...pageObject }
         },
-        
+
         getLayout: async (pageKey: string) => {
 
             const { getCentralDogma } = NotionService()
@@ -48,7 +48,7 @@ const PageService = () => {
                 version,
                 layout,
                 data,
-                pages: pagesData
+                pagesData
             }
 
             return page

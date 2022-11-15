@@ -36,7 +36,7 @@ const pages = ({ store, key }) => {
                 contentRow: <ContentRowProps>{
                     title: "My Portfolio",
                     heading: "",
-                    description: "",
+                    description: "My designs",
                     content: getFeaturedPortfolio().map((portfolio) => ({
                         title: portfolio?.name,
                         url: portfolio?.url,
@@ -92,7 +92,8 @@ const pages = ({ store, key }) => {
 
                     }
                 }))
-            }
+            },
+            pages:[]
         },
         media: {},
         organizations: {},

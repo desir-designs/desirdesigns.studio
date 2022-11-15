@@ -15,7 +15,7 @@ const PortfolioPage = ({ page: { data } }) => {
 export default PortfolioPage
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
     const { getPage } = PageService()
 
@@ -24,7 +24,8 @@ export async function getServerSideProps() {
     return {
         props: {
             page
-        }
+        },
+        revalidate: 5
     }
 
 }

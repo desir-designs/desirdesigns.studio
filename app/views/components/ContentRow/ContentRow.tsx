@@ -1,21 +1,9 @@
-import type { IComponent } from "@models/typings/Component";
-import type { ContentProps } from "@typings/Content";
+import type { ComponentType } from "@models/typings/Component";
+import type { ContentRowProps } from "@typings/ContentRow";
 import Fade from 'react-reveal/Fade';
 
-export type ActionProps = {
-    name?: string,
-    url?: string
-}
 
-export type ContentRowProps = {
-    title?: string,
-    heading?: string,
-    description?: string,
-    action?: ActionProps,
-    content?: ContentProps[]
-}
-
-const ContentRow: IComponent<ContentRowProps> = ({ title, heading, description, action, content }: ContentRowProps) => {
+const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, description, action, content }: ContentRowProps) => {
 
     const Header = () => {
         return (
@@ -34,9 +22,9 @@ const ContentRow: IComponent<ContentRowProps> = ({ title, heading, description, 
                 <div className="w-full lg:w-1/3 px-4 mb-8 md:mb-0 lg:text-right">
                     <a
                         className="inline-block py-4 px-12 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
-                        href={action ? action.url : "#"}
+                        href={action ? action?.url : "ACTION_URL_NOT_FOUND"}
                     >
-                        {action ? action.name : "ACTION_NOT_FOUND"}
+                        {action ? action?.name : "ACTION_NOT_FOUND"}
                     </a>
                 </div>
             </div>
@@ -44,7 +32,6 @@ const ContentRow: IComponent<ContentRowProps> = ({ title, heading, description, 
 
         )
     }
-
 
     const Content = () => {
 
@@ -58,11 +45,11 @@ const ContentRow: IComponent<ContentRowProps> = ({ title, heading, description, 
                         content ? content.map((item, index) => {
                             return (
                                 <a key={index} href={item.url ?? "#"} className="w-full md:w-1/2 xl:w-1/3 px-4 mb-8 cursor-pointer transition-all group">
-                                    <div key={index} className="shadow-lg group-hover:shadow-2xl ease-in duration-500">
+                                    <div key={index} className="">
 
-                                        <div className="items-center bg-opacity-40 backdrop-blur-xl bg-transparent duration-500 hover:opacity-80 transition-all shadow-3xl rounded-xl overflow-hidden hover:-translate-y-4 ease-in-out m-auto">
+                                        <div className="items-center bg-opacity-40 backdrop-blur-lg bg-transparent duration-500 hover:opacity-80 shadow-2xl transition-all shadow-3xl rounded-xl overflow-hidden hover:-translate-y-4 ease-in-out m-auto">
                                             <img
-                                                className="h-50 inline-block object-cover"
+                                                className="max-h-50 inline-block object-fit"
                                                 src={item?.cover?.src ?? "#"}
                                                 alt={item?.cover?.alt ?? "IMAGE_NOT_FOUND"}
                                             />
@@ -114,16 +101,13 @@ const ContentRow: IComponent<ContentRowProps> = ({ title, heading, description, 
         return (
             action ? <div className="mt-20 text-center">
                 <a
-                    className="inline-block py-4 px-12 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
-                    href={action.url}
-                >
-                    {action.name}
+                    className="hover:bg-opacity-50 hover:scale-90 inline-block py-4 px-12 text-center leading-6 text-lg text-white font-bold bg-blue-700 hover:bg-indigo-900 border-3 border-blue-900 rounded transition duration-200"
+                    href={action?.url}>
+                    {action?.name}
                 </a>
-            </div> : <></>
+            </div> : <>CALL_TO_ACTION_NOT_FOUND</>
         )
     }
-
-
 
 
     return (
