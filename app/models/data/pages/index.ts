@@ -65,6 +65,25 @@ const pages = ({ store, key }) => {
                     phone: getPhoneNumber()?.phone,
                     socials: getSocialMedia().map((social) => ({ name: social?.name }))
 
+                },
+                statsSection: {
+                    stats: [
+                        {
+                            value: getPortfolio().length,
+                            description: "My Designs",
+                        },
+                        {
+                            value: getServices().length,
+                            description: "My Services",
+                        },
+                        {
+                            value: getPortfolio().length,
+                        },
+                        {
+                            value: getPortfolio().length,
+                        }
+                    ]
+
                 }
             }
         },
@@ -77,23 +96,27 @@ const pages = ({ store, key }) => {
 
                     content: getPortfolio().map((portfolio) => ({
                         title: portfolio?.name,
+                        cover: {
+                            src: portfolio?.covers[0]?.url,
+                            alt: portfolio?.name
+                        }
                     }))
 
                 },
-                pages: getPortfolio().map((portfolio) => ({
-                    id: portfolio?.name.replace(/\s/g, '-').toLowerCase(),
-                    metaData: {
-                        pageTitle: portfolio?.name,
-                    },
-                    data: {
-                        post: {
-                            title: portfolio?.name,
-                        }
 
-                    }
-                }))
             },
-            pages:[]
+            pages: getPortfolio().map((portfolio, index) => ({
+                id: portfolio?.name.replace(/\s/g, '-').slice(0, getPortfolio()[index]?.name?.length - 2).toLowerCase(),
+                metaData: {
+                    pageTitle: portfolio?.name,
+                },
+                data: {
+                    post: {
+                        title: portfolio?.name,
+                    }
+
+                }
+            }))
         },
         media: {},
         organizations: {},
@@ -118,10 +141,11 @@ const pages = ({ store, key }) => {
             header: {
                 links: getHeaderLinks().map((link) => ({
                     name: link?.name,
-                    url: link?.url
+                    url: link?.url ?? "/"
                 })),
                 favicon: {
-                    image: getFavicon().map((favicon) => ({ src: favicon?.files[0]?.url }))[0]
+                    image: getFavicon().map((favicon) => ({ src: favicon?.files[0]?.url }))[0],
+                    url: "/"
                 }
             },
             footer: {

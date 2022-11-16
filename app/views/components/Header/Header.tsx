@@ -21,7 +21,7 @@ const Header = ({ ...props }: HeaderProps) => {
                     {
                         links.map((link, index) => {
                             return (
-                                <li key={index} className="hover:shadow-xl font-heading mr-12 text-blue-700 hover:text-slate-300 hover:py-2 hover:px-2 hover:bg-black rounded hover:bg-opacity-50 duration-250 ease-in-out will-change-auto transition-all text-lg">
+                                <li key={index} className="hover:shadow-xl font-heading mr-12 text-blue-700 hover:text-slate-300 hover:py-2 hover:px-2 hover:bg-black rounded hover:bg-opacity-50 duration-500 ease-in-out will-change-auto transition-all text-lg">
                                     <a className="inline" href={link.url}><DesignServicesIcon />{link.name}</a>
                                 </li>
                             )

@@ -1,4 +1,4 @@
-import { IComponent } from "@models/typings/Component";
+import { ComponentType } from "@models/typings/Component";
 import { Fade } from "react-awesome-reveal";
 
 
@@ -15,7 +15,7 @@ export type TagCloudProps = {
 }
 
 
-const TagCloud: IComponent<TagCloudProps> = ({ title, heading, tags }: TagCloudProps) => {
+const TagCloud: ComponentType<TagCloudProps> = ({ title, heading, tags }: TagCloudProps) => {
 
 
     const Header = () => {
@@ -40,7 +40,7 @@ const TagCloud: IComponent<TagCloudProps> = ({ title, heading, tags }: TagCloudP
         return (
             tags ?
                 <div className="flex flex-wrap justify-center  mb-7 w-3/4 item-center m-auto">
-                    <Fade duration={500} triggerOnce cascade>
+                    <Fade duration={200} triggerOnce cascade>
                         {
                             tags?.map((tag, index) => {
                                 return (

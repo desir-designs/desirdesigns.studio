@@ -1,5 +1,7 @@
+import type { ImageProps } from "@typings/Image"
+
 export type ContentProps = {
-    cover?: Image,
+    cover?: ImageProps,
     date?: string,
     title?: string,
     url?: string,

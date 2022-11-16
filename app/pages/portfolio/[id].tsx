@@ -3,7 +3,6 @@ import PageService from "@services/page"
 
 const PortfolioPage = () => {
 
-
     return (
         <Post />
     )
@@ -13,9 +12,13 @@ export default PortfolioPage
 
 
 export async function getStaticPaths() {
-    const paths = ["/portfolio/native-woman"]
+
+    const { getPage } = PageService()
+    
+    const { pages } = await getPage("portfolio")
+
     return {
-        paths,
+        paths: pages.map((page) => (`/portfolio/${page?.id}`)),
         fallback: false
     }
 }
@@ -26,10 +29,10 @@ export async function getStaticProps({ params }) {
 
     const { data } = await getPage("home")
 
-
     return {
         props: {
             data
-        }
+        },
+        revalidate: 5
     }
 }

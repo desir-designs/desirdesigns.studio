@@ -24,19 +24,23 @@ const SummarySection: ComponentType<SummarySectionProps> = ({ banner, title, hea
                         summary.map((item, index) => {
 
                             return (
-                                <Accordion sx={{
-                                    backgroundColor: "transparent",
-                                    outline: "none",
-                                }} key={index} className="bg-transparent outline-none">
-                                    <AccordionSummary expandIcon={<img className="h-14" src={item.icon} />} className="mb-4 px-4 lg:px-12 py-6 hover:bg-opacity-100 backdrop-blur-md transition-all bg-black rounded-xl bg-opacity-80 outline-none"
-                                        aria-controls="panel1a-content"
-                                        sx={{
-                                            backgroundColor: 'black',
-                                            marginBottom: 'var(--size-4)',
-                                        }}
-                                        id="panel1a-header"
-                                    >
-                                        <button className="flex w-full text-left">
+                                <div className="group rounded" key={index} >
+
+                                    <button className="flex w-full duration-500 rounded-xl group-hover:scale-80 group-hover:bg-opacity-90 group-hover:shadow-2xl text-left bg-black mb-4 group bg-opacity-50 px-4 py-4">
+                                        <div className="w-auto mr-8">
+                                            <span className="flex items-center justify-center w-12 h-12 text-2xl font-bold bg-blue-400 bg-opacity-50 text-white rounded-full">
+                                                {index + 1}
+                                            </span>
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white">
+                                            {item?.name}
+                                        </h3>
+
+                                    </button>
+
+
+                                    <div className="relative top-0 mt-4 hidden group-hover:flex delay-500 ">
+                                        <button key={index} className="flex w-full mt-4 rounded duration-1000 ease-in-out delay-500 translate-y-4 group-hover:-translate-y-4 opacity-0 group-hover:opacity-100 text-left bg-black mb-4">
                                             <div className="w-auto mr-8">
                                                 <span className="flex items-center justify-center w-12 h-12 text-lg font-bold bg-white rounded-full">
                                                     {index + 1}
@@ -46,30 +50,8 @@ const SummarySection: ComponentType<SummarySectionProps> = ({ banner, title, hea
                                                 {item?.name}
                                             </h3>
                                         </button>
-
-                                    </AccordionSummary>
-                                    <AccordionDetails className="mb-4 px-4 lg:px-12 py-8 bg-blue-700 rounded-2xl">
-                                        <div className="w-full mt-3">
-
-                                            <div className="mt-6 border-l-2 border-gray-500 pl-10">
-                                                <p className="mb-5 text-xl text-gray-300">
-                                                    The point of using Lorem Ipsum is that it has a more-or-less
-                                                    normal:
-                                                </p>
-                                                <p className="mb-2 text-lg text-gray-300">
-                                                    <span className="inline-block mr-6 h-2 w-2 rounded-full bg-blue-500" />
-                                                    <span>Distribution of letters</span>
-                                                </p>
-                                                <p className="text-lg text-gray-300">
-                                                    <span className="inline-block mr-6 h-2 w-2 rounded-full bg-blue-500" />
-                                                    <span>Content here</span>
-                                                </p>
-                                            </div>
-                                        </div>
-
-
-                                    </AccordionDetails>
-                                </Accordion>
+                                    </div>
+                                </div>
                             )
                         })
                     }

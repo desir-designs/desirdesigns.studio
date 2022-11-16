@@ -15,7 +15,7 @@ body {
   color: black !important;
   overflow-x: hidden !important;
   background: rgba(0, 0, 0, 0.238) url("/assets/images/bg.png") center center no-repeat fixed;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 .bg-gradient {

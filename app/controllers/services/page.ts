@@ -1,4 +1,4 @@
-import pages from "@pages/index"
+import { default as pagesDB } from "@pages/index"
 import NotionService from '@services/notion'
 
 const PageService = () => {
@@ -26,13 +26,13 @@ const PageService = () => {
             const { getCentralDogma } = NotionService()
             const centralDogma = await getCentralDogma()
 
-            const { layout, data, version, pages: pagesData } = pages({ store: centralDogma, key: pageKey })
+            const { layout, data, version, pages } = pagesDB({ store: centralDogma, key: pageKey })
 
             const page = {
                 version,
                 layout,
                 data,
-                pages: pagesData
+                pages
             }
 
             return page
@@ -42,13 +42,13 @@ const PageService = () => {
             const { getCentralDogma } = NotionService()
             const centralDogma = await getCentralDogma()
 
-            const { layout, data, version, pages: pagesData } = pages({ store: centralDogma, key: pageKey })
+            const { layout, data, version, pages } = pagesDB({ store: centralDogma, key: pageKey })
 
             const page = {
                 version,
                 layout,
                 data,
-                pagesData
+                pages
             }
 
             return page
