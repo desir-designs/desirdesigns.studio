@@ -5,6 +5,18 @@ const meta = (store: []) => {
     const { meta } = FacadeService().types
 
     const metaObject = {
+        getPortfolioHeader: () => {
+            const headerKeys = ["🪦Heading", "💼Portfolio"]
+            return metaObject.getMeta().find((meta) => headerKeys.every((i) => meta.types.includes(i))) ?? null
+        },
+        getServicesHeader: () => {
+            const headerKeys = ["🪦Heading", "🛒Services"]
+            return metaObject.getMeta().find((meta) => headerKeys.every((i) => meta.types.includes(i))) ?? null
+        },
+        getFAQsHeader: () => {
+            const headerKeys = ["🪦Heading", "❓FAQs"]
+            return metaObject.getMeta().find((meta) => headerKeys.every((i) => meta.types.includes(i))) ?? null
+        },
         getPhoneNumber: () => {
             const phoneNumberKey = "📞Phone Number"
             return metaObject.getMeta().find((meta) => meta?.types.includes(phoneNumberKey)) ?? null
@@ -25,7 +37,7 @@ const meta = (store: []) => {
             const faviconKey = "🖼️Favicon"
             return metaObject.getMeta().filter((meta) => meta?.types?.includes(faviconKey)) ?? null
         },
-        getLogo: ()=> {
+        getLogo: () => {
             const logoKey = "🍎Logo"
             return metaObject.getMeta().find((meta) => meta?.types?.includes(logoKey)) ?? null
 

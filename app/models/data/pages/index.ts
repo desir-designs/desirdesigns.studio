@@ -6,7 +6,7 @@ const pages = ({ store, key }) => {
 
     const { getLinks, getHeaderLinks } = links(store)
 
-    const { getCopyright, getEmailAddress, getPhoneNumber, getLogo, getFavicon, getImpressum } = meta(store)
+    const { getCopyright, getPortfolioHeader, getFAQsHeader, getEmailAddress, getPhoneNumber, getServicesHeader, getLogo, getFavicon, getImpressum } = meta(store)
 
     const { getServices } = services(store)
     const { getPortfolio, getFeaturedPortfolio } = portfolio(store)
@@ -25,8 +25,8 @@ const pages = ({ store, key }) => {
                     description: getImpressum()[0]?.values[0],
                 },
                 tagCloud: {
-                    title: "Services",
-                    heading: "What I can do for you",
+                    title: getServicesHeader()?.name,
+                    heading: getServicesHeader()?.description,
                     tags: getServices().map((services) => ({
                         name: services?.name,
                         url: services?.url,
@@ -34,9 +34,9 @@ const pages = ({ store, key }) => {
                     })),
                 },
                 contentRow: <ContentRowProps>{
-                    title: "My Portfolio",
-                    heading: "",
-                    description: "My designs",
+                    title: getPortfolioHeader()?.values[0],
+                    heading: getPortfolioHeader()?.name,
+                    description: getPortfolioHeader()?.description,
                     content: getFeaturedPortfolio().map((portfolio) => ({
                         title: portfolio?.name,
                         url: portfolio?.url,
@@ -51,7 +51,8 @@ const pages = ({ store, key }) => {
                     }
                 },
                 summarySection: <SummarySectionProps>{
-                    title: 'Frequently Asked Questions',
+                    title: getFAQsHeader()?.name,
+                    heading: getFAQsHeader()?.values[0],
                     banner: {
                         src: getLogo().files[0]?.url,
                     },
@@ -60,7 +61,7 @@ const pages = ({ store, key }) => {
                 contactForm: <ContactFormProps>{
                     title: "Contact Me",
                     description: "I'm always open to new opportunities and challenges. If you have a project you'd like to discuss, please get in touch.",
-                    address: "ere",
+                    address: "Orlando, FL, USA",
                     email: getEmailAddress()?.email,
                     phone: getPhoneNumber()?.phone,
                     socials: getSocialMedia().map((social) => ({ name: social?.name }))
@@ -70,18 +71,21 @@ const pages = ({ store, key }) => {
                     stats: [
                         {
                             value: getPortfolio().length,
-                            description: "My Designs",
+                            description: "Inspired Designs",
                         },
                         {
                             value: getServices().length,
-                            description: "My Services",
+                            description: "Professional Services",
                         },
                         {
-                            value: getPortfolio().length,
+                            value: getSocialMedia().length,
+                            description: "Media Outlets",
                         },
                         {
-                            value: getPortfolio().length,
-                        }
+                            value: getOrganizations().length,
+                            description: "Innovative Organizations",
+                        },
+
                     ]
 
                 }

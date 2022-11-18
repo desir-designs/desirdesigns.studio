@@ -17,10 +17,6 @@
 
 ## ✨Features
 
-* Light/dark mode toggle
-* Live previews
-* Fullscreen mode
-* Cross platform
 
 ---
 
@@ -38,7 +34,7 @@
     
 ## 🆘Support
 
-For support, email info@naturessecret.co
+For support, email devops@desirable.solutions
 
 ---
 
@@ -50,21 +46,12 @@ For support, email info@naturessecret.co
 * Ingridents Page Added
 
 
-**Version 1.0.0**
-* Facade Service (v0.0.1) Integrated. Allowing future-proof extensions.
-* API Maintanence 
-
-
-**Version 0.0.9**
-* Views 'Simply-Typed', parametermized as needed for cms data transformations. 
-* Animations optimized. 
-* App Layout polyfilled. 
 
 ---
 
 ## ➰Feedback
 
-If you have any feedback, please reach out to us at fake@fake.com
+If you have any feedback, please reach out to us at devops@desirable.solutions
 
 ---
 
@@ -81,22 +68,6 @@ If you have any feedback, please reach out to us at fake@fake.com
 
 ## 🛣️Roadmap
 
-
-**Phase E**
-1. Community Marketing 
-
-**Phase D**
-1. Community Marketing 
-
-
-**Phase C**
-1. Community Marketing 
-
-
-**Phase B**
-1. Community Marketing 
-
-
 📍**Phase A**  
 * 🎉MVP Launch!
 
@@ -109,15 +80,13 @@ If you have any feedback, please reach out to us at fake@fake.com
  > To God Be All the Glory. 
 
 
-
-
 ---
 
 ## ✒️Authors
 
-- [@desirtech](https://www.github.com/octokatherine)
-- [@desirdesigns](https://www.github.com/octokatherine)
-- [@desirablesolutions](https://www.github.com/octokatherine)
+- [@desirtech](https://www.github.com/desir-tech)
+- [@desirdesigns](https://www.github.com/desirdesigns)
+- [@desirablesolutions](https://www.github.com/desirablesolutions)
 
 
 ---
@@ -125,8 +94,6 @@ If you have any feedback, please reach out to us at fake@fake.com
 ## 📜License
 
 > This project is under the MIT License☂️. 
-
-**All data & metadata property of Desir Designs**<br/>
 
 **©️ 2022 Desir Designs. All Rights Reserved.**
 

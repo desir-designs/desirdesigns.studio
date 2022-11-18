@@ -9,10 +9,10 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
         return (
             <div className="flex flex-wrap -mx-4 mb-16 items-center">
                 <div className="w-full lg:w-2/3 px-4 mb-8 lg:mb-0">
-                    <span className="text-xl font-extrabold text-blue-500">
+                    <span className="text-2xl font-extrabold text-blue-800">
                         {title ? title : "TITLE_NOT_FOUND"}
                     </span>
-                    <h1 className="text-3xl md:text-4xl font-extrabold font-heading mt-2 mb-4">
+                    <h1 className="text-6xl font-extrabold font-heading mt-2 mb-4">
                         {heading ? heading : "HEADING_NOT_FOUND"}
                     </h1>
                     <p className="text-xl font-extrabold leading-8">
@@ -42,8 +42,8 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
                     {
                         content ? content.map((item, index) => {
                             return (
-                                <a key={index} href={item.url ?? "#"} className="w-full md:w-1/2 xl:w-1/3 px-4 mb-8 cursor-pointer transition-all group hover:opacity-80">
-                                    <div className="group-hover:border-2 group-hover:border-blue-800 items-center group-hover:shadow-2xl backdrop-blur-md duration-300 group-hover:opacity-80 transition-all rounded-2xl border-2 border-opacity-25 border-blue-800 overflow-hidden group-hover:scale-90 group-hover:-translate-y-4 ease-in-out m-auto">
+                                <a key={index} href={item.url ?? "#"} className="duration-500 ease-in-out hover:-translate-y-4 group w-full md:w-1/2 xl:w-1/3 px-4 mb-8 cursor-pointer transition-all">
+                                    <div className="group-hover:border-2 group-hover:border-blue-800 items-center group-hover:shadow-2xl backdrop-blur-lg duration-300 group-hover:opacity-80 transition-all rounded-2xl border-2 border-opacity-25 border-blue-800 overflow-hidden group-hover:scale-90 group-hover:-translate-y-4 ease-in-out m-auto">
                                         <img
                                             className="max-h-50 inline-block object-cover"
                                             src={item?.cover?.src ?? "#"}
@@ -62,13 +62,13 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
                                             <p className="text-xl font-bold text-blue-800 mb-2">
                                                 Joshua Desir • {item?.date}
                                             </p>
-                                            <h2 className="text-2xl font-extrabold mb-6 text-gray-900">
-                                                {item?.title}
+                                            <h2 className="text-4xl font-extrabold mb-6 text-black">
+                                                {item?.title ?? "TITLE_NOT_FOUND"}
                                             </h2>
                                             <p className="text-xl font-bold mb-6">
                                             </p>
                                             <a
-                                                className="inline-block border-3 font-bold text-blue-200 hover:text-indigo-600"
+                                                className="inline-block font-2xl font-bold text-blue-600"
                                                 href={item?.url}
                                             >
                                                 Read More

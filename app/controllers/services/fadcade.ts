@@ -132,7 +132,7 @@ const FacadeService = () => {
                 name: "📏Meta",
                 shape: (data: any) => {
 
-                    const { URL, Title, Types, Status, Values, Phone, Email, Files, Description } = getProperties(data)
+                    const { URL, Name, Types, Status, Values, Phone, Email, Files, Description } = getProperties(data)
 
                     return {
                         url: url(URL),
@@ -141,7 +141,7 @@ const FacadeService = () => {
                         phone: phone(Phone),
                         values: multi_select(Values),
                         description: rich_text(Description),
-                        title: rich_text(Title),
+                        name: title(Name),
                         types: multi_select(Types),
                         status: status(Status),
                     }

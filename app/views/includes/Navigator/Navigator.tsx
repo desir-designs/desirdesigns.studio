@@ -1,29 +1,59 @@
 import ArchitectureIcon from '@mui/icons-material/Architecture';
-import FileCopyIcon from '@mui/icons-material/FileCopyOutlined';
-import PrintIcon from '@mui/icons-material/Print';
-import SaveIcon from '@mui/icons-material/Save';
-import ShareIcon from '@mui/icons-material/Share';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import CelebrationIcon from '@mui/icons-material/Celebration';
+import MenuIcon from '@mui/icons-material/Menu';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-const actions = [
-    { icon: <FileCopyIcon />, name: 'Copy' },
-    { icon: <SaveIcon />, name: 'Save' },
-    { icon: <PrintIcon />, name: 'Print' },
-    { icon: <ShareIcon />, name: 'Share' },
-];
+
+
 
 export default function Navigator() {
+
+    const ActionSx = {
+        backgroundColor: 'black',
+        color: 'white'
+    }
+
+    const Destinations = [
+        {
+            icon: <ArrowUpwardIcon sx={ActionSx} />,
+            name: 'Up',
+            action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+        },
+        {
+            icon: <MenuIcon sx={ActionSx} />,
+            name: 'Menu',
+            action: () => { return }
+        },
+        {
+            icon: <CelebrationIcon sx={ActionSx} />,
+            name: 'Surprise!',
+            action: () => { return }
+        },
+    ];
+
     return (
         <SpeedDial
-            ariaLabel="SpeedDial basic example"
-            sx={{ position: 'fixed', bottom: 16, right: 16, bgColor: "#0039d3" }}
+            ariaLabel="Desir Designs Navigator"
+            sx={{ position: 'fixed', bottom: 16, right: 32 }}
+            FabProps={{
+                sx: {
+                    backgroundColor: "blue",
+
+                    "&:hover": {
+                        backgroundColor: "black",
+                    }
+                }
+            }}
             icon={<ArchitectureIcon />}
         >
-            {actions.map((action) => (
+            {Destinations.map((action) => (
                 <SpeedDialAction
                     key={action.name}
                     icon={action.icon}
-                    tooltipTitle={action.name}
+                    onClick={() => action.action()}
+                    tooltipOpen
+                    tooltipTitle={<div className="block bg-black text-white no-wrap overflow-ellipsis overflow-hidden">{action?.name}</div>}
                 />
             ))}
         </SpeedDial>

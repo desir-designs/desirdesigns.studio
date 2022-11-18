@@ -1,32 +1,32 @@
 import ContentSearch from "@components/ContentSearch"
-import PageLayout from "@layouts/PageLayout"
 import PageService from "@services/page"
 
-const BlogIndexPage = ({ page }) => {
 
-    const { layout } = page
+const BlogIndexPage = () => {
+
+
 
     return (
 
-        <PageLayout {...layout}>
-        </PageLayout>
-
+        <>
+            <ContentSearch />
+        </>
     )
 }
 
 export default BlogIndexPage
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
     const { getPage } = PageService()
 
-    const page = await getPage("blog")
+    const page = await getPage("home")
 
     return {
         props: {
             page
-        }
+        },
+        revalidate: 2
     }
-
 }

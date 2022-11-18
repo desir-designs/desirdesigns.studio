@@ -1,27 +1,24 @@
 import PageService from "@services/page"
-import ContentSearch from "@components/ContentSearch"
 
-const ServicesPage = ({ page }) => {
 
-    const { data: { contentSearch } } = page
+const AboutPage = () => {
 
     return (
-
         <>
-            <ContentSearch />
-        </>
 
+        </>
     )
 }
 
-export default ServicesPage
+
+export default AboutPage
 
 
 export async function getStaticProps() {
 
     const { getPage } = PageService()
 
-    const page = await getPage("services")
+    const page = await getPage("home")
 
     return {
         props: {

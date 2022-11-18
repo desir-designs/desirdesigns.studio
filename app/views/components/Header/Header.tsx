@@ -1,34 +1,35 @@
 import useDrawer from "@hooks/useDrawer";
 import ArchitectureIcon from '@mui/icons-material/Architecture';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
-import type { IComponent } from "@typings/Component";
 import type { HeaderProps } from "@typings/Header";
-import { Fade } from "react-awesome-reveal";
+import type { ComponentType } from "@typings/Component"
 import Headroom from "react-headroom";
-import { motion } from "framer-motion"
 
-const Header = ({ ...props }: HeaderProps) => {
 
-    const { favicon, links } = props
-
+const Header: ComponentType<HeaderProps> = ({ favicon, links }: HeaderProps) => {
 
     const { toggleDrawer } = useDrawer()
+    
+    const Sx = "hover:shadow-2xl font-heading mr-12 text-blue-700 hover:text-white hover:py-2 hover:px-2 hover:bg-black rounded hover:bg-opacity-90 duration-500 ease-in-out will-change-auto transition-all text-lg"
 
     const Links = () => {
+
         return (
-            links ? <div className="w-auto hidden lg:block items-center">
-                <ul className="flex items-center mr-10 flex-row-reverse">
-                    {
-                        links.map((link, index) => {
-                            return (
-                                <li key={index} className="hover:shadow-xl font-heading mr-12 text-blue-700 hover:text-slate-300 hover:py-2 hover:px-2 hover:bg-black rounded hover:bg-opacity-50 duration-500 ease-in-out will-change-auto transition-all text-lg">
-                                    <a className="inline" href={link.url}><DesignServicesIcon />{link.name}</a>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
-            </div> : <></>
+            links ?
+                <div className="w-auto hidden lg:block items-center">
+                    <ul className="flex items-center mr-10 flex-row-reverse">
+                        {
+                            links.map((link, index) => {
+                                return (
+                                    <li key={index} className={Sx}>
+                                        <a className="inline" href={link?.url ?? "#"}><DesignServicesIcon />{link?.name ?? "LINK_NAME_NOT_FOUND"}</a>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+                : <>LINKS_NOT_FOUND</>
         )
     }
 
@@ -64,21 +65,19 @@ const Header = ({ ...props }: HeaderProps) => {
 
         <Headroom>
             <section className="backdrop-blur-sm z-30 overflow-hidden ">
-                <section>
-                    <div className="flex items-center justify-between px-8 py-5">
-                        <div className="w-auto">
-                            <div className="flex flex-wrap items-center">
-                                <Favicon />
-                            </div>
-                        </div>
-                        <Links />
-                        <div className="w-auto">
-                            <div className="flex flex-wrap items-center">
-                                <NavBurger />
-                            </div>
+                <div className="flex items-center justify-between px-8 py-5">
+                    <div className="w-auto">
+                        <div className="flex flex-wrap items-center">
+                            <Favicon />
                         </div>
                     </div>
-                </section>
+                    <Links />
+                    <div className="w-auto">
+                        <div className="flex flex-wrap items-center">
+                            <NavBurger />
+                        </div>
+                    </div>
+                </div>
             </section>
         </Headroom>
     )

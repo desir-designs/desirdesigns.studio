@@ -10,8 +10,8 @@ const PageLayout = ({ children, metaData, header, footer, menu }: LayoutProps) =
 
     return (
         <div>
-            <DrawerMenu {...menu} />
             <RootLayout metaData={metaData}>
+                <DrawerMenu {...menu} />
                 <Header {...header} />
                 {children}
                 <Footer {...footer} />
