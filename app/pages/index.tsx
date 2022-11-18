@@ -20,8 +20,8 @@ function HomePage({ page: { data } }) {
       <SummarySection {...summarySection} />
       <ContactForm {...contactForm} />
     </>
-
   )
+
 }
 
 export default HomePage
@@ -29,13 +29,13 @@ export default HomePage
 export async function getStaticProps() {
 
   const { getPage } = PageService()
-  
+
   const page = await getPage("home")
 
   return {
     props: {
       page
     },
-    revalidate: 10
+    revalidate: 2
   }
 }

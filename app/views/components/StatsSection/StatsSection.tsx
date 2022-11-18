@@ -14,10 +14,10 @@ const StatsSection: ComponentType<StatsSectionProps> = ({ stats }: StatsSectionP
                         stats ? stats.map((stat, index) => {
                             return (
                                 <div key={index} className="w-full md:w-1/2 xl:w-1/4 p-5">
-                                    <div className="p-7 bg-blue-900 bg-opacity-80 backdrop-blur-lg hover:shadow-2xl rounded-lg hover:scale-110 ease-in-out duration-500">
+                                    <div className="p-7 bg-blue-900 bg-opacity-60 backdrop-blur-lg shadow-2xl rounded-lg hover:-translate-y-4 ease-in-out duration-500 cursor-pointer hover:bg-opacity-100">
                                         <h2 className="mb-4 font-heading font-bold text-8xl sm:text-9xl text-gray-200">
                                             {<CountUp duration={2.75}
-                                                suffix="done"
+                     
                                                 onEnd={() => console.log('Ended! 👏')}
                                                 onStart={() => console.log('Started! 💨')} end={stat?.value as number} /> ?? "STAT_VALUE_NOT_FOUND"}
                                         </h2>

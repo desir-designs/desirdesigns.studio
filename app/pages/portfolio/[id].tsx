@@ -1,7 +1,7 @@
 import Post from "@components/Post"
 import PageService from "@services/page"
 
-const PortfolioPage = () => {
+const PortfolioPage = ({ page }) => {
 
     return (
         <Post />
@@ -11,28 +11,17 @@ const PortfolioPage = () => {
 export default PortfolioPage
 
 
-export async function getStaticPaths() {
+
+export async function getServerSideProps({ params }) {
 
     const { getPage } = PageService()
-    
+
     const { pages } = await getPage("portfolio")
 
     return {
-        paths: pages.map((page) => (`/portfolio/${page?.id}`)),
-        fallback: false
-    }
-}
-
-export async function getStaticProps({ params }) {
-
-    const { getPage } = PageService()
-
-    const { data } = await getPage("home")
-
-    return {
         props: {
-            data
+            pages
         },
-        revalidate: 5
+
     }
 }

@@ -7,7 +7,6 @@ import FadeAnimation from "../FadeAnimation";
 
 
 
-
 const SummarySection: ComponentType<SummarySectionProps> = ({ banner, title, heading, summary }: SummarySectionProps) => {
 
 
