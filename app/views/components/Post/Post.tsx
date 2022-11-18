@@ -1,5 +1,4 @@
 import type { ImageProps } from "@typings/Image"
-import { IComponent } from "@models/typings/Component"
 export type PostProps = {
     banner?: ImageProps,
     title?: string,
@@ -10,7 +9,7 @@ import Affix from "../Affix"
 
 
 
-const Post: IComponent<PostProps> = ({ banner, title }: PostProps) => {
+const Post: ComponentType<PostProps> = ({ banner, title }: PostProps) => {
     return (
         <section className="py-22">
             <div className="container px-4 mx-auto">

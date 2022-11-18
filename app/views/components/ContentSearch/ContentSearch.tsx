@@ -1,9 +1,9 @@
 
 import Affix from "@components/Affix"
-import type { IComponent } from "@models/typings/Component"
+import type { ComponentType } from "@models/typings/Component"
 import type { ContentSearchProps } from "@typings/ContentSearch"
 
-const ContentSearch: IComponent<ContentSearchProps> =
+const ContentSearch: ComponentType<ContentSearchProps> =
     ({ content, title, heading, description }: ContentSearchProps) => {
 
 

@@ -1,7 +1,7 @@
-import type { CommentsRowProps } from "@models/typings/CommentsRow"
-import type { IComponent } from "@models/typings/Component"
+import type { CommentsRowProps } from "@typings/CommentsRow"
+import type { ComponentType } from "@typings/Component"
 
-const CommentsRow: IComponent<CommentsRowProps> = ({ title, heading, comments }: CommentsRowProps) => {
+const CommentsRow: ComponentType<CommentsRowProps> = ({ title, heading, comments }: CommentsRowProps) => {
 
     const Header = () => {
 
