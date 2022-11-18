@@ -3,7 +3,7 @@ export type PostProps = {
     banner?: ImageProps,
     title?: string,
 }
-
+import type { ComponentType } from "@models/typings/Component"
 
 import Affix from "../Affix"
 
