@@ -5,9 +5,7 @@ import type { ContentSearchProps, ContactFormProps, ContentRowProps, SummarySect
 const pages = ({ store, key }) => {
 
     const { getLinks, getHeaderLinks } = links(store)
-
     const { getCopyright, getPortfolioHeader, getFAQsHeader, getEmailAddress, getPhoneNumber, getServicesHeader, getLogo, getFavicon, getImpressum } = meta(store)
-
     const { getServices } = services(store)
     const { getPortfolio, getFeaturedPortfolio } = portfolio(store)
     const { getOrganizations } = organizations(store)
@@ -124,10 +122,7 @@ const pages = ({ store, key }) => {
         },
         media: {},
         organizations: {},
-        store: {},
         blog: {},
-        faqs: {},
-        knowledge: {},
         services: {
             metaData: {
                 pageTitle: 'Services',
