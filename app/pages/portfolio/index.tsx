@@ -1,5 +1,22 @@
 import ContentSearch from "@components/ContentSearch"
 import PageService from "@services/page"
+import PageLayout from "@layouts/PageLayout"
+
+export async function getStaticProps() {
+
+    const { getPage } = PageService()
+
+    const page = await getPage("portfolio")
+
+    return {
+        props: {
+            page
+        },
+        revalidate: 1
+    }
+}
+
+
 
 const PortfolioPage = ({ page: { data } }) => {
 
@@ -12,20 +29,8 @@ const PortfolioPage = ({ page: { data } }) => {
     )
 }
 
+PortfolioPage.layout = { PageLayout }
+
 export default PortfolioPage
 
 
-export async function getStaticProps() {
-
-    const { getPage } = PageService()
-
-    const page = await getPage("portfolio")
-
-    return {
-        props: {
-            page
-        },
-        revalidate: 5
-    }
-
-}

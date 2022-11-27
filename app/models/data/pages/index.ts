@@ -2,6 +2,7 @@ import layout from "@configs/layout"
 import { links, meta, services, portfolio, social_media, organizations, faqs } from "@db/index"
 import type { ContentSearchProps, ContactFormProps, ContentRowProps, SummarySectionProps } from "@typings/index"
 
+
 const pages = ({ store, key }) => {
 
     const { getLinks, getHeaderLinks } = links(store)
@@ -31,6 +32,15 @@ const pages = ({ store, key }) => {
                         icon: services?.icon,
                     })),
                 },
+                logoCloud: {
+                    title: "My Organizations",
+                    heading: "What I'm Involved with",
+                    logos: getOrganizations().map((org) => ({
+                        image: {
+                            src: org?.media[0]?.url ?? "#"
+                        }
+                    }))
+                },
                 contentRow: <ContentRowProps>{
                     title: getPortfolioHeader()?.values[0],
                     heading: getPortfolioHeader()?.name,
@@ -39,7 +49,7 @@ const pages = ({ store, key }) => {
                         title: portfolio?.name,
                         url: portfolio?.url,
                         cover: {
-                            src: portfolio?.covers[0]?.url,
+                            src: portfolio?.media[0]?.url,
                             alt: portfolio?.name
                         }
                     })),
@@ -99,7 +109,7 @@ const pages = ({ store, key }) => {
                     content: getPortfolio().map((portfolio) => ({
                         title: portfolio?.name,
                         cover: {
-                            src: portfolio?.covers[0]?.url,
+                            src: portfolio?.media[0]?.url,
                             alt: portfolio?.name
                         }
                     }))

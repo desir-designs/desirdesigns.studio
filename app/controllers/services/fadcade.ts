@@ -13,11 +13,12 @@ const FacadeService = () => {
                 name: "🫂Organizations",
                 shape: (data: any) => {
 
-                    const { URL, Name, Types, Status } = data.properties
+                    const { URL, Name, Types, Status, Media } = data.properties
 
                     return {
                         url: url(URL),
                         name: title(Name),
+                        media: files(Media),
                         types: multi_select(Types),
                         status: status(Status),
                     }
@@ -92,13 +93,13 @@ const FacadeService = () => {
                 name: "🎁Portfolio",
                 shape: (data: any) => {
 
-                    const { URL, Name, Types, Status, Covers } = data.properties
+                    const { URL, Name, Types, Status, Media } = data.properties
 
                     return {
                         url: url(URL),
                         name: title(Name),
                         types: multi_select(Types),
-                        covers: files(Covers),
+                        media: files(Media),
                         status: status(Status),
                     }
                 },

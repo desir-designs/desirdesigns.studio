@@ -5,26 +5,10 @@ import StatsSection from '@components/StatsSection'
 import SummarySection from "@components/SummarySection"
 import TagCloud from "@components/TagCloud"
 import PageService from '@services/page'
+import LogoCloud from "@components/LogoCloud"
 
+import PageLayout from "@layouts/PageLayout"
 
-function HomePage({ page: { data } }) {
-
-  const { contactForm, tagCloud, hero, contentRow, summarySection, statsSection } = data
-
-  return (
-    <>
-      <Hero {...hero} />
-      <ContentRow {...contentRow} />
-      <TagCloud {...tagCloud} />
-      <StatsSection {...statsSection} />
-      <SummarySection {...summarySection} />
-      <ContactForm {...contactForm} />
-    </>
-  )
-
-}
-
-export default HomePage
 
 export async function getStaticProps() {
 
@@ -36,6 +20,30 @@ export async function getStaticProps() {
     props: {
       page
     },
-    revalidate: 2
+    revalidate: 1
   }
 }
+
+
+function HomePage({ page }) {
+
+  const { contactForm, tagCloud, hero, logoCloud, contentRow, summarySection, statsSection } = page.data
+
+  return (
+    <>
+      <Hero {...hero} />
+      <ContentRow {...contentRow} />
+      <TagCloud {...tagCloud} />
+      <StatsSection {...statsSection} />
+      <LogoCloud {...logoCloud} />
+      <SummarySection {...summarySection} />
+      <ContactForm {...contactForm} />
+    </>
+  )
+
+}
+
+HomePage.layout = { PageLayout }
+
+export default HomePage
+

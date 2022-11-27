@@ -10,8 +10,11 @@ import SpeedDialAction from '@mui/material/SpeedDialAction';
 export default function Navigator() {
 
     const ActionSx = {
-        backgroundColor: 'black',
-        color: 'white'
+
+        color: 'black',
+        "&:hover": {
+            color: 'blue'
+        }
     }
 
     const Destinations = [
@@ -53,7 +56,7 @@ export default function Navigator() {
                     icon={action.icon}
                     onClick={() => action.action()}
                     tooltipOpen
-                    tooltipTitle={<div className="block bg-black text-white no-wrap overflow-ellipsis overflow-hidden">{action?.name}</div>}
+                    tooltipTitle={<div className="block text-black no-wrap overflow-ellipsis overflow-hidden">{action?.name}</div>}
                 />
             ))}
         </SpeedDial>
