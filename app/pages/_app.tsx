@@ -8,12 +8,12 @@ import { RecoilRoot } from 'recoil'
 
 export default function Application({ Component, pageProps }) {
 
-  const { PageLayout } = Component?.layout ?? null
+  const { PageLayout } = Component.layout ?? <></>
 
   return (
     <RecoilRoot>
       {
-        (PageLayout) ?
+        (PageLayout == null) ?
           <PageLayout {...pageProps.page.layout}>
             <Component {...pageProps} />
           </PageLayout>
