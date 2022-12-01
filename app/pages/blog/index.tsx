@@ -1,5 +1,6 @@
 import ContentSearch from "@components/ContentSearch"
 import PageService from "@services/page"
+import PageLayout from "@layouts/PageLayout"
 
 
 export async function getStaticProps() {
@@ -27,6 +28,8 @@ const BlogIndexPage = () => {
         </>
     )
 }
+
+BlogIndexPage.layout = { PageLayout }
 
 export default BlogIndexPage
 
