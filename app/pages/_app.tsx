@@ -12,9 +12,14 @@ export default function Application({ Component, pageProps }) {
 
   return (
     <RecoilRoot>
-      <PageLayout {...pageProps.page.layout}>
-        <Component {...pageProps} />
-      </PageLayout>
+      {
+        PageLayout ?
+          <PageLayout {...pageProps.page.layout}>
+            <Component {...pageProps} />
+          </PageLayout>
+          :
+          <>          </>
+      }
     </RecoilRoot>
   )
 }
