@@ -18,9 +18,9 @@ export async function getStaticProps() {
 
 
 
-const PortfolioPage = ({ page: { data } }) => {
+const PortfolioPage = ({ page }) => {
 
-    const { contentSearch } = data
+    const { contentSearch } = page?.data ?? null
 
     return (
         <>

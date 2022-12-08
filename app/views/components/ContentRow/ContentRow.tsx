@@ -38,7 +38,7 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
         return (
 
             <div className="flex flex-wrap -mx-4 -mb-8">
-                <Fade cascade duration={200}>
+                <Fade cascade duration={300}>
                     {
                         content ? content.map((item, index) => {
                             return (

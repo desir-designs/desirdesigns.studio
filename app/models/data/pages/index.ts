@@ -47,7 +47,7 @@ const pages = ({ store, key }) => {
                     description: getPortfolioHeader()?.description,
                     content: getFeaturedPortfolio().map((portfolio) => ({
                         title: portfolio?.name,
-                        url: portfolio?.url,
+                        url: `/portfolio/${portfolio?.name.trim().replace(/\s/g, '-').replace(/'/g, '').toLowerCase()}`,
                         cover: {
                             src: portfolio?.media[0]?.url,
                             alt: portfolio?.name
@@ -117,14 +117,22 @@ const pages = ({ store, key }) => {
                 },
 
             },
+
             pages: getPortfolio().map((portfolio, index) => ({
-                id: portfolio?.name.replace(/\s/g, '-').slice(0, getPortfolio()[index]?.name?.length - 2).toLowerCase(),
+                id: portfolio?.name.trim().replace(/\s/g, '-').replace(/'/g, '').toLowerCase(),
                 metaData: {
                     pageTitle: portfolio?.name,
                 },
                 data: {
-                    post: {
+                    collection: {
                         title: portfolio?.name,
+                        heading: portfolio?.name,
+                        content: portfolio?.media.map((media) => ({
+                            cover: {
+                                src: media?.url,
+                                alt: media?.name
+                            }
+                        }))
                     }
 
                 }

@@ -93,10 +93,11 @@ const FacadeService = () => {
                 name: "🎁Portfolio",
                 shape: (data: any) => {
 
-                    const { URL, Name, Types, Status, Media } = data.properties
+                    const { URL, Name, Types, Description, Status, Media } = data.properties
 
                     return {
                         url: url(URL),
+                        description: rich_text(Description),
                         name: title(Name),
                         types: multi_select(Types),
                         media: files(Media),

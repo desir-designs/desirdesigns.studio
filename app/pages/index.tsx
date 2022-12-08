@@ -6,7 +6,7 @@ import SummarySection from "@components/SummarySection"
 import TagCloud from "@components/TagCloud"
 import PageService from '@services/page'
 import LogoCloud from "@components/LogoCloud"
-
+import Options from "@components/Options"
 import PageLayout from "@layouts/PageLayout"
 
 
@@ -36,6 +36,7 @@ function HomePage({ page }) {
       <TagCloud {...tagCloud} />
       <StatsSection {...statsSection} />
       <LogoCloud {...logoCloud} />
+      <Options />
       <SummarySection {...summarySection} />
       <ContactForm {...contactForm} />
     </>

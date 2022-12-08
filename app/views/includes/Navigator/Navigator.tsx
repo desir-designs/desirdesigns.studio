@@ -5,10 +5,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 
-
+import useDrawer from "@hooks/useDrawer"
 
 export default function Navigator() {
 
+    const { toggleDrawer } = useDrawer()
     const ActionSx = {
 
         color: 'black',
@@ -26,13 +27,9 @@ export default function Navigator() {
         {
             icon: <MenuIcon sx={ActionSx} />,
             name: 'Menu',
-            action: () => { return }
+            action: () => { toggleDrawer() }
         },
-        {
-            icon: <CelebrationIcon sx={ActionSx} />,
-            name: 'Surprise!',
-            action: () => { return }
-        },
+
     ];
 
     return (

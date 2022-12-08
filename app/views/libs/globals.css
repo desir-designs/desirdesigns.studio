@@ -27,3 +27,25 @@ body {
   font-family: var(--font-primary);
   scroll-behavior: smooth !important;
 }
+
+.page-transition-enter {
+  opacity: 0;
+  width: 0px;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  width: 100vw;
+  transition: opacity width 600ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  width: 100vw;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  width: 0px;
+  transition: opacity width 600ms;
+}
