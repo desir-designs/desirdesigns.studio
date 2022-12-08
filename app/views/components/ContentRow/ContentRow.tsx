@@ -7,21 +7,21 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
 
     const Header = () => {
         return (
-            <div className="flex flex-wrap -mx-4 mb-16 items-center">
-                <div className="w-full lg:w-2/3 px-4 mb-8 lg:mb-0">
+            <div className="flex flex-wrap items-center mb-16 -mx-4">
+                <div className="w-full px-4 mb-8 lg:w-2/3 lg:mb-0">
                     <span className="text-2xl font-extrabold text-blue-800">
                         {title ? title : "TITLE_NOT_FOUND"}
                     </span>
-                    <h1 className="text-6xl font-extrabold font-heading mt-2 mb-4">
+                    <h1 className="mt-2 mb-4 text-6xl font-extrabold font-heading">
                         {heading ? heading : "HEADING_NOT_FOUND"}
                     </h1>
                     <p className="text-xl font-extrabold leading-8">
                         {description ? description : "DESCRIPTION_NOT_FOUND"}
                     </p>
                 </div>
-                <div className="w-full lg:w-1/3 px-4 mb-8 md:mb-0 lg:text-right">
+                <div className="w-full px-4 mb-8 lg:w-1/3 md:mb-0 lg:text-right">
                     <a
-                        className="inline-block py-4 px-12 text-center leading-6 text-lg text-white font-extrabold bg-indigo-800 hover:bg-indigo-900 border-3 border-indigo-900 shadow rounded transition duration-200"
+                        className="inline-block px-12 py-4 text-lg font-extrabold leading-6 text-center text-white transition duration-200 bg-indigo-800 border-indigo-900 rounded shadow hover:bg-indigo-900 border-3"
                         href={action ? action?.url : "ACTION_URL_NOT_FOUND"}
                     >
                         {action ? action?.name : "ACTION_NOT_FOUND"}
@@ -42,10 +42,10 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
                     {
                         content ? content.map((item, index) => {
                             return (
-                                <a key={index} href={item.url ?? "#"} className="duration-500 ease-in-out hover:-translate-y-4 group w-full md:w-1/2 xl:w-1/3 px-4 mb-8 cursor-pointer transition-all">
-                                    <div className="group-hover:border-2 group-hover:border-blue-800 items-center group-hover:shadow-2xl backdrop-blur-lg duration-300 group-hover:opacity-80 transition-all rounded-2xl border-2 border-opacity-25 border-blue-800 overflow-hidden group-hover:scale-90 group-hover:-translate-y-4 ease-in-out m-auto">
+                                <a key={index} href={item.url ?? "#"} className="w-full px-4 mb-8 transition-all duration-500 ease-in-out cursor-pointer hover:-translate-y-4 group md:w-1/2 xl:w-1/3">
+                                    <div className="items-center m-auto overflow-hidden transition-all duration-300 ease-in-out border-opacity-25 group-hover:border-2 group-hover:shadow-2xl backdrop-blur-lg group-hover:opacity-80 rounded-2xl group-hover:scale-90 group-hover:-translate-y-4">
                                         <img
-                                            className="max-h-50 inline-block object-cover"
+                                            className="inline-block object-cover max-h-50"
                                             src={item?.cover?.src ?? "#"}
                                             alt={item?.cover?.alt ?? "IMAGE_NOT_FOUND"}
                                         />
@@ -53,22 +53,22 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
                                             {item.tags ?
                                                 item.tags.map((tag, index) => {
                                                     return (
-                                                        <span key={index} className="inline-flex mb-6 h-6 items-center justify-center text-xs font-extrabold px-2 text-blue-900 rounded border-2 border-indigo-900 bg-blue-300 uppercase shadow-xl">
+                                                        <span key={index} className="inline-flex items-center justify-center h-6 px-2 mb-6 text-xs font-extrabold text-blue-900 uppercase bg-blue-300 border-2 border-indigo-900 rounded shadow-xl">
                                                             {tag?.name}
                                                         </span>
                                                     )
                                                 }) : <></>
                                             }
-                                            <p className="text-xl font-bold text-blue-800 mb-2">
+                                            <p className="mb-2 text-xl font-bold text-blue-800">
                                                 Joshua Desir • {item?.date}
                                             </p>
-                                            <h2 className="text-4xl font-extrabold mb-6 text-black">
+                                            <h2 className="mb-6 text-4xl font-extrabold text-black">
                                                 {item?.title ?? "TITLE_NOT_FOUND"}
                                             </h2>
-                                            <p className="text-xl font-bold mb-6">
+                                            <p className="mb-6 text-xl font-bold">
                                             </p>
                                             <a
-                                                className="inline-block font-2xl font-bold text-blue-600"
+                                                className="inline-block font-bold text-blue-600 font-2xl"
                                                 href={item?.url}
                                             >
                                                 Read More
@@ -92,7 +92,7 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
         return (
             action ? <div className="mt-20 text-center">
                 <a
-                    className="hover:bg-opacity-50 hover:scale-90 inline-block py-4 px-12 text-center leading-6 text-lg text-white font-bold bg-blue-700 hover:bg-indigo-900 border-3 border-blue-900 rounded transition duration-200"
+                    className="inline-block px-12 py-4 text-lg font-bold leading-6 text-center text-white transition duration-200 bg-blue-700 border-blue-900 rounded hover:bg-opacity-50 hover:scale-90 hover:bg-indigo-900 border-3"
                     href={action?.url}>
                     {action?.name}
                 </a>
@@ -102,8 +102,8 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
 
 
     return (
-        <section className="py-20 relative">
-            <div className="container px-4 mx-auto relative">
+        <section className="relative py-20">
+            <div className="container relative px-4 mx-auto">
                 <Header />
                 <Content />
                 <Action />
