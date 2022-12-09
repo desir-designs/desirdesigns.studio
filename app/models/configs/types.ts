@@ -77,10 +77,11 @@ export const notion = () => {
             name: "❓FAQs",
             shape: (data: any) => {
 
-                const { URL, Name, Types, Status } = data.properties
+                const { URL, Name, Types, Status, Description } = data.properties
 
                 return {
                     url: url(URL),
+                    description: rich_text(Description),
                     name: title(Name),
                     types: multi_select(Types),
                     status: status(Status),

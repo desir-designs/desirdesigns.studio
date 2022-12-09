@@ -73,7 +73,7 @@ const pages = ({ store, key }) => {
                     banner: {
                         src: getLogo().files[0]?.url,
                     },
-                    summary: getFAQs().map((faq) => ({ name: faq?.name }))
+                    summary: getFAQs().map((faq) => ({ name: faq?.name, description: faq?.description ?? null }))
                 },
                 contactForm: <ContactFormProps>{
                     title: "Contact Me",

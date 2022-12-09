@@ -59,8 +59,8 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
                                                     )
                                                 }) : <>TAGS_NOT_FOUND</>
                                             }
-                                            <p className="mb-2 text-xl font-bold text-blue-800">
-                                               {item?.heading} • {item?.date}
+                                            <p className="mb-2 text-xl font-bold text-blue-700">
+                                                {item?.date}
                                             </p>
                                             <h2 className="mb-6 text-4xl font-extrabold text-black">
                                                 {item?.title ?? "TITLE_NOT_FOUND"}
@@ -68,7 +68,7 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
                                             <p className="mb-6 text-xl font-bold">
                                             </p>
                                             <a
-                                                className="inline-block font-bold text-blue-600 uppercase p-2 border-b border-1 group-hover:border-2 border-slate-800 text-lg"
+                                                className="inline-block font-bold hover:shadow-2xl text-blue-600 uppercase p-2 border-y border-1 hover:animate-pulse duration-500 ease-in-out border-slate-800 text-lg"
                                                 href={item?.cta?.url ?? "#"}
                                             >
 

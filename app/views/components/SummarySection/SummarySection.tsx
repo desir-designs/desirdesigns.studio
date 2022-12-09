@@ -1,9 +1,6 @@
-import type { ComponentType } from "@typings/Component"
-import type { SummarySectionProps } from "@typings/SummarySection"
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import FadeAnimation from "../FadeAnimation";
+import type { ComponentType } from "@typings/Component";
+import type { SummarySectionProps } from "@typings/SummarySection";
+import FadeAnimation from "@components/FadeAnimation";
 
 const Sx = {
     tw: "duration-500 rounded-xl border-2 shadow-2xl hover:border-white hover:-translate-y-4 border-blue-800 group-hover:scale-80 group-hover:bg-opacity-90 group-hover:shadow-2xl text-left mb-4 group bg-opacity-50 px-4 py-4"
