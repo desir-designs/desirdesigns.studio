@@ -60,7 +60,7 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
                                                 }) : <>TAGS_NOT_FOUND</>
                                             }
                                             <p className="mb-2 text-xl font-bold text-blue-800">
-                                                Joshua Desir • {item?.date}
+                                               {item?.heading} • {item?.date}
                                             </p>
                                             <h2 className="mb-6 text-4xl font-extrabold text-black">
                                                 {item?.title ?? "TITLE_NOT_FOUND"}

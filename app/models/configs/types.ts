@@ -8,7 +8,8 @@ export const notion = () => {
 
 
         variants: {
-
+            banner: "🔔Banner",
+            header: "🗣️Header"
         },
 
         organizations: {

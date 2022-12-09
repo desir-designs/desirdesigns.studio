@@ -48,6 +48,7 @@ const pages = ({ store, key }) => {
                     content: getFeaturedPortfolio().map((portfolio) => ({
                         title: portfolio?.name,
                         date: portfolio?.date,
+                        heading: portfolio?.status,
                         cta: {
                             name: "View Archive",
                             url: portfolio?.url
@@ -147,7 +148,14 @@ const pages = ({ store, key }) => {
             }))
         },
         media: {},
-        organizations: {},
+        organizations: {
+            metaData: {
+                pageTitle: "Organizations"
+            },
+            data: {
+
+            }
+        },
         blog: {},
         services: {
             metaData: {

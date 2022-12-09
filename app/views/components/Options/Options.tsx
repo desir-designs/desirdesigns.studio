@@ -1,17 +1,28 @@
+export type OptionProps = {
+    title?: string,
+    heading?: string
+}
+
+
 const Options = () => {
+
+    
     return (
         <section className="py-3 overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="flex flex-wrap items-center -m-6">
                     <div className="w-full md:w-1/2 p-6">
-                        <div className="max-w-lg">
-                            <h2 className="mb-5 font-heading font-bold text-6xl sm:text-7xl text-white">
+
+
+                        <div className="max-w-lg text-black">
+                            <h2 className="mb-5 font-heading font-bold text-6xl sm:text-7xl text-black">
                                 Try Gradia for Free
                             </h2>
                             <p className="mb-11 text-gray-400 text-base">
                                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
                                 sint. Velit officia consequat duis enim velit mollit.
                             </p>
+
                             <ul>
                                 <li className="flex items-center mb-5 text-base text-white">
                                     <svg
@@ -94,8 +105,11 @@ const Options = () => {
                                     <p>Premium Support</p>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
+
+
                     <div className="w-full md:w-1/2 p-6">
                         <div className="md:max-w-lg ml-auto">
                             <a href="#">
