@@ -2,7 +2,7 @@ import FacadeService from "@controllers/services/fadcade"
 
 const organizations = (store: []) => {
 
-    const { organizations } = FacadeService().types
+    const { organizations } = FacadeService().types.notion
 
     const organizationsObject = {
         getOrganizations: () => {

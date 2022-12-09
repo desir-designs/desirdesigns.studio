@@ -2,7 +2,7 @@ import FacadeService from "@services/fadcade"
 
 const portfolio = (store: []) => {
 
-    const { portfolio } = FacadeService().types
+    const { portfolio } = FacadeService().types.notion
 
     const portfolioObject = {
         getFeaturedPortfolio: () => {

@@ -47,6 +47,14 @@ const pages = ({ store, key }) => {
                     description: getPortfolioHeader()?.description,
                     content: getFeaturedPortfolio().map((portfolio) => ({
                         title: portfolio?.name,
+                        date: portfolio?.date,
+                        cta: {
+                            name: "View Archive",
+                            url: portfolio?.url
+                        },
+                        tags: portfolio.types.map((type) => ({
+                            name: type
+                        })),
                         url: `/portfolio/${portfolio?.name.trim().replace(/\s/g, '-').replace(/'/g, '').toLowerCase()}`,
                         cover: {
                             src: portfolio?.media[0]?.url,

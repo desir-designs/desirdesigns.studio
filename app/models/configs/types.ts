@@ -1,29 +1,32 @@
 import utils from "@utils/index"
 
+export const notion = () => {
 
-const { files, url, email, phone, rich_text, title, multi_select, number, status, select, icon, isDatabase, getProperties } = utils().notion
+    const { files, url, email, phone, rich_text, title, multi_select, number, status, select, icon, date, isDatabase, getProperties } = utils().notion
+
+    const typeObject = {
 
 
-const types = () => {
+        variants: {
 
-
-    const typesObject =    {
+        },
 
         organizations: {
             name: "🫂Organizations",
             shape: (data: any) => {
 
-                const { URL, Name, Types, Status } = data.properties
+                const { URL, Name, Types, Status, Media } = data.properties
 
                 return {
                     url: url(URL),
                     name: title(Name),
+                    media: files(Media),
                     types: multi_select(Types),
                     status: status(Status),
                 }
             },
             predicate: (data: any) => {
-                const { name } = typesObject.organizations
+                const { name } = typeObject.organizations
                 return isDatabase(name, data)
             }
         },
@@ -43,7 +46,7 @@ const types = () => {
                 }
             },
             predicate: (data: any) => {
-                const { name } = typesObject.services
+                const { name } = typeObject.services
                 return isDatabase(name, data)
             }
 
@@ -63,7 +66,7 @@ const types = () => {
             },
 
             predicate: (data: any) => {
-                const { name } = typesObject.links
+                const { name } = typeObject?.links
                 return isDatabase(name, data)
             }
 
@@ -73,17 +76,17 @@ const types = () => {
             name: "❓FAQs",
             shape: (data: any) => {
 
-                const { URL, Title, Types, Status } = data.properties
+                const { URL, Name, Types, Status } = data.properties
 
                 return {
                     url: url(URL),
-                    title: rich_text(Title),
+                    name: title(Name),
                     types: multi_select(Types),
                     status: status(Status),
                 }
             },
             predicate: (data: any) => {
-                const { name } = typesObject.faqs
+                const { name } = typeObject.faqs
                 return isDatabase(name, data) ?? null
             }
 
@@ -92,18 +95,20 @@ const types = () => {
             name: "🎁Portfolio",
             shape: (data: any) => {
 
-                const { URL, Name, Types, Status, Covers } = data.properties
+                const { URL, Name, Types, Date, Description, Status, Media } = data.properties
 
                 return {
                     url: url(URL),
+                    date: date(Date),
+                    description: rich_text(Description),
                     name: title(Name),
                     types: multi_select(Types),
-                    covers: files(Covers),
+                    media: files(Media),
                     status: status(Status),
                 }
             },
             predicate: (data: any) => {
-                const { name } = typesObject.portfolio
+                const { name } = typeObject.portfolio
                 return isDatabase(name, data) ?? null
             }
 
@@ -113,17 +118,17 @@ const types = () => {
             name: "📱Social Media",
             shape: (data: any) => {
 
-                const { URL, Title, Types, Status } = data.properties
+                const { URL, Name, Types, Status } = data.properties
 
                 return {
                     url: url(URL),
-                    title: rich_text(Title),
+                    name: title(Name),
                     types: multi_select(Types),
                     status: status(Status),
                 }
             },
             predicate: (data: any) => {
-                const { name } = typesObject.social_media
+                const { name } = typeObject.social_media
                 return isDatabase(name, data) ?? null
             }
         },
@@ -132,27 +137,29 @@ const types = () => {
             name: "📏Meta",
             shape: (data: any) => {
 
-                const { URL, Title, Types, Status, Values, Phone, Email, Files, Description } = getProperties(data)
+                const { URL, Name, Date, Types, Status, Values, Phone, Email, Files, Description } = getProperties(data)
 
                 return {
                     url: url(URL),
                     files: files(Files),
+                    date: date(Date),
                     email: email(Email),
                     phone: phone(Phone),
                     values: multi_select(Values),
                     description: rich_text(Description),
-                    title: rich_text(Title),
+                    name: title(Name),
                     types: multi_select(Types),
                     status: status(Status),
                 }
             },
             predicate: (data: any) => {
-                const { name } = typesObject.meta
+                const { name } = typeObject.meta
                 return isDatabase(name, data)
             }
 
         },
     }
-}
 
-export default types
+    return { ...typeObject }
+
+}

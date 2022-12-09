@@ -4,12 +4,14 @@ import CelebrationIcon from '@mui/icons-material/Celebration';
 import MenuIcon from '@mui/icons-material/Menu';
 import SpeedDial from '@mui/material/SpeedDial';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-
+import AddAlertIcon from '@mui/icons-material/AddAlert';
 import useDrawer from "@hooks/useDrawer"
+import useBanner from "@hooks/useBanner"
 
 export default function Navigator() {
 
     const { toggleDrawer } = useDrawer()
+    const { toggleBanner } = useBanner()
     const ActionSx = {
 
         color: 'black',
@@ -28,6 +30,11 @@ export default function Navigator() {
             icon: <MenuIcon sx={ActionSx} />,
             name: 'Menu',
             action: () => { toggleDrawer() }
+        },
+        {
+            icon: <AddAlertIcon sx={ActionSx} />,
+            name: 'Alerts',
+            action: () => { toggleBanner() }
         },
 
     ];

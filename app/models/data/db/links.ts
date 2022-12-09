@@ -2,7 +2,7 @@ import FacadeService from '@services/fadcade';
 
 const links = (store: []) => {
 
-    const { links } = FacadeService().types
+    const { links } = FacadeService().types.notion
 
     const linksObject = {
         getHeaderLinks: () => {

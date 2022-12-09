@@ -1,8 +1,8 @@
-import FacadeService from "@controllers/services/fadcade"
+import FacadeService from "@services/fadcade"
 
 const social_media = (store: []) => {
 
-    const { social_media } = FacadeService().types
+    const { social_media } = FacadeService().types.notion
 
     const socialMediaObject = {
         getSocialMedia: () => {

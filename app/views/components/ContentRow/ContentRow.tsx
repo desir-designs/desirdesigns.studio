@@ -53,11 +53,11 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
                                             {item.tags ?
                                                 item.tags.map((tag, index) => {
                                                     return (
-                                                        <span key={index} className="inline-flex items-center justify-center h-6 px-2 mb-6 text-xs font-extrabold text-blue-900 uppercase bg-blue-300 border-2 border-indigo-900 rounded shadow-xl">
+                                                        <span key={index} className="ml-1 cursor-pointer  hover:scale-90 duration-500 ease-in-out inline-flex items-center justify-center h-6 px-2 mb-6 text-sm font-extrabold text-blue-900 uppercase bg-blue-400 bg-opacity-30 hover:bg-opacity-90 border-2 border-indigo-900 rounded shadow-xl">
                                                             {tag?.name}
                                                         </span>
                                                     )
-                                                }) : <></>
+                                                }) : <>TAGS_NOT_FOUND</>
                                             }
                                             <p className="mb-2 text-xl font-bold text-blue-800">
                                                 Joshua Desir • {item?.date}
@@ -68,17 +68,19 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
                                             <p className="mb-6 text-xl font-bold">
                                             </p>
                                             <a
-                                                className="inline-block font-bold text-blue-600 font-2xl"
-                                                href={item?.url}
+                                                className="inline-block font-bold text-blue-600 uppercase p-2 border-b border-1 group-hover:border-2 border-slate-800 text-lg"
+                                                href={item?.cta?.url ?? "#"}
                                             >
-                                                Read More
+
+                                                {item?.cta?.name ?? "CTA_NOT_FOUND"}
+
                                             </a>
                                         </div>
                                     </div>
                                 </a>
                             )
                         })
-                            : <></>
+                            : <>CONTENT_NOT_FOUND</>
 
                     }
                 </Fade>

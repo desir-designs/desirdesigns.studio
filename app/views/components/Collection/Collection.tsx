@@ -14,34 +14,28 @@ export type CollectionProps = {
 }
 
 
-function Collection({ heading, title, content }: CollectionProps) {
+function Collection({ heading, title, icon, content }: CollectionProps) {
 
     const Content = () => {
         return (
 
-            <div className="flex flex-wrap -m-3">
+            <div className="flex flex-wrap items-center justify-center">
 
                 {
                     content.map((item, index) => {
                         return (
 
-                            <div key={index} className="shadow-lg duration-500 mt-2 hover:shadow-2xl w-full md:w-1/2 p-3 group cursor-pointer">
-                                <div className="group-hover:-translate-y-4 h-full  shadow-black duration-500 p-10 rounded-xl backdrop-blur-sm">
-                                    <div className="flex flex-wrap items-center mb-32">
-                                        <div className="w-auto p-2">
-                                            <img
-                                                src={item.cover?.src ?? ""}
-                                                alt={item?.cover?.alt ?? ""}
-                                            />
-                                        </div>
-                                        <div className="w-auto p-2">
-                                            <p className="font-semibold text-gray-900 text-lg">
-                                                {item?.heading ?? "HEADING_NOT_FOUND"}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <h3 className="font-heading font-semibold text-gray-900 text-3xl">
-                                        Record Screen. Share with anyone without taking the hassle.
+                            <div key={index} className="group cursor-pointer m-4 rounded-lg">
+                                <div className="w-full shadow-lg rounded-lg p-0 m-0 group-hover:shadow-2xl group-hover:shadow-black group-hover:-translate-y-2 duration-500 ease-in-out">
+                                    <img
+                                        className="object-fit w-auto h-64 rounded-lg"
+                                        src={item.cover?.src ?? ""}
+                                        alt={item?.cover?.alt ?? ""}
+                                    />
+                                </div>
+                                <div className="relative bottom-8 w-auto p-2 group-hover:-translate-y-4">
+                                    <h3 className="font-heading font-semibold text-slate-800 text-2xl">
+                                        {heading ?? "HEADING_NOT_FOUND"}
                                     </h3>
                                 </div>
                             </div>

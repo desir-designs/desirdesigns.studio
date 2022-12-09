@@ -48,7 +48,9 @@ function PortfolioPage({ page }) {
     const { collection } = page?.data ?? null
 
     return (
-        <Collection {...collection} />
+        <>
+            <Collection {...collection} />
+        </>
     )
 }
 

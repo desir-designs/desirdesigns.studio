@@ -87,6 +87,7 @@ const utils = () => {
         },
 
         strings: {
+            
             cleanId: (str: string) => str.replace(/\s/g, '-').replace(/'/g, '').replace(/(?=[^-]*$)/g, '').toLowerCase() ?? ""
         }
 

@@ -5,11 +5,13 @@ import type { HeaderProps } from "@typings/Header";
 import type { ComponentType } from "@typings/Component"
 import Headroom from "react-headroom";
 
+import Banner from "@components/Banner"
+
 
 const Header: ComponentType<HeaderProps> = ({ favicon, links }: HeaderProps) => {
 
     const { toggleDrawer } = useDrawer()
-    
+
     const Sx = "hover:shadow-2xl font-heading mr-12 text-blue-700 hover:text-white hover:py-2 hover:px-2 hover:bg-black rounded hover:bg-opacity-90 duration-250 ease-in-out will-change-auto transition-all text-lg"
 
     const Links = () => {
@@ -65,6 +67,8 @@ const Header: ComponentType<HeaderProps> = ({ favicon, links }: HeaderProps) => 
 
         <Headroom>
             <section className="backdrop-blur-sm z-50 overflow-hidden ">
+                <Banner />
+
                 <div className="flex items-center justify-between px-8 py-5">
                     <div className="w-auto">
                         <div className="flex flex-wrap items-center">

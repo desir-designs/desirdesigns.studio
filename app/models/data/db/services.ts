@@ -2,7 +2,7 @@ import FacadeService from "@services/fadcade"
 
 const services = (store: []) => {
 
-    const { services } = FacadeService().types
+    const { services } = FacadeService().types.notion
 
     const servicesObject = {
 

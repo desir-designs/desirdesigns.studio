@@ -2,7 +2,7 @@ import FacadeService from '@services/fadcade';
 
 const meta = (store: []) => {
 
-    const { meta } = FacadeService().types
+    const { meta } = FacadeService().types.notion
 
     const metaObject = {
         getPortfolioHeader: () => {
