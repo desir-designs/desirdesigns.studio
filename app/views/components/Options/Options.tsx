@@ -1,3 +1,4 @@
+
 export type OptionProps = {
     title?: string,
     heading?: string
@@ -6,7 +7,7 @@ export type OptionProps = {
 
 const Options = () => {
 
-    
+
     return (
         <section className="py-3 overflow-hidden">
             <div className="container mx-auto px-4">

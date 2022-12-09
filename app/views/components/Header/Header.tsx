@@ -8,7 +8,7 @@ import Headroom from "react-headroom";
 import Banner from "@components/Banner"
 
 
-const Header: ComponentType<HeaderProps> = ({ favicon, links }: HeaderProps) => {
+const Header: ComponentType<HeaderProps> = ({ favicon, links, banner }: HeaderProps) => {
 
     const { toggleDrawer } = useDrawer()
 
@@ -67,7 +67,7 @@ const Header: ComponentType<HeaderProps> = ({ favicon, links }: HeaderProps) => 
 
         <Headroom>
             <section className="backdrop-blur-sm z-50 overflow-hidden ">
-                <Banner />
+                <Banner {...banner} />
 
                 <div className="flex items-center justify-between px-8 py-5">
                     <div className="w-auto">

@@ -14,7 +14,7 @@ const meta = (store: []) => {
             return metaObject.getMeta().find((meta) => headerKeys.every((i) => meta.types.includes(i))) ?? null
         },
         getFAQsHeader: () => {
-            const headerKeys = ["🪦Heading", "❓FAQs"]
+            const headerKeys = ["🪦Heading", "❓FAQ"]
             return metaObject.getMeta().find((meta) => headerKeys.every((i) => meta.types.includes(i))) ?? null
         },
         getPhoneNumber: () => {
@@ -46,6 +46,12 @@ const meta = (store: []) => {
             const titleKey = "📛Title"
             return metaObject.getMeta().filter((meta) => meta?.types?.includes(titleKey)) ?? null
         },
+
+        getBanner: () => {
+            const _key = "🔔Banner"
+            return metaObject.getMeta().find((meta) => meta?.types?.includes(_key)) ?? null
+        },
+
         getMeta: () => {
             return store?.filter((data) => {
                 return meta?.predicate(data)

@@ -28,13 +28,13 @@ function Collection({ heading, title, icon, content }: CollectionProps) {
                             <div key={index} className="group cursor-pointer m-4 rounded-lg">
                                 <div className="w-full shadow-lg rounded-lg p-0 m-0 group-hover:shadow-2xl group-hover:shadow-black group-hover:-translate-y-2 duration-500 ease-in-out">
                                     <img
-                                        className="object-fit w-auto h-64 rounded-lg"
+                                        className="object-cover w-min-72 w-auto h-72 rounded-lg"
                                         src={item.cover?.src ?? ""}
                                         alt={item?.cover?.alt ?? ""}
                                     />
                                 </div>
-                                <div className="relative bottom-8 w-auto p-2 group-hover:-translate-y-4">
-                                    <h3 className="font-heading font-semibold text-slate-800 text-2xl">
+                                <div className="relative bottom-12 duration-500 ease-in-out group w-auto p-2 group-hover:-translate-y-4">
+                                    <h3 className="font-heading group-hover:opacity-80 opacity-0 duration-500 font-semibold text-slate-200 text-2xl bg-black bg-opacity-40 text-center">
                                         {heading ?? "HEADING_NOT_FOUND"}
                                     </h3>
                                 </div>

@@ -9,7 +9,20 @@ export const notion = () => {
 
         variants: {
             banner: "🔔Banner",
-            header: "🗣️Header"
+            header: "🗣️Header",
+            heading: "🪦Heading",
+            faq: "❓FAQ",
+            phoneNumber: "📞Phone Number",
+            title: "📛Title",
+            logo: "🍎Logo",
+            favicon: "🖼️Favicon",
+            copyright: "📜Copyright",
+            impressum: "️⃣Impressum",
+            emailAddress: "📧Email Address",
+            services: "🛒Services",
+            portfolio: "💼Portfolio"
+
+
         },
 
         organizations: {

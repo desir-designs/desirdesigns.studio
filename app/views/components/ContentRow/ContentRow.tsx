@@ -45,7 +45,7 @@ const ContentRow: ComponentType<ContentRowProps> = ({ title, heading, descriptio
                                 <a key={index} href={item.url ?? "#"} className="w-full px-4 mb-8 transition-all duration-500 ease-in-out cursor-pointer hover:-translate-y-4 group md:w-1/2 xl:w-1/3">
                                     <div className="items-center m-auto overflow-hidden transition-all duration-300 ease-in-out border-opacity-25 group-hover:border-2 group-hover:shadow-2xl backdrop-blur-lg group-hover:opacity-80 rounded-2xl group-hover:scale-90 group-hover:-translate-y-4">
                                         <img
-                                            className="inline-block object-cover max-h-50"
+                                            className="inline-block object-fit max-h-50"
                                             src={item?.cover?.src ?? "#"}
                                             alt={item?.cover?.alt ?? "IMAGE_NOT_FOUND"}
                                         />

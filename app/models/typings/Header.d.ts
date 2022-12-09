@@ -1,18 +1,9 @@
-import type { CallToActionProps } from "@typings/CallToAction"
-import type { ImageProps } from "@typings/Image"
+import type { BannerProps } from "@typings/Banner"
+import type { LinkProps } from "@typings/Link"
 
-export type LinkProps = {
-    url?: string,
-    name?: string,
-    icon?: string,
-}
-
-export type FaviconProps = {
-    image?: ImpageProps,
-    url?: string,
-}
 
 export type HeaderProps = {
     favicon?: FaviconProps,
     links?: LinkProps[],
+    banner?: BannerProps
 }
