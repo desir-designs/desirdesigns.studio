@@ -27,6 +27,11 @@ export default function Navigator() {
             action: () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
         },
         {
+            icon: <ArrowUpwardIcon className="rotate-180" sx={ActionSx} />,
+            name: 'Down',
+            action: () => { window.scrollTo({ top: 5000, left: 0, behavior: 'smooth' }) }
+        },
+        {
             icon: <MenuIcon sx={ActionSx} />,
             name: 'Menu',
             action: () => { toggleDrawer() }
@@ -36,6 +41,7 @@ export default function Navigator() {
             name: 'Alerts',
             action: () => { toggleBanner() }
         },
+
 
     ];
 

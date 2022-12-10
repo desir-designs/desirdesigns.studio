@@ -27,7 +27,7 @@ export async function getStaticProps() {
 
 function HomePage({ page }) {
 
-  const { contactForm, tagCloud, hero, logoCloud, contentRow, summarySection, statsSection } = page.data
+  const { contactForm, tagCloud, hero, options, logoCloud, contentRow, summarySection, statsSection } = page?.data ?? null
 
   return (
     <>
@@ -36,7 +36,7 @@ function HomePage({ page }) {
       <TagCloud {...tagCloud} />
       <StatsSection {...statsSection} />
       <LogoCloud {...logoCloud} />
-      <Options />
+      <Options {...options} />
       <SummarySection {...summarySection} />
       <ContactForm {...contactForm} />
     </>

@@ -105,6 +105,10 @@ const pages = ({ store, key }) => {
 
                     ]
 
+                },
+
+                options: {
+                    title: "What to expect working with me."
                 }
             }
         },

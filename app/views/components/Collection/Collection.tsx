@@ -25,10 +25,10 @@ function Collection({ heading, title, icon, content }: CollectionProps) {
                     content.map((item, index) => {
                         return (
 
-                            <div key={index} className="group cursor-pointer m-4 rounded-lg">
+                            <div key={index} className="group cursor-pointer m-2 rounded-lg">
                                 <div className="w-full shadow-lg rounded-lg p-0 m-0 group-hover:shadow-2xl group-hover:shadow-black group-hover:-translate-y-2 duration-500 ease-in-out">
                                     <img
-                                        className="object-cover w-min-72 w-auto h-72 rounded-lg"
+                                        className="object-cover w-min-64 w-auto h-64 rounded-lg"
                                         src={item.cover?.src ?? ""}
                                         alt={item?.cover?.alt ?? ""}
                                     />
@@ -66,7 +66,7 @@ function Collection({ heading, title, icon, content }: CollectionProps) {
     return (
         <section className="overflow-hidden">
             <div className="container mx-auto px-4">
-                <div className="pt-28 pb-36 max-w-4xl mx-auto">
+                <div className="pt-24 pb-30 max-w-4xl mx-auto">
                     <Header />
                     <Content />
                 </div>
