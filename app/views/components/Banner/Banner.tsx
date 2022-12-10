@@ -28,7 +28,7 @@ function Banner({ message }: BannerProps) {
                                 <CloseIcon sx={{ height: 25 }} />
                             </a>
                         </div>
-                        <p className="duration-500 border-opacity-60 hover:border-opacity-100 cursor-pointer hover:border-x border-1 px-1 text-lg tracking-wide lg:block lg:absolute top-1/2 left-1/2 transform text-white text-md -translate-y-1/2 -translate-x-1/2 font-medium leading-10">
+                        <p className="w-full text-ellipsis  whitespace-nowrap  duration-500 overflow-hidden border-opacity-60 hover:border-opacity-100 cursor-pointer hover:border-x border-1 px-1 text-lg tracking-wide block text-white text-md font-medium">
                             {message ?? "MESSAGE_NOT_FOUND"}
                         </p>
                     </div>
