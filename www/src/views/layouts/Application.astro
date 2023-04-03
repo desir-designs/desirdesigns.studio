@@ -1,0 +1,16 @@
+---
+import "@libs/globals.css";
+
+import Container from "@includes/static/Container/Container.astro"
+import Meta from "@includes/static/Meta/Meta.astro"
+import Footer from "@includes/static/Footer/Footer.astro";
+---
+
+<!DOCTYPE html>
+<html>
+  <Meta/>
+  <Container>
+    <slot />
+    <Footer />
+  </Container>
+</html>

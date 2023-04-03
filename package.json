@@ -8,7 +8,7 @@
   },
   "scripts": {
     "app:dev": "cd app && npm i && npm run dev",
-    "readme:g": "npx @appnest/readme generate"
+    "readme:g": "npx @appnest/readme generate --config=docs.config.json"
   },
   "repository": {
     "type": "git",
