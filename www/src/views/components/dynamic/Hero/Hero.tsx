@@ -5,17 +5,7 @@ export default function Hero() {
   return (
     <section className="bg-gradient-fuchsia background-animate overflow-hidden">
       <div className="relative container mx-auto px-4">
-        <img
-          className="hidden xl:block absolute bottom-64 left-56 transform -translate-y-4"
-          src="gradia-assets/elements/hero/line2.svg"
-          alt=""
-        />
-        <img
-          className="hidden xl:block absolute bottom-64 right-56 transform -translate-y-28"
-          src="gradia-assets/elements/hero/line3.svg"
-          alt=""
-        />
-        <div className="relative z-10 flex flex-wrap justify-center items-center -m-6 lg:pt-32 pb-36">
+        <div className="relative z-10 flex flex-wrap justify-center items-center -m-6 pb-36">
           <div className="w-full lg:w-auto p-6 self-start">
             <img
               className="xl:relative xl:-top-20 mx-auto"
@@ -24,7 +14,7 @@ export default function Hero() {
             />
           </div>
           <div className="flex-1 p-6">
-            <div className="lg:max-w-2xl mx-auto">
+            <div className="lg:max-w-4xl mx-auto justify-center items-center">
               <div className="mb-6 font-heading flex items-center max-w-max mx-auto px-5 py-2.5 uppercase font-semibold text-xs tracking-px text-white bg-white bg-opacity-20 rounded-lg">
                 <svg
                   className="mr-2"
@@ -39,10 +29,10 @@ export default function Hero() {
                     fill="white"
                   />
                 </svg>
-                <p>Rated #2 on G2</p>
+                <h3 className="font-sans text-black">Creative Direcor</h3>
               </div>
               <img
-                className="object-fit h-1/2"
+                className="object-fit h-96 self-center mx-auto"
                 src="/assets/images/logo-transparent.png"
               />
 

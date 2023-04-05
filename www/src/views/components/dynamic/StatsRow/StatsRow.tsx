@@ -1,6 +1,11 @@
+
+export type StatsRowProps = {
+  title?: string,
+}
+
 export default function StatsRow(props) {
   return (
-    <section className="relative py-36 bg-gray-100 overflow-hidden">
+    <section className="relative py-36  overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap -m-5">
           <div className="w-full md:w-1/2 xl:w-1/4 p-5">

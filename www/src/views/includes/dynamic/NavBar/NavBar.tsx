@@ -1,46 +1,39 @@
-import { FaviconProps } from "@models/typings/favicon";
-
-export type LinkProps = {
-  url?: string;
-  name?: string;
-};
-
-export type NavBarProps = {
-  links?: LinkProps[];
-  favicon?: FaviconProps;
-};
+import type { NavBarProps } from "@typings/includes";
 
 export const defaultProps: NavBarProps = {
   links: Array(4).map((i, g) => ({
     url: `|${i}|`,
-    name: `|${g}|`
+    name: `|${g}|`,
   })),
   favicon: {
     image: {
-
-    }
-  }
+      src: "/assets/images/logo-transparent.png",
+    },
+  },
 };
 
-export default function NavBar(props) {
+export default function NavBar(props: NavBarProps) {
   return (
     <section>
       <div className="flex items-center justify-between px-8 py-5">
         <div className="w-auto">
           <div className="flex flex-wrap items-center">
             <div className="w-auto mr-14">
-              <a href="#">
-                <img src="gradia-assets/logos/gradia-name-white.svg" alt="" />
+              <a href={props?.favicon?.url ?? defaultProps.favicon.url}>
+                <img
+                  className="h-16 object-fit"
+                  src={props?.favicon?.src ?? defaultProps.favicon.image.src}
+                  alt={props?.favicon?.alt ?? defaultProps.favicon.image.alt}
+                />
               </a>
             </div>
           </div>
         </div>
         <div className="w-auto hidden lg:block">
           <ul className="flex items-center mr-10">
-            <li className="font-heading mr-9 text-white hover:text-gray-200 text-lg">
+            <li className="font-heading mr-9 text-black font-sans uppercase text-lg">
               <a href="#">Features</a>
             </li>
-          
           </ul>
         </div>
         <div className="w-auto">
@@ -109,7 +102,7 @@ export default function NavBar(props) {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center py-8 w-full">
+            <div className="flex flex-col justify-center py-8 w-full text-black font-sans">
               <ul>
                 <li className="mb-12">
                   <a

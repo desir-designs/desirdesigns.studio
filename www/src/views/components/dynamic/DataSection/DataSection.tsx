@@ -1,6 +1,9 @@
+export type DataSectionProps = {
+  title?: string;
+};
 export default function DataSection(props) {
   return (
-    <section className="py-32 bg-black overflow-hidden">
+    <section className="py-32  overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-center -m-6">
           <div className="w-full md:w-1/2 p-6">

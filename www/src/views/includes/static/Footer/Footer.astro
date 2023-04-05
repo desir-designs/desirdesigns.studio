@@ -2,7 +2,11 @@
 import type { FaviconProps } from "@typings/favicon";
 import type { FooterProps } from "@typings/includes";
 
-const { copyright, favicon }: FooterProps = Astro.props;
+export const defaultProps = {
+  copyright: "",
+  email: ""
+}
+const { copyright, favicon, email }: FooterProps = Astro.props;
 ---
 
 <section class="py-16 text-black overflow-hidden">
@@ -58,8 +62,8 @@ const { copyright, favicon }: FooterProps = Astro.props;
             </svg>
           </div>
           <div class="w-auto p-1.5">
-            <h3 class="font-heading font-medium text-base text-black">
-              info@gradia.com
+            <h3 class="font-heading font-sans font-medium text-base text-black">
+              {email ?? defaultProps.email}
             </h3>
           </div>
         </div>
@@ -70,19 +74,19 @@ const { copyright, favicon }: FooterProps = Astro.props;
     </div>
     <div class="flex flex-wrap items-center justify-between -m-6">
       <div class="w-auto p-6">
-        <p class="text-sm text-gray-300">
-          © Copyright 2022. All Rights Reserved by Gradia.
+        <p class="text-sm text-black">
+          {copyright ?? defaultProps.copyright}
         </p>
       </div>
       <div class="w-auto p-6">
         <div class="flex flex-wrap -m-6">
           <div class="w-auto p-6">
-            <a class="text-gray-300 hover:text-gray-400 text-sm" href="#"
+            <a class="text-black hover:text-gray-400 text-sm" href="#"
               >Privacy Policy</a
             >
           </div>
           <div class="w-auto p-6">
-            <a class="text-gray-300 hover:text-gray-400 text-sm" href="#"
+            <a class="text-black hover:text-gray-400 text-sm" href="#"
               >Terms &amp; Conditions</a
             >
           </div>

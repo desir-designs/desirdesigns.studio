@@ -5,6 +5,9 @@ export const defaultProps = {
   copyright: "[@props]: COPYRIGHT_NOT_FOUND",
   url: "[@props]: URL_NOT_FOUND",
   description: "[@props]: DESCRIPTION_NOT_FOUND",
+  themeColor: "blue",
+  keywords: [""],
+  language: "EN"
 };
 
 const { pageTitle, title, url, copyright, description } = Astro.props;
@@ -12,7 +15,7 @@ const { pageTitle, title, url, copyright, description } = Astro.props;
 
 <head>
   <title>
-    {`${pageTitle} | ${title}`}
+    {`${pageTitle ?? defaultProps.pageTitle} | ${title ?? defaultProps.title}`}
   </title>
   <meta name="theme-color" content="#fcc631" />
   <meta name="keywords" content="your, tags" />

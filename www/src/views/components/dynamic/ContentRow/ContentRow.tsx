@@ -1,12 +1,28 @@
-export default function ContentRow(props) {
+export type ContentProps = {
+  name?: string;
+  url?: string;
+};
+
+export type ContentRowProps = {
+  title?: string,
+  description?: string,
+  content?: ContentProps[]
+};
+
+export const defaultProps = {
+  title: "My Portfolio",
+  content: [],
+};
+
+export default function ContentRow(props: ContentRowProps) {
   return (
-    <section className="pt-20 pb-36 bg-black overflow-hidden">
+    <section className="pt-20 pb-36 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="md:max-w-lg mx-auto text-center mb-20">
           <h2 className="mb-4 font-heading font-semibold text-white text-6xl sm:text-7xl">
-            Latest news
+            {props?.title ?? defaultProps.title}
           </h2>
-          <p className="text-lg text-gray-400">
+          <p className="text-lg text-black">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
             sint. Velit officia consequat duis enim.
           </p>
