@@ -21,9 +21,10 @@ body {
   background-image: linear-gradient(to right top, rgb(0, 49, 255), #0039d3, #193ba6, #2a3879, #31344c);
 }
 
-* {
+/** {
   user-select: none !important;
   font-family: var(--font-primary);
   scroll-behavior: smooth !important;
 }
 
+*/

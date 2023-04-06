@@ -22,8 +22,8 @@ export default function NavBar(props: NavBarProps) {
               <a href={props?.favicon?.url ?? defaultProps.favicon.url}>
                 <img
                   className="h-16 object-fit"
-                  src={props?.favicon?.src ?? defaultProps.favicon.image.src}
-                  alt={props?.favicon?.alt ?? defaultProps.favicon.image.alt}
+                  src={props?.favicon?.image.src ?? defaultProps.favicon.image.src}
+                  alt={props?.favicon?.image.alt ?? defaultProps.favicon.image.alt}
                 />
               </a>
             </div>

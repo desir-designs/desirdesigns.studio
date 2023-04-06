@@ -1,18 +1,41 @@
 import { SocialIcon } from "react-social-icons";
 
+export type SocialProps = {
+  url?: string;
+};
+
 export type HeroProps = {
   media: Node;
+  socials?: Array<SocialProps>;
 };
-export default function Hero() {
+
+export const defaultProps = {
+  socials: [
+    {
+      url: "",
+    },
+    {
+      url: "",
+    },
+  ],
+};
+export default function Hero(props: HeroProps) {
+
+  
+  const Socials = () => (
+    <aside className="group hover:border-white transition-all duration-500 hover:shadow-sm shadow-black flex flex-col gap-1 fixed top-1/4 left-0 ml-4 z-50 bg-black p-2 bg-opacity-10 backdrop-blur-sm rounded-full">
+      {props?.socials?.map((social, index) => (
+        <SocialIcon url={social?.url ?? `${index}: Not Found`} />
+      )) ??
+        defaultProps.socials.map((social, index) => (
+          <SocialIcon url="https://facebook.com" />
+        ))}
+    </aside>
+  );
+
   return (
     <section className="bg-gradient-fuchsia background-animate overflow-hidden">
-      <aside className="group hover:border-white transition-all duration-500 hover:shadow-sm shadow-black flex flex-col gap-1 fixed top-1/3 left-0 ml-4 z-50 bg-black p-2 bg-opacity-10 backdrop-blur-sm rounded-full">
-        <SocialIcon url="https://facebook.com" />
-        <SocialIcon url="https://twitter.com" />
-        <SocialIcon url="https://behance.com" />
-        <SocialIcon url="https://youtube.com" />
-        <SocialIcon url="https://linkedin.com" />
-      </aside>
+      <Socials />
       <div className="relative container mx-auto px-4">
         <div className="relative z-10 flex flex-wrap justify-center items-center -m-6 pb-36">
           <div className="w-full lg:w-auto p-6 self-start">
