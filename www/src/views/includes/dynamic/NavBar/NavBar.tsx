@@ -14,8 +14,8 @@ export const defaultProps: NavBarProps = {
 
 export default function NavBar(props: NavBarProps) {
   return (
-    <section>
-      <div className="flex items-center justify-between px-8 py-5">
+    <section className="fixed w-full top-0">
+      <div className="relative flex items-center justify-between px-8 py-5">
         <div className="w-auto">
           <div className="flex flex-wrap items-center">
             <div className="w-auto mr-14">
