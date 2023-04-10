@@ -12,10 +12,13 @@ export type HeroProps = {
 export const defaultProps = {
   socials: [
     {
-      url: "",
+      url: "https://facebook.com",
     },
     {
-      url: "",
+      url: "https://twitter.com",
+    },
+      {
+      url: "https://twitter.com",
     },
   ],
 };
@@ -28,7 +31,7 @@ export default function Hero(props: HeroProps) {
         <SocialIcon url={social?.url ?? `${index}: Not Found`} />
       )) ??
         defaultProps.socials.map((social, index) => (
-          <SocialIcon url="https://facebook.com" />
+          <SocialIcon url={`${social?.url}`} />
         ))}
     </aside>
   );
