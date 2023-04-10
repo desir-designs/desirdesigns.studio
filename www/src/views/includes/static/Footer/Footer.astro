@@ -1,11 +1,18 @@
 ---
 import type { FaviconProps } from "@typings/favicon";
 import type { FooterProps } from "@typings/includes";
+import type { LinkProps } from "@typings/link";
 
-export const defaultProps = {
+export const defaultProps: FooterProps = {
   copyright: "",
-  email: ""
-}
+  email: "",
+  favicon: {
+    image: {
+      src: "",
+      alt: "",
+    },
+  },
+};
 const { copyright, favicon, email }: FooterProps = Astro.props;
 ---
 
@@ -13,7 +20,10 @@ const { copyright, favicon, email }: FooterProps = Astro.props;
   <div class="container mx-auto px-4">
     <div class="flex flex-wrap lg:items-center -m-6">
       <div class="w-full md:w-auto p-6">
-        <img src="gradia-assets/logos/gradia-name-black.svg" alt="" />
+        <img
+          src={favicon?.image?.src ?? defaultProps.favicon.image.src}
+          alt={favicon?.image?.src ?? defaultProps.favicon.image.src}
+        />
       </div>
       <div class="w-full md:w-1/2 p-6">
         <ul class="flex flex-wrap -m-5">
