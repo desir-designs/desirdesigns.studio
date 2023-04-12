@@ -1,3 +1,3 @@
-export interface IReactComponent<T> extends JSX.Element {
-    props: T
-}
+export interface JSXView<T> extends JSX.Element {
+    props?: T
+  }
