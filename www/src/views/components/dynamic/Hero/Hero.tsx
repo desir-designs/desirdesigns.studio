@@ -18,10 +18,12 @@ export const defaultProps = {
       url: "https://twitter.com",
     },
       {
-      url: "https://twitter.com",
+      url: "https://behance.com",
     },
   ],
 };
+
+
 export default function Hero(props: HeroProps) {
 
   
