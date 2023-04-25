@@ -1,5 +1,4 @@
-import type { NavBarProps } from "@typings/includes";
-import type { IReactComponent } from "@typings/views";
+import type { JSXComponentType, NavBarProps } from "blakprint/dist/typings/index.d"
 
 export const defaultProps: NavBarProps = {
   links: Array(4).map((i, g) => ({
@@ -7,7 +6,7 @@ export const defaultProps: NavBarProps = {
     name: `|${g}|`,
   })),
   cta: {
-    text: "Get Started",
+    text: "CTA_NOT_FOUND",
     url: "#"
   },
   favicon: {
@@ -17,8 +16,7 @@ export const defaultProps: NavBarProps = {
   },
 };
 
-export default function NavBar(props: NavBarProps): IReactComponent<NavBarProps> {
-
+export default function NavBar(props: NavBarProps): JSXComponentType<NavBarProps> {
 
   const MenuBurger = () => {
     return (
