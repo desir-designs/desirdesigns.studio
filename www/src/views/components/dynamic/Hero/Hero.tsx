@@ -1,13 +1,6 @@
 import { SocialIcon } from "react-social-icons";
-
-export type SocialProps = {
-  url?: string;
-};
-
-export type HeroProps = {
-  media: Node;
-  socials?: Array<SocialProps>;
-};
+import type { IJSXComponent } from "@typings/views"
+import type { HeroProps } from "@typings/components";
 
 export const defaultProps = {
   socials: [
@@ -24,7 +17,7 @@ export const defaultProps = {
 };
 
 
-export default function Hero(props: HeroProps) {
+export default function Hero(props: HeroProps):IJSXComponent<HeroProps> {
 
   
   const Socials = () => (

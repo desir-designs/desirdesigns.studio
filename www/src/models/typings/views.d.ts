@@ -1,3 +1,3 @@
-export interface IReactComponent<T> extends JSX.Element {
-    props: T
+export interface IJSXComponent<T={children?:any}> extends JSX.Element {
+    props?: T
 }
