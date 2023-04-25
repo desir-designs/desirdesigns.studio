@@ -12,7 +12,7 @@
 </h4>
 <h2>📸Screenshots</h2>
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://via.placeholder.com/600x600?text=App+Screenshot+Here)
 
 ---
 
@@ -26,11 +26,10 @@
 
 <h2>🔨Installation</h2>
 
-
 ```bash
- git clone https://github.com/naturessecretco/naturessecretco.git
-  cd app
-  npm run bootstrap
+git clone https://github.com/desirdesigns/desirdesigns.studio.git
+
+npm run app:dev:bootstrap
 ```
 
 ---

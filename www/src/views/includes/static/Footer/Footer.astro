@@ -1,11 +1,27 @@
 ---
-import type { FaviconProps } from "@typings/favicon";
 import type { FooterProps } from "@typings/includes";
-import type { LinkProps } from "@typings/link";
 
 export const defaultProps: FooterProps = {
   copyright: "",
   email: "",
+  links: [
+    {
+      text: "Features",
+      url: "#",
+    },
+    {
+      text: "Pricing",
+      url: "#",
+    },
+    {
+      text: "Affiliate Program",
+      url: "#",
+    },
+    {
+      text: "Press Kit",
+      url: "#",
+    },
+  ],
   favicon: {
     image: {
       src: "",
@@ -13,7 +29,7 @@ export const defaultProps: FooterProps = {
     },
   },
 };
-const { copyright, favicon, email }: FooterProps = Astro.props;
+const { copyright, favicon, email, links }: FooterProps = Astro.props;
 ---
 
 <section class="py-16 text-black overflow-hidden">
@@ -27,30 +43,32 @@ const { copyright, favicon, email }: FooterProps = Astro.props;
       </div>
       <div class="w-full md:w-1/2 p-6">
         <ul class="flex flex-wrap -m-5">
-          <li class="p-5">
-            <a
-              class="font-heading text-base text-black hover:text-gray-200"
-              href="#">Features</a
-            >
-          </li>
-          <li class="p-5">
-            <a
-              class="font-heading text-base text-black hover:text-gray-200"
-              href="#">Pricing</a
-            >
-          </li>
-          <li class="p-5">
-            <a
-              class="font-heading text-base text-black hover:text-gray-200"
-              href="#">Affiliate Program</a
-            >
-          </li>
-          <li class="p-5">
-            <a
-              class="font-heading text-base text-black hover:text-gray-200"
-              href="#">Press Kit</a
-            >
-          </li>
+          {
+            links?.map((link, index) => {
+              return (
+                <li class="p-5">
+                  <a
+                    class="font-heading text-base text-black hover:text-gray-200"
+                    href={link?.url}
+                  >
+                    {link?.name}
+                  </a>
+                </li>
+              );
+            }) ??
+              defaultProps.links.map((link, index) => {
+                return (
+                  <li class="p-5">
+                    <a
+                      class="font-heading text-base text-black hover:text-gray-200"
+                      href={link?.url}
+                    >
+                      {link?.text}
+                    </a>
+                  </li>
+                );
+              })
+          }
         </ul>
       </div>
       <div class="w-auto md:ml-auto p-6">
