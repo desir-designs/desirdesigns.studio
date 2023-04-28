@@ -1,33 +1,26 @@
 {
-  "name": "desirdesigns-studio",
-  "type": "module",
-  "version": "10.0.0",
+  "name": "www",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@astrojs/react": "^2.1.1",
-    "@astrojs/tailwind": "^3.1.1",
-    "@types/react": "^18.0.33",
-    "@types/react-dom": "^18.0.11",
-    "astro": "^2.1.9",
-    "astro-gap": "^1.0.3",
-    "blakprint": "^9.93.98",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-social-icons": "^5.15.0",
-    "tailwindcss": "^3.3.1",
-    "tailwindcss-border-gradients": "^2.0.3",
-    "tailwindcss-elevation": "^2.0.0",
-    "tailwindcss-gradients": "^3.0.0",
-    "tailwindcss-truncate-multiline": "^1.0.3"
-  },
-  "devDependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "tailwindcss-debug-screens": "^2.2.1"
+    "@types/node": "18.16.2",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
+    "autoprefixer": "10.4.14",
+    "blakprint": "^10.0.3",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.1",
+    "next": "13.3.1",
+    "postcss": "8.4.23",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4"
   }
 }

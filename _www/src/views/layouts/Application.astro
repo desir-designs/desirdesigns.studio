@@ -1,0 +1,26 @@
+---
+import "@libs/globals.css";
+
+import Container from "@includes/static/Container/Container.astro";
+import Meta from "@includes/static/Meta/Meta.astro";
+import NavBar from "@includes/dynamic/NavBar";
+import Footer from "@includes/dynamic/Footer";
+import AstroGap from "astro-gap"
+
+import type { MetaProps, LayoutProps } from "blakprint/dist/typings/index.d"
+
+
+
+const { layout }: LayoutProps = Astro.props;
+---
+
+<!DOCTYPE html>
+<html>
+  <Meta />
+  <Container>
+    <NavBar />
+    <AstroGap spaces={8}/>
+    <slot />
+    <Footer />
+  </Container>
+</html>

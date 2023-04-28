@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/desirablesolutions/desirdesigns/issues"
   },
-  "homepage": "https://github.com/desirablesolutions/desirdesigns#readme"
+  "homepage": "https://github.com/desirablesolutions/desirdesigns#readme",
+  "dependencies": {
+    "next": "^13.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
