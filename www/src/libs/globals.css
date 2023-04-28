@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("scrollbar.module.css");
 @import url("animations.module.css");
 @import url("fonts.module.css");
