@@ -1,17 +1,17 @@
 export type DataSectionProps = {
   title?: string;
 };
-export default function DataSection(props) {
+export default function DataSection(props: any) {
   return (
-    <section className="py-32  overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-32 overflow-hidden">
+      <div className="container px-4 mx-auto">
         <div className="flex flex-wrap items-center -m-6">
-          <div className="w-full md:w-1/2 p-6">
+          <div className="w-full p-6 md:w-1/2">
             <div className="max-w-lg">
-              <h2 className="mb-5 font-heading font-bold text-6xl sm:text-7xl text-white">
+              <h2 className="mb-5 text-6xl font-bold text-white font-heading sm:text-7xl">
                 Try Gradia for Free
               </h2>
-              <p className="mb-11 text-gray-400 text-base">
+              <p className="text-base text-gray-400 mb-11">
                 Amet minim mollit non deserunt ullamco est sit aliqua dolor do
                 amet sint. Velit officia consequat duis enim velit mollit.
               </p>
@@ -99,10 +99,10 @@ export default function DataSection(props) {
               </ul>
             </div>
           </div>
-          <div className="w-full md:w-1/2 p-6">
-            <div className="md:max-w-lg ml-auto">
+          <div className="w-full p-6 md:w-1/2">
+            <div className="ml-auto md:max-w-lg">
               <a href="#">
-                <div className="mb-5 p-px bg-gradient-cyan rounded-md">
+                <div className="p-px mb-5 rounded-md bg-gradient-cyan">
                   <div className="p-4 bg-gray-900 rounded-md">
                     <div className="flex flex-wrap justify-between -m-3">
                       <div className="w-auto p-3">
@@ -114,10 +114,10 @@ export default function DataSection(props) {
                             />
                           </div>
                           <div className="w-auto p-3">
-                            <h3 className="mb-1 font-heading font-medium text-white text-xl">
+                            <h3 className="mb-1 text-xl font-medium text-white font-heading">
                               Annual - 2 months free
                             </h3>
-                            <p className="text-gray-400 text-base">
+                            <p className="text-base text-gray-400">
                               $99/year, that’s $8.49/month only
                             </p>
                           </div>
@@ -133,7 +133,7 @@ export default function DataSection(props) {
                 </div>
               </a>
               <a href="#">
-                <div className="mb-5 p-4 bg-black border border-gray-800 rounded-md">
+                <div className="p-4 mb-5 bg-black border border-gray-800 rounded-md">
                   <div className="flex flex-wrap justify-between -m-3">
                     <div className="w-auto p-3">
                       <div className="flex flex-wrap items-center -m-3">
@@ -144,10 +144,10 @@ export default function DataSection(props) {
                           />
                         </div>
                         <div className="w-auto p-3">
-                          <h3 className="mb-1 font-heading font-medium text-white text-xl">
+                          <h3 className="mb-1 text-xl font-medium text-white font-heading">
                             Monthly - 1st week free
                           </h3>
-                          <p className="text-gray-400 text-base">
+                          <p className="text-base text-gray-400">
                             $12/month only
                           </p>
                         </div>
@@ -156,11 +156,11 @@ export default function DataSection(props) {
                   </div>
                 </div>
               </a>
-              <div className="group relative">
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-green opacity-0 group-hover:opacity-50 rounded-lg transition ease-out duration-300" />
-                <button className="p-1 w-full font-heading font-semibold text-xs text-gray-900 uppercase tracking-px overflow-hidden rounded-md">
-                  <div className="relative px-9 py-5 bg-gradient-green overflow-hidden rounded-md">
-                    <div className="absolute top-0 left-0 transform -translate-y-full group-hover:-translate-y-0 h-full w-full bg-white transition ease-in-out duration-500" />
+              <div className="relative group">
+                <div className="absolute top-0 left-0 w-full h-full transition duration-300 ease-out rounded-lg opacity-0 bg-gradient-green group-hover:opacity-50" />
+                <button className="w-full p-1 overflow-hidden text-xs font-semibold text-gray-900 uppercase rounded-md font-heading tracking-px">
+                  <div className="relative py-5 overflow-hidden rounded-md px-9 bg-gradient-green">
+                    <div className="absolute top-0 left-0 w-full h-full transition duration-500 ease-in-out transform -translate-y-full bg-white group-hover:-translate-y-0" />
                     <p className="relative z-10">Try for free</p>
                   </div>
                 </button>

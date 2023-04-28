@@ -1,5 +1,5 @@
 import { SocialIcon } from "react-social-icons";
-import type { JSXComponentType } from "blakprint/typings"
+import type { JSXComponentType } from "blakprint/dist/typings"
 import type { HeroProps } from "@typings/components"
 
 

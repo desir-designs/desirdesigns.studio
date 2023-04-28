@@ -1,18 +1,18 @@
-export default function FeaturedRow(props) {
+export default function FeaturedRow(props: any) {
   return (
     <section className="relative pt-24 pb-32 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <h2 className="mb-5 max-w-2xl mx-auto font-heading font-bold text-center text-6xl sm:text-7xl text-gray-900">
+      <div className="container px-4 mx-auto">
+        <h2 className="max-w-2xl mx-auto mb-5 text-6xl font-bold text-center text-gray-900 font-heading sm:text-7xl">
           12k+ Happy Clients
         </h2>
-        <p className="mb-16 text-base max-w-md mx-auto text-center text-gray-600">
+        <p className="max-w-md mx-auto mb-16 text-base text-center text-gray-600">
           Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
           sint. Velit officia consequat duis enim velit mollit.
         </p>
         <div className="flex flex-wrap -m-5">
-          <div className="w-full md:w-1/3 p-5">
+          <div className="w-full p-5 md:w-1/3">
             <div className="h-full p-0.5 bg-gradient-cyan transform hover:-translate-y-3 rounded-10 transition ease-out duration-1000">
-              <div className="h-full px-7 py-8 bg-white rounded-lg">
+              <div className="h-full py-8 bg-white rounded-lg px-7">
                 <img
                   className="mb-8"
                   src="gradia-assets/images/testimonials/avatar.png"
@@ -30,9 +30,9 @@ export default function FeaturedRow(props) {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/3 p-5">
+          <div className="w-full p-5 md:w-1/3">
             <div className="h-full p-0.5 bg-gradient-cyan transform hover:-translate-y-3 rounded-10 shadow-5xl transition ease-out duration-1000">
-              <div className="h-full px-7 py-8 bg-white rounded-lg">
+              <div className="h-full py-8 bg-white rounded-lg px-7">
                 <img
                   className="mb-8"
                   src="gradia-assets/images/testimonials/avatar2.png"
@@ -49,9 +49,9 @@ export default function FeaturedRow(props) {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/3 p-5">
+          <div className="w-full p-5 md:w-1/3">
             <div className="h-full p-0.5 bg-gradient-cyan transform hover:-translate-y-3 rounded-10 transition ease-out duration-1000">
-              <div className="h-full px-7 py-8 bg-white rounded-lg">
+              <div className="h-full py-8 bg-white rounded-lg px-7">
                 <img
                   className="mb-8"
                   src="gradia-assets/images/testimonials/avatar3.png"
