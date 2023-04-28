@@ -22,30 +22,30 @@ export const defaultProps: HeroProps = {
 export default function Hero(props: HeroProps): JSXComponentType<HeroProps> {
 
   const Socials = () => (
-    <aside className="group hover:border-white transition-all duration-500 hover:shadow-sm shadow-black flex flex-col gap-1 fixed top-1/4 left-0 ml-4 z-50 bg-black p-2 bg-opacity-10 backdrop-blur-sm rounded-full">
-      {props?.socials?.map((social, index) => (
-        <SocialIcon url={social?.url ?? `${index}: Not Found`} />
+    <aside className="fixed left-0 z-50 flex flex-col gap-1 p-2 ml-4 transition-all duration-500 bg-black rounded-full group hover:border-white hover:shadow-sm shadow-black top-1/4 bg-opacity-10 backdrop-blur-sm">
+      {props?.socials?.map((social: any, index: number) => (
+        <SocialIcon key={index } url={social?.url ?? `${index}: Not Found`} />
       )) ??
-        defaultProps.socials.map((social, index) => (
-          <SocialIcon url={`${social?.url}`} />
+        defaultProps.socials.map((social: any, index: number) => (
+          <SocialIcon key={index} url={`${social?.url}`} />
         ))}
     </aside>
   );
 
   return (
-    <section className="bg-gradient-fuchsia background-animate overflow-hidden">
+    <section className="overflow-hidden bg-gradient-fuchsia background-animate">
       <Socials />
-      <div className="relative container mx-auto px-4">
-        <div className="relative z-10 flex flex-wrap justify-center items-center -m-6 pb-36">
-          <div className="w-full lg:w-auto p-6 self-start">
+      <div className="container relative px-4 mx-auto">
+        <div className="relative z-10 flex flex-wrap items-center justify-center -m-6 pb-36">
+          <div className="self-start w-full p-6 lg:w-auto">
             <img
-              className="xl:relative xl:-top-20 mx-auto"
+              className="mx-auto xl:relative xl:-top-20"
               src="gradia-assets/images/hero/avatar-message.png"
               alt=""
             />
           </div>
           <div className="flex-1 p-6">
-            <div className="lg:max-w-4xl mx-auto justify-center items-center">
+            <div className="items-center justify-center mx-auto lg:max-w-4xl">
               <div className="mb-6 font-heading flex items-center max-w-max mx-auto px-5 py-2.5 uppercase font-semibold text-xs tracking-px text-white bg-white bg-opacity-20 rounded-lg">
                 <svg
                   className="mr-2"
@@ -63,16 +63,16 @@ export default function Hero(props: HeroProps): JSXComponentType<HeroProps> {
                 <h3 className="font-sans text-black">Creative Direcor</h3>
               </div>
               <img
-                className="object-fit h-96 self-center mx-auto"
+                className="self-center mx-auto object-fit h-96"
                 src="/assets/images/logo-transparent.png"
               />
 
-              <p className="mb-10 font-medium text-xl text-center text-white">
+              <p className="mb-10 text-xl font-medium text-center text-white">
                 Velit officia consequat duis enim velit mollit. Exercitation
                 veniam consequat.
               </p>
-              <button className="group mb-9 relative flex items-center justify-center font-heading px-24 py-5 mx-auto w-full lg:w-auto uppercase text-white text-xs font-semibold tracking-px bg-gray-900 overflow-hidden rounded-md">
-                <div className="absolute transform -translate-x-full group-hover:-translate-x-0 h-full w-full transition ease-in-out duration-500 bg-gradient-fuchsia" />
+              <button className="relative flex items-center justify-center w-full px-24 py-5 mx-auto overflow-hidden text-xs font-semibold text-white uppercase bg-gray-900 rounded-md group mb-9 font-heading lg:w-auto tracking-px">
+                <div className="absolute w-full h-full transition duration-500 ease-in-out transform -translate-x-full group-hover:-translate-x-0 bg-gradient-fuchsia" />
                 <p className="relative z-10 mr-2">Get started now</p>
                 <svg
                   className="relative z-10"
@@ -108,7 +108,7 @@ export default function Hero(props: HeroProps): JSXComponentType<HeroProps> {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <p className="font-heading text-white text-base">
+                  <p className="text-base text-white font-heading">
                     No credit card required
                   </p>
                 </li>
@@ -129,16 +129,16 @@ export default function Hero(props: HeroProps): JSXComponentType<HeroProps> {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <p className="font-heading text-white text-base">
+                  <p className="text-base text-white font-heading">
                     Cancel anytime
                   </p>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="w-full lg:w-auto p-6 self-end">
+          <div className="self-end w-full p-6 lg:w-auto">
             <img
-              className="xl:relative xl:-bottom-10 mx-auto"
+              className="mx-auto xl:relative xl:-bottom-10"
               src="gradia-assets/images/hero/avatar-message2.png"
               alt=""
             />
