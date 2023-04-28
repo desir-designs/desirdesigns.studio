@@ -1,4 +1,4 @@
-import type { JSXComponentType, LinkProps, FooterProps as _FooterProps } from "@blakprint/typings/index.d"
+import type { JSXComponentType, LinkProps, FooterProps as _FooterProps } from "blakprint/dist/typings"
 
 
 type FooterProps = _FooterProps<{
@@ -10,7 +10,7 @@ export default function Footer(props: FooterProps): JSXComponentType<FooterProps
 
     const Favicon = () => {
         return (
-            <div className="w-full md:w-auto p-6">
+            <div className="w-full p-6 md:w-auto">
                 <img src="gradia-assets/logos/gradia-name-white.svg" alt="" />
             </div>
         )
@@ -18,11 +18,11 @@ export default function Footer(props: FooterProps): JSXComponentType<FooterProps
 
     const NavLinks = () => {
         return (
-            <div className="w-full md:w-1/2 p-6">
+            <div className="w-full p-6 md:w-1/2">
                 <ul className="flex flex-wrap -m-5">
                     <li className="p-5">
                         <a
-                            className="font-heading text-base text-white hover:text-gray-200"
+                            className="text-base text-white font-heading hover:text-gray-200"
                             href="#"
                         >
                             Features
@@ -30,7 +30,7 @@ export default function Footer(props: FooterProps): JSXComponentType<FooterProps
                     </li>
                     <li className="p-5">
                         <a
-                            className="font-heading text-base text-white hover:text-gray-200"
+                            className="text-base text-white font-heading hover:text-gray-200"
                             href="#"
                         >
                             Pricing
@@ -38,7 +38,7 @@ export default function Footer(props: FooterProps): JSXComponentType<FooterProps
                     </li>
                     <li className="p-5">
                         <a
-                            className="font-heading text-base text-white hover:text-gray-200"
+                            className="text-base text-white font-heading hover:text-gray-200"
                             href="#"
                         >
                             Affiliate Program
@@ -46,7 +46,7 @@ export default function Footer(props: FooterProps): JSXComponentType<FooterProps
                     </li>
                     <li className="p-5">
                         <a
-                            className="font-heading text-base text-white hover:text-gray-200"
+                            className="text-base text-white font-heading hover:text-gray-200"
                             href="#"
                         >
                             Press Kit
@@ -60,7 +60,7 @@ export default function Footer(props: FooterProps): JSXComponentType<FooterProps
 
     const Socials = () => {
         return (
-            <div className="w-auto md:ml-auto p-6">
+            <div className="w-auto p-6 md:ml-auto">
                 <div className="flex flex-wrap items-center -m-1.5">
                     <div className="w-auto p-1.5">
                         <svg
@@ -80,7 +80,7 @@ export default function Footer(props: FooterProps): JSXComponentType<FooterProps
                         </svg>
                     </div>
                     <div className="w-auto p-1.5">
-                        <h3 className="font-heading font-medium text-base text-white">
+                        <h3 className="text-base font-medium text-white font-heading">
                             info@gradia.com
                         </h3>
                     </div>
@@ -91,8 +91,8 @@ export default function Footer(props: FooterProps): JSXComponentType<FooterProps
 
     return (
         <section className="py-16 overflow-hidden">
-            <div className="container mx-auto px-4">
-                <div className="flex flex-wrap lg:items-center -m-6">
+            <div className="container px-4 mx-auto">
+                <div className="flex flex-wrap -m-6 lg:items-center">
                     <Favicon />
                     <NavLinks />
                     <Socials />
@@ -109,12 +109,12 @@ export default function Footer(props: FooterProps): JSXComponentType<FooterProps
                     <div className="w-auto p-6">
                         <div className="flex flex-wrap -m-6">
                             <div className="w-auto p-6">
-                                <a className="text-gray-300 hover:text-gray-400 text-sm" href="#">
+                                <a className="text-sm text-gray-300 hover:text-gray-400" href="#">
                                     Privacy Policy
                                 </a>
                             </div>
                             <div className="w-auto p-6">
-                                <a className="text-gray-300 hover:text-gray-400 text-sm" href="#">
+                                <a className="text-sm text-gray-300 hover:text-gray-400" href="#">
                                     Terms &amp; Conditions
                                 </a>
                             </div>
