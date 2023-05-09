@@ -1,7 +1,6 @@
-"use client"
 import "@libs/globals.css"
 
-import { NavBar } from "t4-navbar-react"
+import { NavBar, } from "t4-navbar-react"
 
 export const metadata = {
   title: 'Desir Designs',
@@ -17,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
-        <NavBar componentName="Larry" />
+        <NavBar template={blake}/>
         {children}
       </body>
     </html>
