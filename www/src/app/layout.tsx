@@ -1,24 +1,25 @@
-import "@libs/globals.css"
+import "@libs/globals.css";
 
-import NavBar from "@includes/NavBar"
-import Footer from "@includes/Footer"
+import NavBar from "@includes/NavBar";
+import Footer from "@includes/Footer";
 
 export const metadata = {
-  title: 'Desir Designs',
-  description: 'The Fringe of Desing',
-}
+  title: "Desir Designs",
+  description: "The Fringe of Desing",
+};
 
 export type NextLayoutProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 export default function RootLayout({ children }: NextLayoutProps) {
   return (
     <html lang="en">
-      <body >
-        <NavBar/>
+      <body>
+        <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
-  )
+  );
 }

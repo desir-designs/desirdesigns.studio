@@ -1,12 +1,20 @@
-import type { JSXComponentType } from "blakprint/dist/typings"
+import ContentGrid from "@components/ContentGrid";
+import TagCloud from "@components/TagCloud"
+import StatsRow from "@components/StatsRow"
+import FeaturedContent from "@components/FeaturedContent";
+import TableSection from "@components/TableSection";
+import ContactSection from "@components/ContactSection";
 
 
-export default function HomePage(): JSXComponentType<any> {
+export default async function Home() {
   return (
     <>
-      <main>
-
-      </main>
+      <ContentGrid />
+      <TagCloud/>
+      <StatsRow/>
+      <FeaturedContent/>
+      <TableSection/>
+      <ContactSection/>
     </>
-  )
+  );
 }

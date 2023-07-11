@@ -11,28 +11,28 @@ export default function NavBar() {
         </div>
       </div>
     </div>
-    <div className="w-auto hidden lg:block">
+    <div className="hidden w-auto lg:block">
       <ul className="flex items-center mr-10">
-        <li className="font-heading mr-9 text-white hover:text-gray-200 text-lg">
+        <li className="text-lg text-white font-heading mr-9 hover:text-gray-200">
           <a href="#">Features</a>
         </li>
-        <li className="font-heading mr-9 text-white hover:text-gray-200 text-lg">
+        <li className="text-lg text-white font-heading mr-9 hover:text-gray-200">
           <a href="#">Solutions</a>
         </li>
-        <li className="font-heading mr-9 text-white hover:text-gray-200 text-lg">
+        <li className="text-lg text-white font-heading mr-9 hover:text-gray-200">
           <a href="#">Resources</a>
         </li>
-        <li className="font-heading text-white hover:text-gray-200 text-lg">
+        <li className="text-lg text-white font-heading hover:text-gray-200">
           <a href="#">Pricing</a>
         </li>
       </ul>
     </div>
     <div className="w-auto">
       <div className="flex flex-wrap items-center">
-        <div className="w-auto hidden lg:block">
+        <div className="hidden w-auto lg:block">
           <button className="group relative p-0.5 font-heading block w-full md:w-auto text-lg text-white font-medium bg-gradient-cyan overflow-hidden rounded-10">
-            <div className="absolute top-0 left-0 transform -translate-y-full group-hover:-translate-y-0 h-full w-full bg-gradient-cyan transition ease-in-out duration-500" />
-            <div className="py-2 px-5 bg-gray-900 rounded-lg">
+            <div className="absolute top-0 left-0 w-full h-full transition duration-500 ease-in-out transform -translate-y-full group-hover:-translate-y-0 bg-gradient-cyan" />
+            <div className="px-5 py-2 bg-gray-900 rounded-lg">
               <p className="relative z-10">Start Free Trial</p>
             </div>
           </button>
@@ -40,7 +40,7 @@ export default function NavBar() {
         <div className="w-auto lg:hidden">
           <a href="#">
             <svg
-              className="navbar-burger text-gray-800"
+              className="text-gray-800 navbar-burger"
               width={51}
               height={51}
               viewBox="0 0 56 56"
@@ -61,9 +61,9 @@ export default function NavBar() {
       </div>
     </div>
   </div>
-  <div className="hidden navbar-menu fixed top-0 left-0 bottom-0 w-4/6 sm:max-w-xs z-50">
-    <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-80" />
-    <nav className="relative z-10 px-9 py-8 bg-gray-900 h-full">
+  <div className="fixed top-0 bottom-0 left-0 z-50 hidden w-4/6 navbar-menu sm:max-w-xs">
+    <div className="fixed inset-0 bg-gray-800 navbar-backdrop opacity-80" />
+    <nav className="relative z-10 h-full py-8 bg-gray-900 px-9">
       <div className="flex flex-wrap justify-between h-full">
         <div className="w-full">
           <div className="flex items-center justify-between -m-2">
@@ -93,11 +93,11 @@ export default function NavBar() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center text-center justify-center py-8 w-full">
+        <div className="flex flex-col items-center justify-center w-full py-8 text-center">
           <ul>
             <li className="mb-12">
               <a
-                className="font-heading font-medium text-lg text-white hover:text-gray-200"
+                className="text-lg font-medium text-white font-heading hover:text-gray-200"
                 href="#"
               >
                 Features
@@ -105,7 +105,7 @@ export default function NavBar() {
             </li>
             <li className="mb-12">
               <a
-                className="font-heading font-medium text-lg text-white hover:text-gray-200"
+                className="text-lg font-medium text-white font-heading hover:text-gray-200"
                 href="#"
               >
                 Solutions
@@ -113,7 +113,7 @@ export default function NavBar() {
             </li>
             <li className="mb-12">
               <a
-                className="font-heading font-medium text-lg text-white hover:text-gray-200"
+                className="text-lg font-medium text-white font-heading hover:text-gray-200"
                 href="#"
               >
                 Resources
@@ -121,7 +121,7 @@ export default function NavBar() {
             </li>
             <li>
               <a
-                className="font-heading font-medium text-lg text-white hover:text-gray-200"
+                className="text-lg font-medium text-white font-heading hover:text-gray-200"
                 href="#"
               >
                 Pricing
@@ -133,15 +133,15 @@ export default function NavBar() {
           <div className="flex flex-wrap">
             <div className="w-full mb-3">
               <button className="p-0.5 font-heading block w-full text-lg text-white font-medium rounded-10">
-                <div className="py-2 px-5 rounded-10">
+                <div className="px-5 py-2 rounded-10">
                   <p>Login</p>
                 </div>
               </button>
             </div>
             <div className="w-full">
               <button className="group relative p-0.5 font-heading block w-full text-lg text-white font-medium bg-gradient-cyan overflow-hidden rounded-10">
-                <div className="absolute top-0 left-0 transform -translate-y-full group-hover:-translate-y-0 h-full w-full bg-gradient-cyan transition ease-in-out duration-500" />
-                <div className="py-2 px-5 bg-gray-900 rounded-lg">
+                <div className="absolute top-0 left-0 w-full h-full transition duration-500 ease-in-out transform -translate-y-full group-hover:-translate-y-0 bg-gradient-cyan" />
+                <div className="px-5 py-2 bg-gray-900 rounded-lg">
                   <p className="relative z-10">Start Free Trial</p>
                 </div>
               </button>
@@ -152,6 +152,6 @@ export default function NavBar() {
     </nav>
   </div>
 </section>
- F
+ 
     )
 }
