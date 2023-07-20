@@ -15,7 +15,7 @@ export type NextLayoutProps = {
 export default function RootLayout({ children }: NextLayoutProps) {
   return (
     <html lang="en">
-      <body>
+      <body className="relative">
         <NavBar />
         {children}
         <Footer />
