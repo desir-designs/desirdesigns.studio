@@ -1,30 +1,35 @@
-import type { FaviconProps, LinkProps, CallToActionProps } from "@typings/index";
+import type { NavBarProps } from "@typings/index";
 
-export type NavBarProps = {
-  favicon?: FaviconProps;
-  links?: LinkProps[];
-  cta?: CallToActionProps;
-};
-
+export const defaultProps = {
+  favicon: {
+    image: {
+      src: ""
+    }
+  },
+  links: [
+    {
+      label: "Home",
+    }
+  ]
+}
 export function Links(links: NavBarProps["links"]) {
   if (!links) {
     return null;
   } else {
+
+    const Link = (props:any) => {
+      return (
+        <li className="text-lg text-white font-heading mr-9 hover:text-gray-200">
+            <a href="#">{props?.label}</a>
+          </li>
+      )
+    }
     return (
       <div className="w-auto lg:block">
         <ul className="flex items-center mr-10 text-black">
-          <li className="text-lg text-white font-heading mr-9 hover:text-gray-200">
-            <a href="#">Features</a>
-          </li>
-          <li className="text-lg text-white font-heading mr-9 hover:text-gray-200">
-            <a href="#">Solutions</a>
-          </li>
-          <li className="text-lg text-white font-heading mr-9 hover:text-gray-200">
-            <a href="#">Resources</a>
-          </li>
-          <li className="text-lg text-white font-heading hover:text-gray-200">
-            <a href="#">Pricing</a>
-          </li>
+          { defaultProps.links.map((link, index) => (
+            <Link key={index} />
+          ))  }
         </ul>
       </div>
     );
@@ -36,8 +41,8 @@ export function Favicon(props: NavBarProps["favicon"]) {
     <div className="w-auto">
       <div className="flex flex-wrap items-center">
         <div className="w-auto mr-14">
-          <a href="#">
-            <img src="gradia-assets/logos/gradia-name-white.svg" alt="" />
+          <a href="/">
+            <img src={props?.image?.src ?? ""} className="object-contain h-20" alt="" />
           </a>
         </div>
       </div>
@@ -85,7 +90,7 @@ export function CallToAction(props: NavBarProps["cta"]) {
 
 export function Container({ children }) {
   return (
-    <section className="sticky top-0 overflow-hidden">
+    <section className="sticky top-0 overflow-hidden z-50">
       <div className="sticky top-0 flex justify-between px-8 py-5 top-0items-center backdrop-blur-sm">
         {children}
       </div>

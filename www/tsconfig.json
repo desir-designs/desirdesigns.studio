@@ -26,6 +26,7 @@
       "@layouts/*": ["./src/views/layouts/*"],
       "@services/*": ["./src/controllers/services/*"],
       "@typings/*": ["./src/models/typings/*"],
+      "@hooks/*": ["./src/controllers/hooks/*"],
 
       "@typings/*": ["./src/models/typings/*"],
       "@pages/*": ["./src/models/data/pages/*"],

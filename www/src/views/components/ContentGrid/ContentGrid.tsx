@@ -21,8 +21,9 @@ export function Header(props: ContentGridProps["header"]) {
 
   return (
     <div className="mx-auto mb-20 text-center md:max-w-lg">
-      <h1 className="mb-4 font-semibold text-white text-9xl font-heading ">
-        {title}
+      <h1 className="mb-4 font-semibold text-white text-9xl font-heading items-center justify-center">
+        {title ?? defaultProps.title}
+        <p>{title ?? defaultProps.title}</p>
       </h1>
       <p className="text-lg text-gray-400">{description}</p>
     </div>
@@ -31,7 +32,7 @@ export function Header(props: ContentGridProps["header"]) {
 
 export function Grid(props: ContentGridProps["grid"]) {
   return (
-    <div className="flex flex-wrap -m-3">
+    <div className="flex flex-wrap -m-3 z-50">
       <div className="w-full p-3 md:w-1/2 xl:w-1/4">
         <a className="group" href="#">
           <div className="relative flex flex-col justify-end h-full overflow-hidden group rounded-10">

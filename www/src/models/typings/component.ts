@@ -14,3 +14,10 @@ export type LinkProps = { url?: string, name?: string };
 export type ActionType = LinkProps | any
 
 export type CallToActionProps = any;
+
+
+export type NavBarProps = {
+    favicon?: FaviconProps;
+    links?: LinkProps[];
+    cta?: CallToActionProps;
+  };

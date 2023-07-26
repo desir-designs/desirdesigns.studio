@@ -1,6 +1,6 @@
 export default function StatsRow() { 
     return (
-        <section className="relative overflow-hidden bg-gray-100 py-36">
+        <section className="relative overflow-hidden py-36">
   <div className="container px-4 mx-auto">
     <div className="flex flex-wrap -m-5">
       <div className="w-full p-5 md:w-1/2 xl:w-1/4">

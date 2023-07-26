@@ -1,3 +1,3 @@
-<h2>Copyright</h2>
+<h2>©️Copyright</h2>
 
-**©️ 2022 Desir Designs. All Rights Reserved.**
+**©️ 2023 Desir Designs. All Rights Reserved.**

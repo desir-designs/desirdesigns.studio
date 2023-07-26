@@ -2,6 +2,7 @@ import "@libs/globals.css";
 
 import NavBar from "@includes/NavBar";
 import Footer from "@includes/Footer";
+import Container from "@includes/Container";
 
 export const metadata = {
   title: "Desir Designs",
@@ -12,14 +13,16 @@ export type NextLayoutProps = {
   children: React.ReactNode;
 };
 
-export default function RootLayout({ children }: NextLayoutProps) {
+export default async function RootLayout({ children }: NextLayoutProps) {
   return (
-    <html lang="en">
-      <body className="relative">
-        <NavBar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <Container>
+      <NavBar favicon={{
+        image: {
+          src: "/assets/images/logo-transparent.png"
+        }
+      }}/>
+      {children}
+      <Footer />
+    </Container>
   );
 }

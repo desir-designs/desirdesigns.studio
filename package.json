@@ -1,13 +1,13 @@
 {
   "name": "desirdesigns-master",
-  "version": "10.0.0",
+  "version": "11.0.0",
   "description": "The Fringe of Design.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "app:dev": "cd app && npm i && npm run dev",
+    "dev": "npm run dev",
     "readme:g": "npx @appnest/readme generate --config=docs.config.json"
   },
   "repository": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/desirablesolutions/desirdesigns#readme",
   "dependencies": {
+    "blakprint": "^12.5.2",
     "next": "^13.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
