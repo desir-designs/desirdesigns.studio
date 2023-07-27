@@ -1,6 +1,6 @@
 export default function TableSection() {
     return (
-        <section className="py-32 overflow-hidden bg-black">
+        <section className="py-32 overflow-hidden">
   <div className="container px-4 mx-auto">
     <div className="flex flex-wrap items-center -m-6">
       <div className="w-full p-6 md:w-1/2">

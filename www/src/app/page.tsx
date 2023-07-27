@@ -9,9 +9,10 @@ import Hero from "@components/Hero"
 import { usePage } from "@hooks/usePage"
 
 export default async function Home() {
+  
   return (
     <>
-    <Hero/>
+      <Hero/>
       <TagCloud/>
       <StatsRow/>
       <FeaturedContent/>

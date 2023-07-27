@@ -1,33 +1,43 @@
 import type { NavBarProps } from "@typings/index";
+import { ViewType } from "blakprint/dist/typings"
 
-export const defaultProps = {
-  favicon: {
-    image: {
-      src: ""
-    }
-  },
-  links: [
-    {
-      label: "Home",
-    }
-  ]
+
+export function defaultProps() {
+  return {
+    links: [
+      {
+        label: "Home",
+      }
+    ]
+  }
 }
 export function Links(links: NavBarProps["links"]) {
+
+  const Link = (props:any) => {
+    return (
+      <li className="text-lg text-white font-heading mr-9 hover:text-gray-200">
+          <a href="#">{props?.label}</a>
+        </li>
+    )
+  }
+  const Template = (props) => (
+    <div className="w-auto lg:block">
+    <ul className="flex items-center mr-10 text-black">
+      { defaultProps().links.map((link, index) => (
+        <Link key={index} />
+      ))  }
+    </ul>
+  </div>
+  )
   if (!links) {
-    return null;
+    return <Template/>;
   } else {
 
-    const Link = (props:any) => {
-      return (
-        <li className="text-lg text-white font-heading mr-9 hover:text-gray-200">
-            <a href="#">{props?.label}</a>
-          </li>
-      )
-    }
+    
     return (
       <div className="w-auto lg:block">
         <ul className="flex items-center mr-10 text-black">
-          { defaultProps.links.map((link, index) => (
+          { defaultProps().links.map((link, index) => (
             <Link key={index} />
           ))  }
         </ul>
