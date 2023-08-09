@@ -1,9 +1,22 @@
 export const pages = {
-    home: {
-        hero: {
-            title: "Home",
-            subtitle: "Welcome to My Studio",
-            cta: {}
+    data: {
+
+        home: {
+            data: {
+                hero: {
+                    title: "Home",
+                    subtitle: "Welcome to My Studio",
+                    cta: {}
+                }
+            },
+            metaData: {}
         }
+      
+    },
+    metaData: {
+        layout: {
+            navBar: {}
+        },
+        
     }
 }

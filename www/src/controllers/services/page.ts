@@ -1,15 +1,37 @@
-import { pages } from "@pages/index"
+import { pages } from "@pages/index";
+import { definePageService } from "blakprint";
 
-export function PageService() {
+
+export type PageServiceType = {
+    methods: {}
+}
+export default async function PageService() {
+  return definePageService(() => {
 
     const methods = {
-        getPage: async (id: string) => {
-            const page = pages[id]
-            return page
-        },
-        getPages: async () => {
-            return pages
-        }
-    }
-    return { ...methods }
+      getData: async (id: string) => {
+        const page = pages[id];
+        return page;
+      },
+      getMetaData: async () => {
+        return pages;
+      },
+      getPageData: async (id: string) => {
+          
+      },
+      getPageMetaData: async (id: string) => {
+          
+      },
+
+      getPage: async (id: string) => {
+          
+      },
+      getPageLayout: async (id: string) => {
+          
+      }
+
+    };
+    return methods;
+
+  }).value()
 }

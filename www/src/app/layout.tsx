@@ -3,26 +3,40 @@ import "@libs/globals.css";
 import NavBar from "@includes/NavBar";
 import Footer from "@includes/Footer";
 import Container from "@includes/Container";
+import { usePage } from "@hooks/usePage";
+import type { Metadata } from 'next'
 
-export const metadata = {
+import { DefinitionParams, defineLayout, LayoutType } from "blakprint";
+
+
+
+export type LayoutProps = DefinitionParams<LayoutType<any, any, any>>;
+
+export async function generateMetadata(): Promise<Metadata> {
+ 
+  const getPage = usePage
+
+  const { metaData } = await getPage({ type: "metaData", id: "home" });
+
+  return {
   title: "Desir Designs",
-  description: "The Fringe of Desing",
+  description: "The Fringe of Design",
+  themeColor: "#000000",
+ }
+  
 };
 
-export type NextLayoutProps = {
-  children: React.ReactNode;
-};
+export default async function RootLayout({ children }: LayoutProps) {
 
-export default async function RootLayout({ children }: NextLayoutProps) {
-  return (
+  const { layout } = await usePage({ type: "layout", id: "home" });
+
+  const Component = defineLayout(
     <Container>
-      <NavBar favicon={{
-        image: {
-          src: "/assets/images/logo-transparent.png"
-        }
-      }}/>
+      <NavBar {...layout.navBar} />
       {children}
-      <Footer />
+      <Footer {...layout.footer} />
     </Container>
   );
+
+  return Component.value();
 }

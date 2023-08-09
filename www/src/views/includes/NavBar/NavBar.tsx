@@ -1,12 +1,13 @@
 import type { NavBarProps } from "@typings/index";
-import { ViewType } from "blakprint/dist/typings"
+import { defineComponent, defineClassInvariance } from "blakprint";
 
-
-export function defaultProps() {
+export function defaultProps(): NavBarProps {
   return {
+    favicon: {},
+    cta: {},
     links: [
       {
-        label: "Home",
+        name: "Home",
       }
     ]
   }
@@ -46,13 +47,20 @@ export function Links(links: NavBarProps["links"]) {
   }
 }
 
+
+
 export function Favicon(props: NavBarProps["favicon"]) {
+
+  const { image, url } = props 
+
   return (
     <div className="w-auto">
       <div className="flex flex-wrap items-center">
         <div className="w-auto mr-14">
-          <a href="/">
-            <img src={props?.image?.src ?? ""} className="object-contain h-20" alt="" />
+          <a href={!props ? defaultProps().favicon.url : url}> 
+            <img src={!props ? defaultProps().favicon.image.src : image.src} 
+                 className="object-contain h-20" 
+                 alt={!props ? defaultProps().favicon.image.src : image.src}  />
           </a>
         </div>
       </div>
