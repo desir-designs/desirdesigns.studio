@@ -1,0 +1,10 @@
+# Exported from Render on 2024-05-03T03:44:31Z
+services:
+  - type: web
+    name: desirtech
+    runtime: static
+    repo: https://github.com/desirtechnologies/desirtech
+    buildCommand: npm install --force; npm run build
+    staticPublishPath: public
+    rootDir: app
+version: "1"

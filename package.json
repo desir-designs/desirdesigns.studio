@@ -1,29 +1,14 @@
 {
-  "name": "desirdesigns-master",
-  "version": "11.0.0",
-  "description": "The Fringe of Design.",
+  "name": "desirdesigns.studio",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "dev": "npm run dev",
-    "readme:g": "npx @appnest/readme generate --config=docs.config.json"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/desirablesolutions/desirdesigns.git"
-  },
-  "author": "Jeffrey Desir",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/desirablesolutions/desirdesigns/issues"
-  },
-  "homepage": "https://github.com/desirablesolutions/desirdesigns#readme",
-  "dependencies": {
-    "blakprint": "^12.5.2",
-    "next": "^13.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+  "author": "",
+  "license": "ISC"
 }
