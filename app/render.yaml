@@ -3,7 +3,7 @@ services:
   - type: web
     name: desirtech
     runtime: static
-    repo: https://github.com/desirtechnologies/desirtech
+    repo: https://github.com/desir-designs/desirdesigns-studio
     buildCommand: npm install --force; npm run build
     staticPublishPath: public
     rootDir: app

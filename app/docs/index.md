@@ -1,6 +1,10 @@
 ---
-title: Knowledge Determines Desiny
+title: The Fringe of Design
 ---
  
 
-# Hello World
+# Desir Designs Studio
+
+> Welcome to the studio!
+> 
+> 
