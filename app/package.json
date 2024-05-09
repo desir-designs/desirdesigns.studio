@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "./quartz/bootstrap-cli.mjs",
-    "build": "npx quartz build -d docs",
+    "build": "chmod +x ./quartz/bootstrap-cli.mjs && npx quartz build",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
     "test": "tsx ./quartz/util/path.test.ts && tsx ./quartz/depgraph.test.ts",
