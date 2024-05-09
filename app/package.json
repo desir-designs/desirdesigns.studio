@@ -1,10 +1,10 @@
 {
-  "name": "desirtech",
+  "name": "desirdesigns",
   "description": "",
   "private": true,
   "version": "4.2.3",
   "type": "module",
-  "author": "desirtech <jeffrey@desirtech.pro>",
+  "author": "desirdesigns <jeffrey@desirtech.pro>",
   "license": "MIT",
   "homepage": "https://quartz.jzhao.xyz",
   "repository": {
